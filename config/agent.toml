@@ -1,0 +1,55 @@
+# Agent configuration. Committed on purpose: the risk limits are part of the
+# submission and every decision-log record references the config hash it ran under.
+
+[agent]
+tick_seconds = 300                 # one tick per closed 5m candle
+category = "USDT-FUTURES"
+model = "claude-opus-5"
+
+# Perception watches the whole US-stock perp universe on Bitget...
+watchlist = [
+  "NVDAUSDT", "TSLAUSDT", "AAPLUSDT", "METAUSDT", "AMZNUSDT", "GOOGLUSDT",
+  "COINUSDT", "HOODUSDT", "MSTRUSDT", "CRCLUSDT", "SP500USDT", "NDX100USDT",
+]
+# ...but the agent may only trade this narrower whitelist (enforced by the risk gate).
+whitelist = [
+  "NVDAUSDT", "TSLAUSDT", "AAPLUSDT", "METAUSDT", "AMZNUSDT", "GOOGLUSDT",
+  "SP500USDT", "NDX100USDT",
+]
+
+[perception]
+candle_interval = "5m"
+lookback_candles = 48              # 4h of 5m candles for ATR / volume baselines
+move_window_candles = 6            # 30 min
+move_threshold_pct = 1.0           # |30m return| that counts as a price event
+range_atr_multiple = 3.0           # single-candle range vs ATR
+volume_multiple = 4.0              # single-candle volume vs median
+event_cooldown_minutes = 60        # same (type, symbol) cannot re-fire inside this window
+position_review_hours = 4          # periodic LLM review of held positions
+position_pnl_band_pct = 1.5        # re-review when unrealized PnL crosses another band
+
+[risk]
+min_confidence = 0.55
+max_order_notional_usdt = 1500
+max_position_pct_equity = 15
+max_gross_exposure_pct_equity = 40
+max_open_positions = 3
+leverage = 2
+daily_drawdown_halt_pct = 3.0      # vs equity at first tick of the UTC day
+consecutive_loss_limit = 3
+loss_cooldown_minutes = 240
+max_trades_per_day = 8
+symbol_min_minutes_between_trades = 60
+max_spread_pct = 0.30              # demo book spread sanity bound
+max_live_demo_divergence_pct = 1.5 # demo vs live venue price sanity bound
+stop_loss_pct = 2.5                # hard stop, enforced locally AND preset on the exchange
+max_holding_hours = 72
+open_sessions = ["pre", "regular", "post"]   # no new positions overnight / weekends
+
+[sim]
+# Used only when no Bitget key is configured (local paper book, demo-venue prices).
+starting_equity_usdt = 10000
+taker_fee_rate = 0.0006
+
+[publish]
+commit_every_minutes = 60

@@ -1,0 +1,14 @@
+# Secrets — never committed
+.env
+.env.*
+!.env.example
+
+# Runtime state (everything needed to audit a decision is also written to logs/)
+state/
+STOP
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
