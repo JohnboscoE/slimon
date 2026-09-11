@@ -67,6 +67,15 @@ Signals come from Bitget's **live** public market data, which reflects the real 
 
 Every event is written to `logs/events/` with its `received_at` time and the `source_ts` of the candle it came from, which shows decisions were not made in hindsight.
 
+### Data sources
+
+Slimon reads **one source**: Bitget's public market API (`/api/v3/market/instruments`, `/tickers`, `/candles`) for the 12 watched perps, read from both the live venue (signals) and the demo venue (execution prices, spread, instrument status). It does **not** read news, X, Truth Social or any other feed. The track allows other sources (its sub-themes include sentiment and earnings agents); keeping to one is a deliberate choice.
+
+- **What that means for news.** A post from a president or a CEO reaches Slimon as the price move it causes, not as text. Racing headlines is a contest against firms with direct feeds, and a post can be misread, parodied or retracted within minutes. A price that has actually traded is the market's own verdict on the news, whoever broke it.
+- **How early.** Each tick runs 15 seconds after a 5-minute candle closes, so a move is caught at the first close after it crosses a threshold: never more than about five minutes late. The delay is on the record, not claimed: every event carries `source_ts` and `received_at`, and every model call logs `latency_ms`.
+- **How it is verified.** Detectors use closed candles only. Range and volume are compared against a baseline from the same US session. The model gets the full cross-section, so it can tell one stock's news from an index-wide move. The gate refuses to open a position if the demo book's spread exceeds 0.30% or its price diverges from the live venue by more than 1.5%, and it vetoes any decision that cites an event ID the agent did not see that tick.
+- **Weekends and overnight.** Stock perps trade around the clock, so news that breaks at the weekend still moves them. Perception keeps running and logging then, and the model is still consulted about held positions, but no new position is opened outside the US pre, regular and post sessions.
+
 ## Modes
 
 | Mode | When | Behaviour |
@@ -88,6 +97,20 @@ cp .env.example .env                                         # fill in keys
 .venv/Scripts/python -m slimon run                           # loop: one tick per closed 5m candle
 .venv/Scripts/python -m unittest discover -s tests           # risk gate tests
 ```
+
+## Web UI (`web/`)
+
+A landing page that explains the agent, with an animated walk through one tick (perceive, decide, gate, execute, log), and a **Launch App** button that opens a replay of the decision log at `/app`. The replay needs no keys: it reads `logs/decisions/*.jsonl` straight from the repository, opens on the veto cases, and expands any tick into the events seen, the model's reasoning and invalidation, every gate check with its detail, and the execution result.
+
+Next.js 16, TypeScript, Tailwind CSS v4 and shadcn/ui (components in `web/components/ui`).
+
+```bash
+cd web
+npm install
+npx next dev -p 3000        # http://localhost:3000 and http://localhost:3000/app
+```
+
+The replay reads `../logs` by default; set `SLIMON_LOG_DIR` to point it at another log, the same variable the agent uses. The ticks in the landing-page animation are illustrative and labelled as such; everything on `/app` comes from the log.
 
 ## Decision log record (`slimon.tick/v1`)
 
