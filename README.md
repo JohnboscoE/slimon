@@ -54,6 +54,8 @@ Closing a position reduces risk, so kill switches, breakers, cooldowns and sessi
 
 The gate also acts **on its own**: a hard stop at -2.5% (enforced locally and preset on the exchange) and a 72h maximum holding time close positions without consulting the model.
 
+Positions on symbols outside the whitelist, such as a trade opened by hand in the same account, are not the agent's. It never reviews or closes them and never counts their outcome as its own trade, but their exposure still counts against the gross cap and they are recorded under `foreign_positions` in every log record.
+
 All limits live in [`config/agent.toml`](config/agent.toml). Every log record carries the hash of the config it ran under. The gate is covered by unit tests in [`tests/test_risk.py`](tests/test_risk.py).
 
 ## Perception

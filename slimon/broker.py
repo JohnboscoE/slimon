@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import math
 import time
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 
 from .bitget import AMBIGUOUS_ORDER_CODES, BitgetClient, BitgetError
@@ -45,24 +45,29 @@ class Portfolio:
     equity: float
     unrealized_pnl: float
     positions: list[Position]
+    # Positions in the account on symbols the agent does not trade (opened by hand, say).
+    # The agent never reviews, closes or counts them as its own, but their exposure still
+    # counts against the gross cap: the margin behind them is real.
+    foreign: list[Position] = field(default_factory=list)
 
     def position(self, symbol: str) -> Position | None:
         return next((p for p in self.positions if p.symbol == symbol), None)
 
     @property
     def gross_exposure(self) -> float:
-        return sum(p.notional for p in self.positions)
+        return sum(p.notional for p in self.positions + self.foreign)
 
     def to_dict(self) -> dict:
+        def row(p: Position) -> dict:
+            return {**asdict(p), "notional": round(p.notional, 4), "pnl_pct": round(p.pnl_pct, 3)}
+
         return {
             "source": self.source,
             "equity": round(self.equity, 4),
             "unrealized_pnl": round(self.unrealized_pnl, 4),
             "gross_exposure": round(self.gross_exposure, 4),
-            "positions": [
-                {**asdict(p), "notional": round(p.notional, 4), "pnl_pct": round(p.pnl_pct, 3)}
-                for p in self.positions
-            ],
+            "positions": [row(p) for p in self.positions],
+            "foreign_positions": [row(p) for p in self.foreign],
         }
 
 
@@ -136,6 +141,7 @@ class BitgetBroker:
         self.client = client
         self.category = category
         self.trading = trading
+        self.managed = set(symbols)
         settings = client.account_settings() or {}
         self.hold_mode = settings.get("holdMode", "one_way_mode")
         if trading:
@@ -156,23 +162,25 @@ class BitgetBroker:
         assets = self.client.account_assets() or {}
         equity = float(assets.get("accountEquity") or assets.get("usdtEquity") or 0)
         upnl = float(assets.get("unrealisedPnl") or 0)
-        positions = []
+        positions, foreign = [], []
         for r in self.client.positions(self.category):
             qty = float(r.get("total") or 0)
             if qty == 0:
                 continue
             side = r.get("posSide") if r.get("posSide") in ("long", "short") else ("long" if qty > 0 else "short")
             opened = r.get("createdTime")
-            positions.append(Position(
+            p = Position(
                 symbol=r["symbol"], side=side, qty=abs(qty),
                 avg_price=float(r.get("avgPrice") or 0), mark_price=float(r.get("markPrice") or 0),
                 unrealized_pnl=float(r.get("unrealisedPnl") or 0),
                 opened_at=iso(datetime.fromtimestamp(int(opened) / 1000, timezone.utc)) if opened else None,
-            ))
-        return Portfolio("bitget_demo", equity, upnl, positions)
+            )
+            (positions if p.symbol in self.managed else foreign).append(p)
+        return Portfolio("bitget_demo", equity, upnl, positions, foreign)
 
     def execute(self, intent: dict, client_oid: str, snap: MarketSnapshot, now: datetime, submit: bool) -> dict:
-        meta = snap.views[intent["symbol"]].meta or {}
+        view = snap.views.get(intent["symbol"])  # a failed fetch this tick must not crash a close
+        meta = (view.meta if view else None) or {}
         order = {
             "category": self.category,
             "symbol": intent["symbol"],
@@ -243,7 +251,7 @@ class BitgetBroker:
         closed = []
         current = {p.symbol for p in portfolio.positions}
         for sym, p in prev.items():
-            if sym in current:
+            if sym in current or sym not in self.managed:  # a foreign close is not our trade, win or lose
                 continue
             pnl, source = None, "position_history"
             try:
