@@ -69,6 +69,10 @@ Signals come from Bitget's **live** public market data, which reflects the real 
 
 Every event is written to `logs/events/` with its `received_at` time and the `source_ts` of the candle it came from, which shows decisions were not made in hindsight.
 
+### When the model is called
+
+Claude (`claude-sonnet-5`, adaptive thinking at `medium` effort, set in `config/agent.toml`) is consulted only when a tick produces an event it could act on: an event on a tradable symbol, a US session open or close, a position review, or any event while a position is held. Quiet ticks and events on watch-only symbols are logged with the reason the model was not called (`no_events`, `no_tradable_events`, `us_market_closed_and_flat`). The context is sent as compact JSON with the market cross-section included once, and every call logs its token usage and `cost_usd`.
+
 ### Data sources
 
 Slimon reads **one source**: Bitget's public market API (`/api/v3/market/instruments`, `/tickers`, `/candles`) for the 12 watched perps, read from both the live venue (signals) and the demo venue (execution prices, spread, instrument status). It does **not** read news, X, Truth Social or any other feed. The track allows other sources (its sub-themes include sentiment and earnings agents); keeping to one is a deliberate choice.

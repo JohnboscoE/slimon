@@ -30,6 +30,25 @@ def _git_head() -> str | None:
         return None
 
 
+def worth_a_decision(events: list[dict], whitelist: list[str], holding: bool) -> bool:
+    """Spend a model call only when the answer could lead somewhere: an event on a tradable symbol,
+    a session edge or position review, or any event at all while positions are held. Events on
+    watch-only symbols alone can only ever produce NO_TRADE, so they are logged but not sent."""
+    if holding:
+        return bool(events)
+    return any(e.get("symbol") is None or e.get("symbol") in whitelist or e.get("type") == "position_review"
+               for e in events)
+
+
+def _for_model(ev: dict) -> dict:
+    """Session events carry the whole cross-section, which the model already gets under "market".
+    Send it once; the event log keeps the full payload."""
+    payload = ev.get("payload") or {}
+    if "cross_section" not in payload:
+        return ev
+    return {**ev, "payload": {k: v for k, v in payload.items() if k != "cross_section"}}
+
+
 class Agent:
     def __init__(self, cfg: Config):
         self.cfg = cfg
@@ -40,7 +59,9 @@ class Agent:
         self.state = State()
         self.journal = Journal(s.values())
         self.perception = Perception(p, self.state)
-        self.dm = DecisionMaker(a["model"], s.anthropic_key)
+        self.dm = DecisionMaker(a["model"], s.anthropic_key, a.get("effort", "high"),
+                                (a["price_input_per_mtok"], a["price_output_per_mtok"])
+                                if "price_input_per_mtok" in a else None)
         self.book = RiskBook(self.state.get("risk", {}), cfg.risk)
         startup = {"type": "startup", "ts": iso(utcnow()), "mode": cfg.mode, "config_hash": cfg.config_hash,
                    "git_head": _git_head(), "model": a["model"], "llm_configured": bool(s.anthropic_key)}
@@ -67,7 +88,7 @@ class Agent:
         return {
             "now_utc": iso(now),
             "us_session": session,
-            "events": events,
+            "events": [_for_model(e) for e in events],
             "market": [snap.views[s].summary() for s in a["watchlist"] if s in snap.views],
             "portfolio": portfolio.to_dict(),
             "tradable_whitelist": a["whitelist"],
@@ -131,6 +152,8 @@ class Agent:
             rec["llm"] = {"called": False, "reason": "no_events"}
         elif session == "closed" and not portfolio.positions:
             rec["llm"] = {"called": False, "reason": "us_market_closed_and_flat"}
+        elif not worth_a_decision(events, a["whitelist"], holding=bool(portfolio.positions)):
+            rec["llm"] = {"called": False, "reason": "no_tradable_events"}
         else:
             llm = self.dm.decide(self._context(now, session, events, snap, portfolio))
             decision = llm.pop("decision")

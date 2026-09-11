@@ -82,8 +82,10 @@ contradicts them, and say why now. This text is published in the decision log, s
 
 
 class DecisionMaker:
-    def __init__(self, model: str, api_key: str):
+    def __init__(self, model: str, api_key: str, effort: str = "high", price_per_mtok: tuple[float, float] | None = None):
         self.model = model
+        self.effort = effort
+        self.price_per_mtok = price_per_mtok  # (input, output) USD, for the logged cost of each call
         self.client = anthropic.Anthropic(api_key=api_key or None, timeout=180.0, max_retries=2) if api_key else None
 
     def decide(self, context: dict) -> dict:
@@ -100,9 +102,10 @@ class DecisionMaker:
                 betas=["server-side-fallback-2026-07-01"],
                 fallbacks="default",
                 thinking={"type": "adaptive", "display": "summarized"},
-                output_config={"format": {"type": "json_schema", "schema": DECISION_SCHEMA}},
+                output_config={"effort": self.effort, "format": {"type": "json_schema", "schema": DECISION_SCHEMA}},
                 system=SYSTEM_PROMPT,
-                messages=[{"role": "user", "content": json.dumps(context, indent=1, default=str)}],
+                # Compact JSON: indentation alone was ~18% of the input tokens.
+                messages=[{"role": "user", "content": json.dumps(context, separators=(",", ":"), default=str)}],
             )
         except anthropic.APIStatusError as e:
             out["error"] = f"api_status_{e.status_code}: {e.message}"
@@ -117,6 +120,10 @@ class DecisionMaker:
                                    for it in (getattr(resp.usage, "iterations", None) or []))
         out["stop_reason"] = resp.stop_reason
         out["usage"] = {"input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
+        out["effort"] = self.effort
+        if self.price_per_mtok:
+            p_in, p_out = self.price_per_mtok
+            out["cost_usd"] = round((resp.usage.input_tokens * p_in + resp.usage.output_tokens * p_out) / 1e6, 6)
         out["thinking_summary"] = "\n".join(b.thinking for b in resp.content
                                             if b.type == "thinking" and getattr(b, "thinking", "")) or None
         if resp.stop_reason == "refusal":

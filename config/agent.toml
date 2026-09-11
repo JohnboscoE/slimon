@@ -4,7 +4,11 @@
 [agent]
 tick_seconds = 300                 # one tick per closed 5m candle
 category = "USDT-FUTURES"
-model = "claude-opus-5"
+model = "claude-sonnet-5"
+effort = "medium"                  # adaptive-thinking depth; medium holds quality at a third of the cost of Opus
+# USD per million tokens for the model above; every call's cost is logged from its token usage.
+price_input_per_mtok = 2.0
+price_output_per_mtok = 10.0
 
 # Perception watches the whole US-stock perp universe on Bitget...
 watchlist = [

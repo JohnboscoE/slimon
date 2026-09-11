@@ -149,6 +149,7 @@ function headline(r: TickRow): string {
   if (!r.llm.called) {
     const why: Record<string, string> = {
       no_events: "No events on this candle; the model was not called.",
+      no_tradable_events: "Events only on watch-only symbols it cannot trade; the model was not called.",
       us_market_closed_and_flat: "Events seen, but the US market was closed and the book was flat.",
       portfolio_unavailable: "Portfolio could not be read; tick skipped.",
     };
