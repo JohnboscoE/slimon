@@ -9,9 +9,11 @@ import path from "node:path";
 import { isExecuted, type LogSummary, type TickRow, type Verdict } from "./tick";
 
 export function logDir(): string {
-  return process.env.SLIMON_LOG_DIR
-    ? path.resolve(process.env.SLIMON_LOG_DIR)
-    : path.resolve(process.cwd(), "..", "logs");
+  if (process.env.SLIMON_LOG_DIR) return path.resolve(process.env.SLIMON_LOG_DIR);
+  // Locally the server runs from web/; a deployed function may run from the traced
+  // repository root instead. Take whichever holds the log.
+  const candidates = [path.resolve(process.cwd(), "..", "logs"), path.resolve(process.cwd(), "logs")];
+  return candidates.find((d) => existsSync(path.join(d, "decisions"))) ?? candidates[0];
 }
 
 type Json = Record<string, unknown>;
