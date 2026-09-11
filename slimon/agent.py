@@ -50,7 +50,7 @@ class Agent:
             info = self.client.account_info() or {}
             perms = info.get("permissions") or []
             startup["key_check"] = {"perm_type": info.get("permType"), "permissions": perms,
-                                    "ip_bound": bool(info.get("ips"))}
+                                    "permissions_reported": bool(perms), "ip_bound": bool(info.get("ips"))}
             if "withdraw" in perms:
                 self.journal.run({**startup, "fatal": "API key has withdraw permission; refusing to run"}, utcnow())
                 raise SystemExit("Refusing to run: the Bitget key has WITHDRAW permission. Create a key without it.")

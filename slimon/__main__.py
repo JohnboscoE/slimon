@@ -64,13 +64,21 @@ def check(with_llm: bool) -> int:
             if "withdraw" in perms:
                 _fail("key has WITHDRAW permission - the agent will refuse to run. Recreate the key without it.")
                 bad += 1
-            if info.get("permType") != "read-and-write" or "uta_trade" not in perms:
+            if not perms:
+                _warn("the demo API does not report key permissions - confirm in the Bitget UI: "
+                      "read/write trade, NO withdraw")
+            elif info.get("permType") != "read-and-write" or "uta_trade" not in perms:
                 _warn("key is not read-and-write with uta_trade; orders will be rejected")
             (_ok if info.get("ips") else _warn)("IP binding " + ("present" if info.get("ips") else "NOT set - bind the key to this machine's IP"))
             st = c.account_settings() or {}
             _ok(f"accountMode={st.get('accountMode')} holdMode={st.get('holdMode')}")
             assets = c.account_assets() or {}
-            _ok(f"demo equity={assets.get('accountEquity')} unrealisedPnl={assets.get('unrealisedPnl')}")
+            equity = float(assets.get("accountEquity") or 0)
+            if equity > 0:
+                _ok(f"demo equity={equity} unrealisedPnl={assets.get('unrealisedPnl')}")
+            else:
+                _fail("demo unified account has 0 equity - claim demo funds in the Bitget app (Demo mode)")
+                bad += 1
             _ok(f"open positions: {len([p for p in c.positions(a['category']) if float(p.get('total') or 0)])}")
         except BitgetError as e:
             _fail(f"signed demo call failed: {e}")

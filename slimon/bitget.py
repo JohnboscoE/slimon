@@ -23,6 +23,13 @@ BASE_URL = "https://api.bitget.com"
 AMBIGUOUS_ORDER_CODES = {"40010", "40725", "45001"}
 
 
+def _rows(data: object) -> list[dict]:
+    """List endpoints return {"list": [...]}, {"list": null} when empty, or a bare list."""
+    if isinstance(data, dict):
+        return data.get("list") or []
+    return data or []
+
+
 class BitgetError(Exception):
     def __init__(self, message: str, *, code: str | None = None, http_status: int | None = None):
         super().__init__(message)
@@ -91,12 +98,12 @@ class BitgetClient:
 
     def positions(self, category: str) -> list[dict]:
         data = self.private("GET", "/api/v3/position/current-position", {"category": category})
-        return (data or {}).get("list", []) if isinstance(data, dict) else (data or [])
+        return _rows(data)
 
     def position_history(self, category: str, symbol: str, limit: int = 5) -> list[dict]:
         data = self.private("GET", "/api/v3/position/history-position",
                             {"category": category, "symbol": symbol, "limit": str(limit)})
-        return (data or {}).get("list", []) if isinstance(data, dict) else (data or [])
+        return _rows(data)
 
     def set_leverage(self, category: str, symbol: str, leverage: int) -> object:
         return self.private("POST", "/api/v3/account/set-leverage",
