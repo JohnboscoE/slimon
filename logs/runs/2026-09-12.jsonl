@@ -1,0 +1,1 @@
+{"type": "startup", "ts": "2026-09-12T06:40:52.216Z", "mode": "dry_run", "config_hash": "57ed11b9ba5c", "git_head": "a38c422", "model": "claude-sonnet-5", "llm_configured": true, "key_check": {"perm_type": "unknown", "permissions": [], "permissions_reported": false, "ip_bound": false}, "hold_mode": "hedge_mode"}
