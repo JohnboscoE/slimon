@@ -59,12 +59,11 @@ class Agent:
         self.state = State()
         self.journal = Journal(s.values())
         self.perception = Perception(p, self.state)
-        self.dm = DecisionMaker(a["model"], s.anthropic_key, a.get("effort", "high"),
-                                (a["price_input_per_mtok"], a["price_output_per_mtok"])
-                                if "price_input_per_mtok" in a else None)
+        self.dm = DecisionMaker.from_config(cfg)
         self.book = RiskBook(self.state.get("risk", {}), cfg.risk)
         startup = {"type": "startup", "ts": iso(utcnow()), "mode": cfg.mode, "config_hash": cfg.config_hash,
-                   "git_head": _git_head(), "model": a["model"], "llm_configured": bool(s.anthropic_key)}
+                   "git_head": _git_head(), "llm_provider": self.dm.provider, "model": self.dm.model,
+                   "llm_configured": bool(self.dm.api_key)}
         if cfg.mode == "sim":
             self.broker = SimBroker(cfg.sim["starting_equity_usdt"], cfg.sim["taker_fee_rate"])
         else:

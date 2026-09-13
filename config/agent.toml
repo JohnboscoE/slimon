@@ -4,11 +4,6 @@
 [agent]
 tick_seconds = 300                 # one tick per closed 5m candle
 category = "USDT-FUTURES"
-model = "claude-sonnet-5"
-effort = "medium"                  # adaptive-thinking depth; medium holds quality at a third of the cost of Opus
-# USD per million tokens for the model above; every call's cost is logged from its token usage.
-price_input_per_mtok = 2.0
-price_output_per_mtok = 10.0
 
 # Perception watches the whole US-stock perp universe on Bitget...
 watchlist = [
@@ -20,6 +15,23 @@ whitelist = [
   "NVDAUSDT", "TSLAUSDT", "AAPLUSDT", "METAUSDT", "AMZNUSDT", "GOOGLUSDT",
   "SP500USDT", "NDX100USDT",
 ]
+
+[llm]
+# Which model makes the decisions. Both get the same system prompt, the same JSON schema and the
+# same validation; only the transport differs.
+provider = "qwen"                  # "qwen" (QWEN_API_KEY) or "anthropic" (ANTHROPIC_API_KEY)
+
+[llm.qwen]
+# Bitget AI hackathon gateway (Qwen token subsidy), OpenAI-compatible chat completions.
+model = "qwen3.8-max"
+base_url = "https://hackathon.bitgetops.com/v1"
+
+[llm.anthropic]
+model = "claude-sonnet-5"
+effort = "medium"                  # adaptive-thinking depth
+# USD per million tokens, used to log each call's cost from its token usage.
+price_input_per_mtok = 2.0
+price_output_per_mtok = 10.0
 
 [perception]
 candle_interval = "5m"

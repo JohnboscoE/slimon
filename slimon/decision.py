@@ -1,4 +1,5 @@
-"""Decision layer: Claude reads the events and proposes exactly one structured decision.
+"""Decision layer: the LLM (Qwen or Claude, see [llm] in config/agent.toml) reads the events and
+proposes exactly one structured decision.
 
 The model's output is constrained by a JSON schema (never regex-parsed prose). It is a
 proposal only: the deterministic risk gate in risk.py decides whether anything happens.
@@ -10,7 +11,7 @@ import json
 import time
 from typing import Literal
 
-import anthropic
+import requests
 from pydantic import BaseModel, ValidationError
 
 ACTIONS = ("OPEN_LONG", "OPEN_SHORT", "CLOSE", "NO_TRADE")
@@ -80,60 +81,142 @@ contradicts them, and say why now. This text is published in the decision log, s
 - invalidation: a concrete, observable condition.
 """
 
+# How much of a model's reasoning text to keep in the decision log.
+REASONING_LOG_CHARS = 4000
+
 
 class DecisionMaker:
-    def __init__(self, model: str, api_key: str, effort: str = "high", price_per_mtok: tuple[float, float] | None = None):
-        self.model = model
-        self.effort = effort
-        self.price_per_mtok = price_per_mtok  # (input, output) USD, for the logged cost of each call
-        self.client = anthropic.Anthropic(api_key=api_key or None, timeout=180.0, max_retries=2) if api_key else None
+    """Asks the configured model for one decision.
+
+    Two transports share one contract: the same system prompt, the same JSON schema, the same
+    validation, and the same `llm` record shape in the log. Only the wire format differs.
+    """
+
+    def __init__(self, provider: str, settings: dict, api_key: str):
+        self.provider = provider
+        self.model = settings["model"]
+        self.settings = settings
+        self.api_key = api_key
+        self._anthropic = None
+        self._http = None
+        if not api_key:
+            return
+        if provider == "anthropic":
+            import anthropic
+
+            self._anthropic = anthropic.Anthropic(api_key=api_key, timeout=180.0, max_retries=2)
+        else:
+            self._http = requests.Session()
+
+    @classmethod
+    def from_config(cls, cfg) -> "DecisionMaker":
+        llm = cfg.llm
+        return cls(llm["provider"], llm, cfg.secrets.llm_key(llm["provider"]))
 
     def decide(self, context: dict) -> dict:
         """Returns the `llm` section of the tick record; `decision` is None if no valid decision came back."""
-        out: dict = {"called": True, "model": self.model, "decision": None, "error": None}
-        if self.client is None:
-            out["error"] = "ANTHROPIC_API_KEY not configured"
+        out: dict = {"called": True, "provider": self.provider, "model": self.model, "decision": None, "error": None}
+        if not self.api_key:
+            out["error"] = f"{self.provider} API key not configured"
             return out
+        # Compact JSON: indentation alone was ~18% of the input tokens.
+        user = json.dumps(context, separators=(",", ":"), default=str)
         started = time.monotonic()
-        try:
-            resp = self.client.beta.messages.create(
-                model=self.model,
-                max_tokens=16000,
-                betas=["server-side-fallback-2026-07-01"],
-                fallbacks="default",
-                thinking={"type": "adaptive", "display": "summarized"},
-                output_config={"effort": self.effort, "format": {"type": "json_schema", "schema": DECISION_SCHEMA}},
-                system=SYSTEM_PROMPT,
-                # Compact JSON: indentation alone was ~18% of the input tokens.
-                messages=[{"role": "user", "content": json.dumps(context, separators=(",", ":"), default=str)}],
-            )
-        except anthropic.APIStatusError as e:
-            out["error"] = f"api_status_{e.status_code}: {e.message}"
-            return out
-        except anthropic.APIConnectionError as e:
-            out["error"] = f"api_connection: {type(e).__name__}"
-            return out
+        text = self._ask_anthropic(user, out) if self.provider == "anthropic" else self._ask_qwen(user, out)
         out["latency_ms"] = int((time.monotonic() - started) * 1000)
-        out["request_id"] = getattr(resp, "_request_id", None)
-        out["served_by"] = resp.model
-        out["fallback_used"] = any(getattr(it, "type", None) == "fallback_message"
-                                   for it in (getattr(resp.usage, "iterations", None) or []))
-        out["stop_reason"] = resp.stop_reason
-        out["usage"] = {"input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
-        out["effort"] = self.effort
-        if self.price_per_mtok:
-            p_in, p_out = self.price_per_mtok
-            out["cost_usd"] = round((resp.usage.input_tokens * p_in + resp.usage.output_tokens * p_out) / 1e6, 6)
-        out["thinking_summary"] = "\n".join(b.thinking for b in resp.content
-                                            if b.type == "thinking" and getattr(b, "thinking", "")) or None
-        if resp.stop_reason == "refusal":
-            details = getattr(resp, "stop_details", None)
-            out["error"] = f"refusal: {getattr(details, 'category', None)}"
+        if text is None:
             return out
-        text = next((b.text for b in resp.content if b.type == "text"), "")
         try:
             out["decision"] = Decision.model_validate(json.loads(text)).model_dump()
         except (json.JSONDecodeError, ValidationError) as e:
             out["error"] = f"malformed_output: {type(e).__name__}"
             out["raw_output"] = text[:4000]
         return out
+
+    # --- transports: return the response text, or None with out["error"] set ---
+
+    def _ask_anthropic(self, user: str, out: dict) -> str | None:
+        import anthropic
+
+        effort = self.settings.get("effort", "high")
+        try:
+            resp = self._anthropic.beta.messages.create(
+                model=self.model,
+                max_tokens=16000,
+                betas=["server-side-fallback-2026-07-01"],
+                fallbacks="default",
+                thinking={"type": "adaptive", "display": "summarized"},
+                output_config={"effort": effort, "format": {"type": "json_schema", "schema": DECISION_SCHEMA}},
+                system=SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user}],
+            )
+        except anthropic.APIStatusError as e:
+            out["error"] = f"api_status_{e.status_code}: {e.message}"
+            return None
+        except anthropic.APIConnectionError as e:
+            out["error"] = f"api_connection: {type(e).__name__}"
+            return None
+        out["request_id"] = getattr(resp, "_request_id", None)
+        out["served_by"] = resp.model
+        out["fallback_used"] = any(getattr(it, "type", None) == "fallback_message"
+                                   for it in (getattr(resp.usage, "iterations", None) or []))
+        out["stop_reason"] = resp.stop_reason
+        out["usage"] = {"input_tokens": resp.usage.input_tokens, "output_tokens": resp.usage.output_tokens}
+        out["effort"] = effort
+        if "price_input_per_mtok" in self.settings:
+            out["cost_usd"] = round((resp.usage.input_tokens * self.settings["price_input_per_mtok"]
+                                     + resp.usage.output_tokens * self.settings["price_output_per_mtok"]) / 1e6, 6)
+        out["thinking_summary"] = "\n".join(b.thinking for b in resp.content
+                                            if b.type == "thinking" and getattr(b, "thinking", "")) or None
+        if resp.stop_reason == "refusal":
+            out["error"] = f"refusal: {getattr(getattr(resp, 'stop_details', None), 'category', None)}"
+            return None
+        return next((b.text for b in resp.content if b.type == "text"), "")
+
+    def _ask_qwen(self, user: str, out: dict) -> str | None:
+        body = {
+            "model": self.model,
+            "max_tokens": 16000,
+            "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": user}],
+            "response_format": {"type": "json_schema",
+                                "json_schema": {"name": "decision", "strict": True, "schema": DECISION_SCHEMA}},
+        }
+        url = self.settings["base_url"].rstrip("/") + "/chat/completions"
+        headers = {"Authorization": f"Bearer {self.api_key}"}
+        resp = None
+        for attempt in (1, 2, 3):  # a decision is idempotent, so transient failures are simply retried
+            try:
+                resp = self._http.post(url, json=body, headers=headers, timeout=180)
+            except requests.RequestException as e:
+                out["error"] = f"api_connection: {type(e).__name__}"
+                resp = None
+            if resp is not None and resp.status_code != 429 and resp.status_code < 500:
+                break
+            if attempt < 3:
+                time.sleep(2 * attempt)
+        if resp is None:
+            return None
+        if not resp.ok:
+            out["error"] = f"api_status_{resp.status_code}: {resp.text[:300]}"
+            return None
+        out["error"] = None
+        try:
+            data = resp.json()
+            choice = data["choices"][0]
+        except (ValueError, KeyError, IndexError, TypeError):
+            out["error"] = "malformed_response"
+            out["raw_output"] = resp.text[:4000]
+            return None
+        msg = choice.get("message") or {}
+        usage = data.get("usage") or {}
+        out["request_id"] = data.get("id")
+        out["served_by"] = data.get("model")
+        out["stop_reason"] = choice.get("finish_reason")
+        out["usage"] = {"input_tokens": usage.get("prompt_tokens"), "output_tokens": usage.get("completion_tokens"),
+                        "reasoning_tokens": (usage.get("completion_tokens_details") or {}).get("reasoning_tokens")}
+        # Qwen returns its full reasoning, not a summary; keep a bounded excerpt for the log.
+        reasoning = msg.get("reasoning_content") or ""
+        out["reasoning_excerpt"] = reasoning[:REASONING_LOG_CHARS] or None
+        return msg.get("content") or ""
+
+

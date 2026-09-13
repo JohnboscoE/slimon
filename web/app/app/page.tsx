@@ -7,7 +7,7 @@ import { fmtCount, fmtDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Decision log | Slimon",
-  description: "Replay every tick Slimon has logged: the events it saw, what Claude proposed, and what the risk gate allowed.",
+  description: "Replay every tick Slimon has logged: the events it saw, what the LLM proposed, and what the risk gate allowed.",
 };
 
 // The agent appends to the log while this page is open; read it on every request.

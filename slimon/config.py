@@ -24,14 +24,19 @@ class Secrets:
     bitget_secret: str = field(repr=False)
     bitget_passphrase: str = field(repr=False)
     anthropic_key: str = field(repr=False)
+    qwen_key: str = field(repr=False, default="")
 
     @property
     def has_bitget(self) -> bool:
         return bool(self.bitget_key and self.bitget_secret and self.bitget_passphrase)
 
+    def llm_key(self, provider: str) -> str:
+        return {"anthropic": self.anthropic_key, "qwen": self.qwen_key}.get(provider, "")
+
     def values(self) -> list[str]:
         """Every secret value, for the log scrubber. Short values are ignored to avoid false hits."""
-        return [v for v in (self.bitget_key, self.bitget_secret, self.bitget_passphrase, self.anthropic_key) if len(v) >= 8]
+        return [v for v in (self.bitget_key, self.bitget_secret, self.bitget_passphrase, self.anthropic_key, self.qwen_key)
+                if len(v) >= 8]
 
 
 @dataclass(frozen=True)
@@ -46,6 +51,12 @@ class Config:
     @property
     def agent(self) -> dict:
         return self.raw["agent"]
+
+    @property
+    def llm(self) -> dict:
+        """The active provider's settings, with "provider" set."""
+        provider = self.raw["llm"]["provider"]
+        return {**self.raw["llm"][provider], "provider": provider}
 
     @property
     def perception(self) -> dict:
@@ -85,6 +96,8 @@ def load_config() -> Config:
         bitget_secret=os.environ.get("BITGET_API_SECRET", "").strip(),
         bitget_passphrase=os.environ.get("BITGET_API_PASSPHRASE", "").strip(),
         anthropic_key=os.environ.get("ANTHROPIC_API_KEY", "").strip(),
+        # The hackathon guide names it BITGET_QWEN_API_KEY; accept either.
+        qwen_key=(os.environ.get("QWEN_API_KEY") or os.environ.get("BITGET_QWEN_API_KEY") or "").strip(),
     )
     cfg = Config(
         raw=raw,
@@ -96,6 +109,9 @@ def load_config() -> Config:
     )
     if cfg.enable_trading and not secrets.has_bitget:
         raise SystemExit("ENABLE_TRADING=1 but Bitget demo credentials are missing from .env")
+    provider = raw.get("llm", {}).get("provider")
+    if provider not in ("qwen", "anthropic") or provider not in raw["llm"]:
+        raise SystemExit(f"[llm] provider must be 'qwen' or 'anthropic' with a matching [llm.{provider}] section")
     unknown = set(cfg.agent["whitelist"]) - set(cfg.agent["watchlist"])
     if unknown:
         raise SystemExit(f"whitelist symbols missing from watchlist: {sorted(unknown)}")

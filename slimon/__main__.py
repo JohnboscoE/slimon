@@ -85,20 +85,25 @@ def check(with_llm: bool) -> int:
             print("         (demo keys need the `paptrading: 1` header - sent automatically; check key/secret/passphrase)")
             bad += 1
 
-    print("\nLLM")
-    if not s.anthropic_key:
-        _warn("ANTHROPIC_API_KEY not set - ticks with events will log llm error and take no action")
+    llm = cfg.llm
+    print(f"\nLLM ({llm['provider']}: {llm['model']})")
+    if not s.llm_key(llm["provider"]):
+        key_var = "QWEN_API_KEY" if llm["provider"] == "qwen" else "ANTHROPIC_API_KEY"
+        _fail(f"{key_var} not set - ticks with events will log an llm error and take no action")
+        bad += 1
     elif with_llm:
-        import anthropic
-        try:
-            r = anthropic.Anthropic(api_key=s.anthropic_key).messages.create(
-                model=a["model"], max_tokens=64, messages=[{"role": "user", "content": "Reply with OK."}])
-            _ok(f"{r.model} responded (request {r._request_id})")
-        except anthropic.APIError as e:
-            _fail(f"anthropic: {type(e).__name__}: {getattr(e, 'message', e)}")
+        # A real decision on a quiet synthetic tick: exercises the prompt, schema and validation end to end.
+        from .decision import DecisionMaker
+        res = DecisionMaker.from_config(cfg).decide({"now_utc": "check", "us_session": "closed", "events": [],
+                                                     "portfolio": {"positions": []}, "note": "connectivity check"})
+        if res["decision"]:
+            _ok(f"{res.get('served_by')} returned a valid decision ({res['decision']['action']}) "
+                f"in {res.get('latency_ms')} ms, request {res.get('request_id')}")
+        else:
+            _fail(f"{llm['provider']}: {res['error']}")
             bad += 1
     else:
-        _ok("ANTHROPIC_API_KEY present (use --llm to make a test call)")
+        _ok(f"{llm['provider']} API key present (use --llm to make a test call)")
 
     print("\n" + ("all checks passed" if not bad else f"{bad} check(s) failed"))
     return 1 if bad else 0

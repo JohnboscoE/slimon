@@ -22,7 +22,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Slimon | The model proposes. The risk gate decides.",
   description:
-    "An event-driven trading agent for US-stock perpetuals on Bitget. Claude proposes one structured decision per event; a deterministic risk gate can veto it; every tick is logged.",
+    "An event-driven trading agent for US-stock perpetuals on Bitget. An LLM proposes one structured decision per event; a deterministic risk gate can veto it; every tick is logged.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

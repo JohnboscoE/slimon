@@ -2,13 +2,13 @@
 
 An event-driven trading agent for **US-stock perpetuals on Bitget** (Bitget AI Base Camp Hackathon S2, Track 2: Agentic Trading, Event-Driven Agent).
 
-The LLM (Claude) decides. A **deterministic risk gate**, written as plain code with no model involvement, can veto any decision. Every tick is written to an append-only decision log, including ticks where nothing happened and every veto.
+The LLM decides (Qwen by default, Claude as a config switch). A **deterministic risk gate**, written as plain code with no model involvement, can veto any decision. Every tick is written to an append-only decision log, including ticks where nothing happened and every veto.
 
 ```
 live-venue market data ─► perception (events, timestamped on receipt)
                                    │
                                    ▼
-                        Claude: one structured decision
+                          LLM: one structured decision
                    (OPEN_LONG / OPEN_SHORT / CLOSE / NO_TRADE,
                     size, confidence, reasoning, cited event IDs)
                                    │
@@ -71,7 +71,7 @@ Every event is written to `logs/events/` with its `received_at` time and the `so
 
 ### When the model is called
 
-Claude (`claude-sonnet-5`, adaptive thinking at `medium` effort, set in `config/agent.toml`) is consulted only when a tick produces an event it could act on: an event on a tradable symbol, a US session open or close, a position review, or any event while a position is held. Quiet ticks and events on watch-only symbols are logged with the reason the model was not called (`no_events`, `no_tradable_events`, `us_market_closed_and_flat`). The context is sent as compact JSON with the market cross-section included once, and every call logs its token usage and `cost_usd`.
+The decision model is set in `config/agent.toml` under `[llm]`: **Qwen** (`qwen3.8-max`, through Bitget's hackathon gateway, key in `QWEN_API_KEY`) by default, or **Claude** (`claude-sonnet-5` at `medium` effort, `ANTHROPIC_API_KEY`). Both get the same system prompt, the same JSON schema and the same validation; every call logs its provider, the model that served it, token usage and latency (and `cost_usd` for Claude). The model is consulted only when a tick produces an event it could act on: an event on a tradable symbol, a US session open or close, a position review, or any event while a position is held. Quiet ticks and events on watch-only symbols are logged with the reason the model was not called (`no_events`, `no_tradable_events`, `us_market_closed_and_flat`). The context is sent as compact JSON with the market cross-section included once.
 
 ### Data sources
 

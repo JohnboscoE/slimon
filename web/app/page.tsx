@@ -40,7 +40,7 @@ const STEPS = [
   {
     icon: Sparkles,
     title: "Decide",
-    body: "Claude gets the events, the full cross-section, the portfolio, the risk limits and its own recent decisions, and returns exactly one decision in a fixed JSON schema: open long, open short, close or no trade, with size, confidence, reasoning, the event IDs behind it, and what would prove it wrong.",
+    body: "The LLM gets the events, the full cross-section, the portfolio, the risk limits and its own recent decisions, and returns exactly one decision in a fixed JSON schema: open long, open short, close or no trade, with size, confidence, reasoning, the event IDs behind it, and what would prove it wrong.",
   },
   {
     icon: ShieldCheck,
@@ -118,7 +118,7 @@ export default function Home() {
               The <em className="text-primary">risk gate</em> decides.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/75">
-              Slimon watches twelve US-stock perpetuals for market events, asks Claude for one structured decision, and
+              Slimon watches twelve US-stock perpetuals for market events, asks an LLM for one structured decision, and
               runs that decision past 22 deterministic rules before anything reaches the exchange. Every tick is logged,
               including every trade it refused.
             </p>
@@ -152,7 +152,7 @@ export default function Home() {
       <section id="how" className="scroll-mt-10 border-t px-5 py-24 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <SectionHeading eyebrow="What Slimon does" title="An agent you can audit, one decision at a time">
-            Most trading bots are a model&apos;s opinion wired straight to an order. Slimon puts Claude in charge of
+            Most trading bots are a model&apos;s opinion wired straight to an order. Slimon puts the LLM in charge of
             judgement and takes it out of charge of risk. The model sees the market and makes the call. Code it cannot
             talk its way past decides whether the call is allowed.
           </SectionHeading>
