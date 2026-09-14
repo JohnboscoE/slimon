@@ -1,0 +1,34 @@
+name: Connectivity test
+
+# One-off check: can a GitHub-hosted runner reach the services the agent needs?
+# No secrets are used. Unauthenticated calls are enough to tell "reachable" from "blocked":
+# a blocked region fails or returns a restriction error, while a reachable service answers
+# normally (market data) or with an authentication error (signed endpoints, the Qwen gateway).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Runner location
+        run: curl -s --max-time 10 https://ipinfo.io/json | grep -E '"(city|region|country|org)"' || echo "location lookup failed"
+
+      - name: Probe Bitget and the Qwen gateway
+        run: |
+          probe() {
+            name="$1"; shift
+            code=$(curl -s -o /tmp/body -w '%{http_code}' --max-time 20 "$@") || code="${code:-000} (curl exit $?)"
+            printf '%-38s HTTP %s\n    %s\n' "$name" "$code" "$(head -c 220 /tmp/body 2>/dev/null | tr '\n' ' ')"
+          }
+          probe "Bitget server time" "https://api.bitget.com/api/v2/public/time"
+          probe "Bitget live tickers" "https://api.bitget.com/api/v3/market/tickers?category=USDT-FUTURES"
+          probe "Bitget demo instruments" -H "paptrading: 1" "https://api.bitget.com/api/v3/market/instruments?category=USDT-FUTURES"
+          probe "Bitget signed, no key (expect 4xx)" -H "paptrading: 1" "https://api.bitget.com/api/v3/account/info"
+          probe "Qwen gateway, no key (expect 401)" -X POST -H "Content-Type: application/json" \
+            -d '{"model":"qwen3.8-max","messages":[{"role":"user","content":"ping"}]}' \
+            "https://hackathon.bitgetops.com/v1/chat/completions"
