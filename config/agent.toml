@@ -25,6 +25,11 @@ provider = "qwen"                  # "qwen" (QWEN_API_KEY) or "anthropic" (ANTHR
 # Bitget AI hackathon gateway (Qwen token subsidy), OpenAI-compatible chat completions.
 model = "qwen3.8-max"
 base_url = "https://hackathon.bitgetops.com/v1"
+# Unbounded, qwen3.8-max reasoned ~4,500 tokens per decision and took ~4 minutes: too slow for a
+# 5-minute tick, and the gate would judge the order against stale prices. A 1,000-token budget
+# measured ~30s with the same decision quality. 0 turns thinking off (~10s).
+thinking_budget = 1000
+timeout_seconds = 120              # a slower call is abandoned and logged, never retried
 
 [llm.anthropic]
 model = "claude-sonnet-5"

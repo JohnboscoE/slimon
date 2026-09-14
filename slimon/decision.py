@@ -174,19 +174,27 @@ class DecisionMaker:
         return next((b.text for b in resp.content if b.type == "text"), "")
 
     def _ask_qwen(self, user: str, out: dict) -> str | None:
+        budget = int(self.settings.get("thinking_budget", 0))
         body = {
             "model": self.model,
             "max_tokens": 16000,
             "messages": [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": user}],
             "response_format": {"type": "json_schema",
                                 "json_schema": {"name": "decision", "strict": True, "schema": DECISION_SCHEMA}},
+            **({"enable_thinking": True, "thinking_budget": budget} if budget > 0 else {"enable_thinking": False}),
         }
+        out["thinking_budget"] = budget
         url = self.settings["base_url"].rstrip("/") + "/chat/completions"
         headers = {"Authorization": f"Bearer {self.api_key}"}
+        timeout = (10, float(self.settings.get("timeout_seconds", 120)))
         resp = None
-        for attempt in (1, 2, 3):  # a decision is idempotent, so transient failures are simply retried
+        for attempt in (1, 2, 3):  # a decision is idempotent, so transient failures are retried
             try:
-                resp = self._http.post(url, json=body, headers=headers, timeout=180)
+                resp = self._http.post(url, json=body, headers=headers, timeout=timeout)
+            except requests.Timeout:
+                # A slow answer is already a stale one; retrying would only make the tick later.
+                out["error"] = f"api_timeout: no answer within {timeout[1]:.0f}s"
+                return None
             except requests.RequestException as e:
                 out["error"] = f"api_connection: {type(e).__name__}"
                 resp = None

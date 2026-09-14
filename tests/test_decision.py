@@ -80,6 +80,26 @@ class QwenTransport(unittest.TestCase):
         self.assertIsNone(out["error"])
         self.assertIsNotNone(out["decision"])
 
+    def test_thinking_is_bounded_by_the_configured_budget(self):
+        dm, http = maker(FakeResponse(200, completion(json.dumps(GOOD))))
+        dm.settings = {**SETTINGS, "thinking_budget": 1000}
+        dm.decide({})
+        self.assertEqual(http.calls[0]["json"]["enable_thinking"], True)
+        self.assertEqual(http.calls[0]["json"]["thinking_budget"], 1000)
+
+        dm, http = maker(FakeResponse(200, completion(json.dumps(GOOD))))
+        dm.settings = {**SETTINGS, "thinking_budget": 0}
+        dm.decide({})
+        self.assertEqual(http.calls[0]["json"]["enable_thinking"], False)
+        self.assertNotIn("thinking_budget", http.calls[0]["json"])
+
+    def test_timeout_is_logged_and_not_retried(self):
+        dm, http = maker(requests.Timeout("read timed out"), FakeResponse(200, completion(json.dumps(GOOD))))
+        out = dm.decide({})
+        self.assertEqual(len(http.calls), 1)
+        self.assertIsNone(out["decision"])
+        self.assertTrue(out["error"].startswith("api_timeout"))
+
     def test_auth_error_is_not_retried(self):
         dm, http = maker(FakeResponse(401, text='{"error":"invalid key"}'))
         out = dm.decide({})
