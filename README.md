@@ -72,6 +72,10 @@ Every event is written to `logs/events/` with its `received_at` time and the `so
 ### When the model is called
 
 The decision model is set in `config/agent.toml` under `[llm]`: **Qwen** (`qwen3.8-max`, through Bitget's hackathon gateway, key in `QWEN_API_KEY`) by default, or **Claude** (`claude-sonnet-5` at `medium` effort, `ANTHROPIC_API_KEY`). Both get the same system prompt, the same JSON schema and the same validation; every call logs its provider, the model that served it, token usage and latency (and `cost_usd` for Claude). The model is consulted only when a tick produces an event it could act on: an event on a tradable symbol, a US session open or close, a position review, or any event while a position is held. Quiet ticks and events on watch-only symbols are logged with the reason the model was not called (`no_events`, `no_tradable_events`, `us_market_closed_and_flat`). The context is sent as compact JSON with the market cross-section included once.
+A per-UTC-day ceiling (`max_calls_per_day`, `max_cost_usd_per_day` in `[llm]`) keeps a fixed credit
+lasting a known number of days; past it, ticks are logged with `llm_daily_cap` and the model is left
+unconsulted. Qwen's thinking is capped too (`thinking_budget`): unbounded it reasoned ~4,500 tokens
+and took four minutes, long enough for the gate to be judging an order against stale prices.
 
 ### Data sources
 
@@ -103,6 +107,29 @@ cp .env.example .env                                         # fill in keys
 .venv/Scripts/python -m slimon run                           # loop: one tick per closed 5m candle
 .venv/Scripts/python -m unittest discover -s tests           # risk gate tests
 ```
+
+## Running it unattended (GitHub Actions)
+
+`.github/workflows/agent-tick.yml` runs one tick every five minutes on GitHub's runners during US
+market hours (weekdays, 08:00-00:00 UTC) and commits the log back to the repository, so the log
+accrues without a machine of your own. Setup:
+
+1. Add four repository secrets (Settings -> Secrets and variables -> Actions): `BITGET_API_KEY`,
+   `BITGET_API_SECRET`, `BITGET_API_PASSPHRASE`, `QWEN_API_KEY`.
+2. Optionally set the repository variable `ENABLE_TRADING` to `1` to place demo orders; without it
+   the workflow runs in `dry_run`.
+3. Stop any local `slimon run`, so only one writer appends to the log.
+4. If the site is deployed from this repository, set Vercel's **Ignored Build Step** to
+   `bash -c 'if [ "$(date -u +%M)" -lt 5 ]; then exit 1; else exit 0; fi'`, which rebuilds once an
+   hour instead of after every tick.
+
+Two caveats. GitHub's scheduler is best-effort: runs drift by minutes and are sometimes skipped, so
+ticks are less regular than a continuously running process (each record still names the candle it
+came from). And scheduled workflows are disabled after 60 days of repository inactivity, so a long
+run needs re-enabling in the Actions tab.
+
+`.github/workflows/connectivity-test.yml` is a manual, keyless check that a runner can reach Bitget
+and the model gateway at all.
 
 ## Web UI (`web/`)
 

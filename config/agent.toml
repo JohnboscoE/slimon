@@ -20,6 +20,10 @@ whitelist = [
 # Which model makes the decisions. Both get the same system prompt, the same JSON schema and the
 # same validation; only the transport differs.
 provider = "qwen"                  # "qwen" (QWEN_API_KEY) or "anthropic" (ANTHROPIC_API_KEY)
+# Ceilings per UTC day, so a fixed credit lasts a known number of days. A busy session produces
+# ~25-30 calls; past the cap, ticks are still logged with the model left unconsulted.
+max_calls_per_day = 40
+max_cost_usd_per_day = 0.05        # only bites where the provider reports cost (Anthropic)
 
 [llm.qwen]
 # Bitget AI hackathon gateway (Qwen token subsidy), OpenAI-compatible chat completions.

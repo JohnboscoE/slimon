@@ -7,7 +7,7 @@ import time
 import traceback
 from datetime import datetime
 
-from . import gitsync
+from . import budget, gitsync
 from .bitget import BitgetClient, BitgetError
 from .broker import BitgetBroker, SimBroker
 from .config import KILL_SWITCH_PATH, ROOT, Config
@@ -61,6 +61,7 @@ class Agent:
         self.perception = Perception(p, self.state)
         self.dm = DecisionMaker.from_config(cfg)
         self.book = RiskBook(self.state.get("risk", {}), cfg.risk)
+        self.budget = self.state.get("llm_budget", {})
         startup = {"type": "startup", "ts": iso(utcnow()), "mode": cfg.mode, "config_hash": cfg.config_hash,
                    "git_head": _git_head(), "llm_provider": self.dm.provider, "model": self.dm.model,
                    "llm_configured": bool(self.dm.api_key)}
@@ -153,8 +154,11 @@ class Agent:
             rec["llm"] = {"called": False, "reason": "us_market_closed_and_flat"}
         elif not worth_a_decision(events, a["whitelist"], holding=bool(portfolio.positions)):
             rec["llm"] = {"called": False, "reason": "no_tradable_events"}
+        elif (spent := budget.exhausted(budget.roll(self.budget, now), self.cfg.raw["llm"])):
+            rec["llm"] = {"called": False, "reason": "llm_daily_cap", "detail": spent}
         else:
             llm = self.dm.decide(self._context(now, session, events, snap, portfolio))
+            budget.record(self.budget, llm.get("cost_usd"))
             decision = llm.pop("decision")
             rec["llm"] = llm
             if llm.get("error"):
@@ -185,6 +189,7 @@ class Agent:
             after = portfolio
         rec["portfolio_after"] = after.to_dict() if after is not portfolio else None
         rec["risk_state"] = self.book.snapshot(now, after.equity)
+        rec["llm_budget"] = dict(self.budget)
         self.state.data["positions_last_tick"] = {p.symbol: {"side": p.side, "qty": p.qty} for p in after.positions}
         self.state.data["risk"] = self.book.d
         self.state.save()

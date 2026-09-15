@@ -1,0 +1,74 @@
+name: Agent tick
+
+# Runs the agent unattended: one tick per closed 5-minute candle, committing the decision log
+# back to this repository. Only US market hours are scheduled (pre-market 08:00 UTC through the
+# end of after-hours at 00:00 UTC, weekdays); outside them the agent would only log quiet ticks,
+# and every open position already carries a stop preset on the exchange.
+#
+# GitHub's scheduler is best-effort: runs drift by minutes and are occasionally skipped, so tick
+# timing is looser than a continuously running process. Each record still carries the candle it
+# was derived from.
+#
+# Requires four repository secrets: BITGET_API_KEY, BITGET_API_SECRET, BITGET_API_PASSPHRASE,
+# QWEN_API_KEY. Set the repository variable ENABLE_TRADING to 1 to place demo orders; without it
+# the agent runs in dry_run and only logs what it would have sent.
+on:
+  schedule:
+    - cron: "*/5 8-23 * * 1-5"
+  workflow_dispatch:
+
+# One tick at a time: ticks share the committed state file.
+concurrency:
+  group: slimon-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Run one tick
+        env:
+          BITGET_API_KEY: ${{ secrets.BITGET_API_KEY }}
+          BITGET_API_SECRET: ${{ secrets.BITGET_API_SECRET }}
+          BITGET_API_PASSPHRASE: ${{ secrets.BITGET_API_PASSPHRASE }}
+          QWEN_API_KEY: ${{ secrets.QWEN_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ENABLE_TRADING: ${{ vars.ENABLE_TRADING }}
+        run: python -m slimon once
+
+      - name: Commit the log
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add logs
+          # Runtime state is normally untracked; the runner is wiped between ticks, so the risk
+          # counters (drawdown baseline, cooldowns, per-symbol spacing) have to travel with it.
+          git add -f state/state.json
+          if git diff --cached --quiet; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git commit -m "log: tick $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push rejected, rebasing onto origin (attempt $attempt)"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git rebase "origin/${GITHUB_REF_NAME}"
+            sleep 5
+          done
+          echo "could not push the log after 3 attempts" >&2
+          exit 1
