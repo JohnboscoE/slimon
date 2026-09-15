@@ -119,9 +119,9 @@ accrues without a machine of your own. Setup:
 2. Optionally set the repository variable `ENABLE_TRADING` to `1` to place demo orders; without it
    the workflow runs in `dry_run`.
 3. Stop any local `slimon run`, so only one writer appends to the log.
-4. If the site is deployed from this repository, set Vercel's **Ignored Build Step** to
-   `bash -c 'if [ "$(date -u +%M)" -lt 5 ]; then exit 1; else exit 0; fi'`, which rebuilds once an
-   hour instead of after every tick.
+4. Nothing to do for Vercel: [`web/vercel.json`](web/vercel.json) points its ignored build step at
+   [`web/scripts/vercel-ignore.sh`](web/scripts/vercel-ignore.sh), which builds whenever the site's
+   own files change and otherwise once an hour, instead of after every tick commit.
 
 Two caveats. GitHub's scheduler is best-effort: runs drift by minutes and are sometimes skipped, so
 ticks are less regular than a continuously running process (each record still names the candle it
