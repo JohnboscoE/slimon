@@ -1,0 +1,16 @@
+{
+  "risk": {
+    "consecutive_losses": 0,
+    "last_trade_at": {},
+    "day": "2026-09-15",
+    "day_start_equity": 49965.45889478,
+    "trades_today": 0,
+    "halted_until": null,
+    "halt_reason": null
+  },
+  "llm_budget": {},
+  "positions_last_tick": {},
+  "recent_closed": [],
+  "last_session": "post",
+  "position_reviews": {}
+}
