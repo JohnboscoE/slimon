@@ -2,8 +2,8 @@
   "risk": {
     "consecutive_losses": 0,
     "last_trade_at": {},
-    "day": "2026-09-15",
-    "day_start_equity": 49965.45889478,
+    "day": "2026-09-16",
+    "day_start_equity": 49961.52641722,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null
@@ -11,6 +11,11 @@
   "llm_budget": {},
   "positions_last_tick": {},
   "recent_closed": [],
-  "last_session": "post",
-  "position_reviews": {}
+  "last_session": "closed",
+  "position_reviews": {},
+  "event_last": {
+    "volume_spike|METAUSDT": "2026-09-16T01:22:38.419Z",
+    "range_expansion|AMZNUSDT": "2026-09-16T01:22:38.419Z",
+    "volume_spike|AMZNUSDT": "2026-09-16T01:22:38.419Z"
+  }
 }
