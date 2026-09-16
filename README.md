@@ -110,9 +110,15 @@ cp .env.example .env                                         # fill in keys
 
 ## Running it unattended (GitHub Actions)
 
-`.github/workflows/agent-tick.yml` runs one tick every five minutes on GitHub's runners during US
-market hours (weekdays, 08:00-00:00 UTC) and commits the log back to the repository, so the log
-accrues without a machine of your own. Setup:
+`.github/workflows/agent-loop.yml` runs the agent on GitHub's runners, so the log accrues without a
+machine of your own. Each run holds the agent's own loop open for about five hours, ticking on every
+closed candle and committing the log hourly, then hands over to the next run.
+
+One run *per tick* does not work: GitHub throttles frequent schedules hard, and a `*/5` cron
+delivered two runs in a day, hours late. Roughly five long runs a day is a cadence the scheduler can
+keep, and ticks still land 15 seconds after each candle close.
+
+Setup:
 
 1. Add four repository secrets (Settings -> Secrets and variables -> Actions): `BITGET_API_KEY`,
    `BITGET_API_SECRET`, `BITGET_API_PASSPHRASE`, `QWEN_API_KEY`.
@@ -123,10 +129,13 @@ accrues without a machine of your own. Setup:
    [`web/scripts/vercel-ignore.sh`](web/scripts/vercel-ignore.sh), which builds whenever the site's
    own files change and otherwise once an hour, instead of after every tick commit.
 
-Two caveats. GitHub's scheduler is best-effort: runs drift by minutes and are sometimes skipped, so
-ticks are less regular than a continuously running process (each record still names the candle it
-came from). And scheduled workflows are disabled after 60 days of repository inactivity, so a long
-run needs re-enabling in the Actions tab.
+For a reliable handover, add a fine-grained personal access token with **Actions: read and write**
+on this repository as the secret `LOOP_PAT`: each run then dispatches the next itself. Without it the
+handover falls back to the cron, which is throttled, so gaps are likely. (The built-in
+`GITHUB_TOKEN` cannot be used: a dispatch made with it never starts a run.)
+
+Scheduled workflows are also disabled after 60 days of repository inactivity, so a long run needs
+re-enabling in the Actions tab.
 
 `.github/workflows/connectivity-test.yml` is a manual, keyless check that a runner can reach Bitget
 and the model gateway at all.
