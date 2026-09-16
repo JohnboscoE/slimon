@@ -8,14 +8,30 @@
     "halted_until": null,
     "halt_reason": null
   },
-  "llm_budget": {},
+  "llm_budget": {
+    "day": "2026-09-16",
+    "calls": 1,
+    "cost_usd": 0.0
+  },
   "positions_last_tick": {},
   "recent_closed": [],
-  "last_session": "closed",
+  "last_session": "pre",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-09-16T01:22:38.419Z",
-    "range_expansion|AMZNUSDT": "2026-09-16T01:22:38.419Z",
-    "volume_spike|AMZNUSDT": "2026-09-16T01:22:38.419Z"
-  }
+    "volume_spike|METAUSDT": "2026-09-16T12:58:08.054Z",
+    "range_expansion|AMZNUSDT": "2026-09-16T12:58:08.054Z",
+    "volume_spike|AMZNUSDT": "2026-09-16T12:58:08.054Z",
+    "volume_spike|GOOGLUSDT": "2026-09-16T12:58:08.054Z"
+  },
+  "recent_decisions": [
+    {
+      "tick_id": "20260916T125808",
+      "action": "NO_TRADE",
+      "instrument": "AMZNUSDT",
+      "confidence": 0.6,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    }
+  ]
 }
