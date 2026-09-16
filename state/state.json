@@ -10,18 +10,19 @@
   },
   "llm_budget": {
     "day": "2026-09-16",
-    "calls": 1,
+    "calls": 2,
     "cost_usd": 0.0
   },
   "positions_last_tick": {},
   "recent_closed": [],
-  "last_session": "pre",
+  "last_session": "regular",
   "position_reviews": {},
   "event_last": {
     "volume_spike|METAUSDT": "2026-09-16T12:58:08.054Z",
     "range_expansion|AMZNUSDT": "2026-09-16T12:58:08.054Z",
     "volume_spike|AMZNUSDT": "2026-09-16T12:58:08.054Z",
-    "volume_spike|GOOGLUSDT": "2026-09-16T12:58:08.054Z"
+    "volume_spike|GOOGLUSDT": "2026-09-16T12:58:08.054Z",
+    "us_regular_open|None": "2026-09-16T17:29:09.845Z"
   },
   "recent_decisions": [
     {
@@ -29,6 +30,15 @@
       "action": "NO_TRADE",
       "instrument": "AMZNUSDT",
       "confidence": 0.6,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260916T172909",
+      "action": "NO_TRADE",
+      "instrument": "NVDAUSDT",
+      "confidence": 0.62,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
