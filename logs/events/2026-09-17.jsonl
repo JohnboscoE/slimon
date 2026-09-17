@@ -1,0 +1,1 @@
+{"id": "evt-volume_spike-GOOGLUSDT-1789649100000", "type": "volume_spike", "symbol": "GOOGLUSDT", "received_at": "2026-09-17T12:54:24.565Z", "source_ts": "2026-09-17T12:45:00.000Z", "session": "pre", "summary": "GOOGLUSDT 5m volume 5.4x median", "payload": {"volume": 76.79, "median_volume": 14.09, "multiple": 5.45, "candle_return_pct": -0.057}}
