@@ -2,8 +2,8 @@
   "risk": {
     "consecutive_losses": 0,
     "last_trade_at": {},
-    "day": "2026-09-16",
-    "day_start_equity": 49961.52641722,
+    "day": "2026-09-17",
+    "day_start_equity": 49955.59681567,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null
@@ -15,7 +15,7 @@
   },
   "positions_last_tick": {},
   "recent_closed": [],
-  "last_session": "post",
+  "last_session": "closed",
   "position_reviews": {},
   "event_last": {
     "volume_spike|METAUSDT": "2026-09-16T12:58:08.054Z",
