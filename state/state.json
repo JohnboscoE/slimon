@@ -18,15 +18,25 @@
   "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-09-16T12:58:08.054Z",
+    "volume_spike|METAUSDT": "2026-09-18T03:50:15.000Z",
     "range_expansion|AMZNUSDT": "2026-09-16T12:58:08.054Z",
-    "volume_spike|AMZNUSDT": "2026-09-16T12:58:08.054Z",
-    "volume_spike|GOOGLUSDT": "2026-09-17T12:54:24.565Z",
+    "volume_spike|AMZNUSDT": "2026-09-18T03:45:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-09-18T03:25:15.000Z",
     "us_regular_open|None": "2026-09-17T17:21:52.229Z",
     "price_move|MSTRUSDT": "2026-09-16T20:21:12.589Z",
     "price_move|CRCLUSDT": "2026-09-16T20:21:12.589Z",
     "us_regular_close|None": "2026-09-17T20:24:14.956Z",
-    "volume_spike|SP500USDT": "2026-09-17T17:21:52.229Z"
+    "volume_spike|SP500USDT": "2026-09-17T17:21:52.229Z",
+    "volume_spike|MSTRUSDT": "2026-09-18T03:25:15.000Z",
+    "volume_spike|HOODUSDT": "2026-09-18T03:35:15.000Z",
+    "volume_spike|COINUSDT": "2026-09-18T03:40:15.000Z",
+    "price_move|HOODUSDT": "2026-09-18T03:40:15.000Z",
+    "range_expansion|HOODUSDT": "2026-09-18T03:40:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-09-18T03:50:15.000Z",
+    "range_expansion|SP500USDT": "2026-09-18T03:50:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-09-18T03:55:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-09-18T03:55:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-09-18T03:55:15.000Z"
   },
   "recent_decisions": [
     {
@@ -83,5 +93,6 @@
       "veto_reasons": [],
       "execution_status": null
     }
-  ]
+  ],
+  "last_log_commit_at": "2026-09-18T03:25:18.698Z"
 }
