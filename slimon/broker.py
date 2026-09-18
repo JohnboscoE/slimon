@@ -196,6 +196,9 @@ class BitgetBroker:
         if intent.get("stop_loss_price"):
             order["stopLoss"] = fmt_decimal(intent["stop_loss_price"], int(meta.get("pricePrecision") or 2))
             order["slOrderType"] = "market"
+        if intent.get("take_profit_price"):
+            order["takeProfit"] = fmt_decimal(intent["take_profit_price"], int(meta.get("pricePrecision") or 2))
+            order["tpOrderType"] = "market"
         if not (submit and self.trading):
             return {"status": "would_submit", "venue": "bitget_demo", "client_oid": client_oid, "order": order}
 

@@ -120,6 +120,14 @@ class Agent:
 
         # Bookkeeping from the previous tick: closed trades feed the loss cooldown.
         closed = self.broker.detect_closed(self.state.get("positions_last_tick", {}), portfolio)
+        # Why each position ended: an order this agent sent (and the rule behind it), or something
+        # that happened at the venue while it was not looking - the preset stop, the preset target,
+        # or a liquidation. Never left to inference from the PnL sign.
+        pending = self.state.get("closes_sent", {})
+        for t in closed:
+            rule = pending.pop(t["symbol"], None)
+            t["closed_by"] = "agent" if rule else "exchange_or_external"
+            t["reason"] = rule or "no agent order: exchange stop, exchange take-profit, or liquidation"
         notes = self.book.record_closed(closed, now)
         self.book.roll_day(now, portfolio.equity)
         trip = self.book.update_breaker(now, portfolio.equity)
@@ -137,6 +145,7 @@ class Agent:
         for i, f in enumerate(forced_actions(ctx)):
             f["execution"] = self.broker.execute(f["intent"], f"slm{tick_id}f{i}", snap, now, submit=True)
             rec["forced_actions"].append(f)
+            self.state.get("closes_sent", {})[f["intent"]["symbol"]] = f["rule"]
         if rec["forced_actions"]:
             portfolio = self.broker.portfolio(snap)
             ctx.portfolio = portfolio
@@ -173,6 +182,8 @@ class Agent:
             if verdict["verdict"] == "PASS":
                 ex = self.broker.execute(verdict["intent"], f"slm{tick_id}d", snap, now, submit=True)
                 rec["execution"] = ex
+                if verdict["intent"]["action"] == "CLOSE" and ex.get("status") in FILLED_LIKE:
+                    self.state.get("closes_sent", {})[verdict["intent"]["symbol"]] = "model_decision"
                 if ex.get("status") in FILLED_LIKE and verdict["intent"]["action"] != "CLOSE":
                     self.book.record_trade(verdict["intent"]["symbol"], now)
             recent = self.state.get("recent_decisions", [])

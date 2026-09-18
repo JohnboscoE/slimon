@@ -256,7 +256,10 @@ def evaluate(decision: dict, ctx: RiskContext) -> dict:
         ok = qty > 0 and qty >= min_qty and qty * price >= min_amt
         c.add("min_order_size", ok, f"qty {qty} (step {step}, min {min_qty}); value {qty * price:.2f} (min {min_amt})")
         sl = L["stop_loss_pct"] / 100
+        tp = L.get("take_profit_pct", 0) / 100
         stop = price * (1 - sl) if side == "long" else price * (1 + sl)
+        target = (price * (1 + tp) if side == "long" else price * (1 - tp)) if tp else None
+        prec = int(meta.get("pricePrecision") or 2)
         intent = {
             "action": action,
             "symbol": sym,
@@ -266,7 +269,9 @@ def evaluate(decision: dict, ctx: RiskContext) -> dict:
             "reduce_only": False,
             "ref_price": price,
             "notional_usdt": round(qty * price, 4),
-            "stop_loss_price": round(stop, int(meta.get("pricePrecision") or 2)),
+            # Both are preset on the exchange, so they still apply if the agent is not running.
+            "stop_loss_price": round(stop, prec),
+            "take_profit_price": round(target, prec) if target else None,
         }
     else:
         c.add("min_order_size", False, "cannot size order without demo price and instrument metadata")
@@ -294,6 +299,12 @@ def forced_actions(ctx: RiskContext) -> list[dict]:
         if p.pnl_pct <= -L["stop_loss_pct"]:
             out.append({"rule": "hard_stop", "detail": f"{p.symbol} {p.side} at {p.pnl_pct:+.2f}% <= -{L['stop_loss_pct']}%",
                         "intent": _close_intent(p, view, "hard_stop")})
+            continue
+        if L.get("take_profit_pct") and p.pnl_pct >= L["take_profit_pct"]:
+            # The exchange-side target should have fired first; this is the backstop for a venue
+            # that dropped it, and it books the win without waiting for the model's next call.
+            out.append({"rule": "take_profit", "detail": f"{p.symbol} {p.side} at {p.pnl_pct:+.2f}% >= +{L['take_profit_pct']}%",
+                        "intent": _close_intent(p, view, "take_profit")})
             continue
         opened = _parse(p.opened_at)
         if opened and ctx.now - opened >= timedelta(hours=L["max_holding_hours"]):

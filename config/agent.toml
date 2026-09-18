@@ -53,6 +53,15 @@ event_cooldown_minutes = 60        # same (type, symbol) cannot re-fire inside t
 position_review_hours = 4          # periodic LLM review of held positions
 position_pnl_band_pct = 1.5        # re-review when unrealized PnL crosses another band
 
+# Scheduled macro events: diary entries, not a news feed. Each fires once, when the first tick at
+# or after `at` runs, and sends held positions back to the model with the catalyst named. The agent
+# cannot see an unscheduled headline or speech; it sees the price move that follows one.
+# Example:
+#   macro_events = [
+#     { at = "2026-09-29T18:00:00Z", name = "FOMC rate decision", note = "statement, then press conference" },
+#   ]
+macro_events = []
+
 [risk]
 min_confidence = 0.55
 max_order_notional_usdt = 1500
@@ -68,6 +77,7 @@ symbol_min_minutes_between_trades = 60
 max_spread_pct = 0.30              # demo book spread sanity bound
 max_live_demo_divergence_pct = 1.5 # demo vs live venue price sanity bound
 stop_loss_pct = 2.5                # hard stop, enforced locally AND preset on the exchange
+take_profit_pct = 5.0              # target, likewise: twice the stop, so a winner pays for two losers
 max_holding_hours = 72
 open_sessions = ["pre", "regular", "post"]   # no new positions overnight / weekends
 

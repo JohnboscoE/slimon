@@ -105,6 +105,25 @@ class Perception:
                 {"cross_section": [v.summary() for v in snap.views.values()]}))
         self.state.data["last_session"] = session
 
+        # Scheduled macro events the operator listed in config (FOMC, CPI, a scheduled speech).
+        # There is no news feed: these are diary entries, fired once when the tick first runs at or
+        # after the stated time, so held positions are reviewed against a known catalyst.
+        fired = self.state.get("macro_fired", [])
+        for entry in cfg.get("macro_events", []):
+            try:
+                at = datetime.fromisoformat(str(entry["at"]).replace("Z", "+00:00"))
+            except (KeyError, TypeError, ValueError):
+                continue
+            key = f"{entry['at']}|{entry.get('name', '')}"
+            if key in fired or not (at <= now <= at + timedelta(minutes=30)):
+                continue
+            events.append(_event(
+                "macro_event", None, at.strftime("%Y%m%dT%H%M"), now, session,
+                f"scheduled: {entry.get('name', 'macro event')}",
+                {"scheduled_for": iso(at), "name": entry.get("name"), "note": entry.get("note")}))
+            fired.append(key)
+            del fired[:-50]
+
         # Held positions: periodic review and PnL band crossings go back to the model.
         reviews = self.state.get("position_reviews", {})
         for p in portfolio.positions:

@@ -52,7 +52,11 @@ decision=OPEN_LONG MSTRUSDT | gate=VETO |
 
 Closing a position reduces risk, so kill switches, breakers, cooldowns and session rules never block it.
 
-The gate also acts **on its own**: a hard stop at -2.5% (enforced locally and preset on the exchange) and a 72h maximum holding time close positions without consulting the model.
+The gate also acts **on its own**, without consulting the model: a hard stop at -2.5%, a take profit at +5% (both preset on the exchange when the position opens, so they hold even when the agent is not running, and re-checked locally each tick as a backstop), and a 72h maximum holding time.
+
+**Every exit is attributed.** Each closed trade records `closed_by` and a `reason`: the model's own decision, the gate rule that fired (`hard_stop`, `take_profit`, `max_holding_time`), or, when a position simply disappears between ticks, that no agent order was involved and it was the exchange stop, the exchange target, or a liquidation. Nothing is inferred from the sign of the PnL.
+
+Scheduled macro events (FOMC, CPI, a diarised speech) can be listed under `macro_events` in `[perception]`. Each fires once at its time and sends held positions back to the model with the catalyst named. This is a diary, not a news feed: the agent cannot see an unscheduled headline, only the price move that follows it.
 
 Positions on symbols outside the whitelist, such as a trade opened by hand in the same account, are not the agent's. It never reviews or closes them and never counts their outcome as its own trade, but their exposure still counts against the gross cap and they are recorded under `foreign_positions` in every log record.
 

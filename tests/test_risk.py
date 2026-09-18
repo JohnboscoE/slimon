@@ -14,7 +14,7 @@ LIMITS = {
     "max_gross_exposure_pct_equity": 40, "max_open_positions": 3, "leverage": 2,
     "daily_drawdown_halt_pct": 3.0, "consecutive_loss_limit": 3, "loss_cooldown_minutes": 240,
     "max_trades_per_day": 8, "symbol_min_minutes_between_trades": 60, "max_spread_pct": 0.30,
-    "max_live_demo_divergence_pct": 1.5, "stop_loss_pct": 2.5, "max_holding_hours": 72,
+    "max_live_demo_divergence_pct": 1.5, "stop_loss_pct": 2.5, "take_profit_pct": 5.0, "max_holding_hours": 72,
     "open_sessions": ["pre", "regular", "post"],
 }
 META = {"status": "online", "quantityMultiplier": "0.01", "quantityPrecision": "2",
