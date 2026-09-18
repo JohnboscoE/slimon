@@ -18,6 +18,9 @@ from urllib.parse import urlencode
 import requests
 
 BASE_URL = "https://api.bitget.com"
+# The ticker endpoint returns every symbol in the category and was timing out at 10s from a
+# cloud runner, taking the live price (and with it the divergence check) down with it.
+PUBLIC_TIMEOUT = 25.0
 
 # Bitget codes the docs say may mean "outcome unknown" — confirm by clientOid before retrying.
 AMBIGUOUS_ORDER_CODES = {"40010", "40725", "45001"}
@@ -51,10 +54,26 @@ class BitgetClient:
     # ---- public market data -------------------------------------------------
 
     def public_get(self, path: str, params: dict | None = None, *, venue: str) -> object:
+        """Market reads are idempotent, so transport failures are retried.
+
+        A dropped live-ticker read is not free: without a live price the gate cannot compute the
+        demo-vs-live divergence, fails that check closed, and vetoes an otherwise sound trade.
+        """
         if venue not in ("live", "demo"):
             raise ValueError(venue)
         headers = {"paptrading": "1"} if venue == "demo" else {}
-        return self._send("GET", path, params=params, headers=headers)
+        last: BitgetError | None = None
+        for attempt in (1, 2, 3):
+            try:
+                return self._send("GET", path, params=params, headers=headers, timeout=PUBLIC_TIMEOUT)
+            except BitgetError as e:
+                # Only transport failures and 5xx are worth repeating; a 4xx will say the same thing.
+                if e.http_status is not None and e.http_status < 500:
+                    raise
+                last = e
+                if attempt < 3:
+                    time.sleep(0.8 * attempt)
+        raise last  # type: ignore[misc]
 
     def instruments(self, category: str, venue: str) -> list[dict]:
         return self.public_get("/api/v3/market/instruments", {"category": category}, venue=venue)
@@ -126,14 +145,15 @@ class BitgetClient:
     # ---- transport ----------------------------------------------------------
 
     def _send(self, method: str, path: str, *, params: dict | None = None, query: str = "",
-              body: str = "", headers: dict) -> object:
+              body: str = "", headers: dict, timeout: float | None = None) -> object:
         url = BASE_URL + path
         if params:
             query = urlencode(sorted(params.items()))
         if query:
             url += "?" + query
         try:
-            resp = self._http.request(method, url, data=body or None, headers=headers, timeout=self._timeout)
+            resp = self._http.request(method, url, data=body or None, headers=headers,
+                                      timeout=timeout or self._timeout)
         except requests.RequestException as e:
             # Deliberately omits headers from the message.
             raise BitgetError(f"{method} {path}: transport error {type(e).__name__}") from None

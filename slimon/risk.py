@@ -243,7 +243,8 @@ def evaluate(decision: dict, ctx: RiskContext) -> dict:
           f"demo spread {spread if spread is None else round(spread, 4)}% vs max {L['max_spread_pct']}%")
     div = view.divergence_pct if view else None
     c.add("venue_divergence", div is not None and abs(div) <= L["max_live_demo_divergence_pct"],
-          f"demo vs live {div if div is None else round(div, 3)}% vs max ±{L['max_live_demo_divergence_pct']}%")
+          f"demo vs live {round(div, 3)}% vs max ±{L['max_live_demo_divergence_pct']}%" if div is not None
+          else "no live price this tick, so demo vs live cannot be checked")
 
     intent = None
     if price and view and view.meta:
