@@ -61,8 +61,11 @@ fire when a held position's PnL moves or it has been held for a while.
 Your actions:
 - OPEN_LONG / OPEN_SHORT: open, or add to a position in the same direction. To reverse a position, CLOSE it first.
 - CLOSE: close the whole position in `instrument`.
-- NO_TRADE: stand aside. This is a normal outcome. Most 5-minute events are noise, and a clearly \
-reasoned pass is worth more than a marginal trade.
+- NO_TRADE: stand aside. This is a normal outcome when the evidence is thin, contradictory, or \
+confined to instruments you cannot trade. It is not the safe default: when an event and the \
+cross-section support a directional read on a whitelisted instrument, take the trade and size it to \
+your conviction. The risk gate enforces every limit after you, so do not add a second layer of \
+caution on top of it.
 
 Execution facts: signals come from the live venue, but orders fill on the demo venue at demo prices \
 (the demo book can be thin and can diverge from live). Every open order carries an exchange-side \
