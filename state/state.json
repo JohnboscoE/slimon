@@ -36,7 +36,8 @@
     "range_expansion|SP500USDT": "2026-09-18T03:50:15.000Z",
     "volume_spike|TSLAUSDT": "2026-09-18T03:55:15.000Z",
     "range_expansion|AAPLUSDT": "2026-09-18T03:55:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-09-18T03:55:15.000Z"
+    "volume_spike|AAPLUSDT": "2026-09-18T03:55:15.000Z",
+    "price_move|GOOGLUSDT": "2026-09-18T04:15:15.000Z"
   },
   "recent_decisions": [
     {
