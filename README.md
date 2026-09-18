@@ -158,6 +158,12 @@ npx next dev -p 3000        # http://localhost:3000 and http://localhost:3000/ap
 
 The replay reads `../logs` by default; set `SLIMON_LOG_DIR` to point it at another log, the same variable the agent uses. The ticks in the landing-page animation are illustrative and labelled as such; everything on `/app` comes from the log.
 
+## Demo video
+
+[`DEMO.md`](DEMO.md) is a 90-second script: six scenes with the visual, the on-screen text and the
+narration for each, plus a shot list keyed to the landing page and `/app`, and the figures from the
+log as they stood on 18 September. Refresh those numbers before recording.
+
 ## Decision log record (`slimon.tick/v1`)
 
 `tick_id`, `ts`, `mode`, `config_hash`, `session`, `portfolio`, `closed_trades`, `risk_notes` (breaker trips, cooldown starts), `forced_actions`, `events`, `llm` (model, served_by, request_id, usage, latency, summarized thinking, error), `decision` (the structured object), `risk` (verdict, every check with pass/fail and detail, veto reasons, the sized order intent), `execution` (clientOid, order, status, fill, fee), `portfolio_after`, `risk_state`, `errors`.
