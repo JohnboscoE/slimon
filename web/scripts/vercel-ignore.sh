@@ -1,21 +1,23 @@
 #!/usr/bin/env bash
 # Vercel "Ignored Build Step": exit 1 to build, exit 0 to skip.
 #
-# The agent commits a log line every five minutes, and a deployment per tick would exhaust the
-# free daily allowance. So: build whenever the site's own files changed, and otherwise only in the
-# first five minutes of each hour, which keeps /app at most an hour behind the log.
+# /app is rendered from the decision log that is bundled at build time, so the deployed site only
+# moves forward when a build runs. The agent commits the log about once an hour (and once more when
+# a run hands over), which is a fine cadence to deploy on: ~20 builds a day, well inside the free
+# allowance. Commits that touch neither the site nor the log - a state-only commit, say - are skipped.
 set -u
 
-if ! git diff --quiet HEAD^ HEAD -- .; then
-  echo "web/ changed since the last commit - building"
+changed() { ! git diff --quiet HEAD^ HEAD -- "$@"; }
+
+if changed .; then
+  echo "web/ changed - building"
   exit 1
 fi
 
-minute=$((10#$(date -u +%M)))
-if [ "$minute" -lt 5 ]; then
-  echo "hourly refresh of the decision log - building"
+if changed ../logs; then
+  echo "decision log changed - building so /app shows the newest ticks"
   exit 1
 fi
 
-echo "log-only commit and not the top of the hour - skipping this build"
+echo "nothing that affects the site changed - skipping this build"
 exit 0
