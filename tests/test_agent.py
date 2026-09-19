@@ -1,6 +1,47 @@
 import unittest
 
-from slimon.agent import _for_model, worth_a_decision
+from slimon.agent import _for_model, positions_to_track, worth_a_decision
+from slimon.broker import Portfolio, Position
+from slimon.risk import RiskBook
+
+from test_risk import LIMITS, NOW, pos
+
+
+class FakeHistoryBroker:
+    """detect_closed as BitgetBroker implements it, with the venue's position history stubbed."""
+
+    def __init__(self, pnl_by_symbol):
+        from slimon.broker import BitgetBroker
+        self._impl = BitgetBroker.detect_closed
+        self.managed = set(pnl_by_symbol)
+        self.category = "USDT-FUTURES"
+        self.client = type("C", (), {"position_history": lambda _, cat, sym, limit=1: [{"netProfit": str(pnl_by_symbol[sym])}]})()
+
+    def detect_closed(self, prev, portfolio):
+        return self._impl(self, prev, portfolio)
+
+
+class AgentClosesAreRecorded(unittest.TestCase):
+    def test_a_position_the_agent_closed_is_still_tracked(self):
+        nvda = pos("NVDAUSDT")
+        tracked = positions_to_track(held_at_start=[nvda], held_after=[])
+        self.assertIn("NVDAUSDT", tracked)
+
+    def test_a_position_opened_this_tick_is_tracked(self):
+        self.assertIn("AAPLUSDT", positions_to_track([], [pos("AAPLUSDT")]))
+
+    def test_three_agent_closed_losers_start_the_cooldown(self):
+        # The bug: four model-closed losers in a row never reached the loss counter.
+        book = RiskBook({}, LIMITS)
+        notes = []
+        for sym in ("NVDAUSDT", "AAPLUSDT", "TSLAUSDT"):
+            broker = FakeHistoryBroker({sym: -12.5})
+            prev = positions_to_track(held_at_start=[pos(sym)], held_after=[])  # closed by the agent this tick
+            closed = broker.detect_closed(prev, Portfolio("test", 10_000, 0, []))
+            self.assertEqual([c["symbol"] for c in closed], [sym])
+            notes += book.record_closed(closed, NOW)
+        self.assertEqual([n["type"] for n in notes], ["loss_cooldown_started"])
+        self.assertTrue(book.in_cooldown(NOW))
 
 WHITELIST = ["NVDAUSDT", "SP500USDT"]
 

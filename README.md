@@ -158,6 +158,14 @@ npx next dev -p 3000        # http://localhost:3000 and http://localhost:3000/ap
 
 The replay reads `../logs` by default; set `SLIMON_LOG_DIR` to point it at another log, the same variable the agent uses. The ticks in the landing-page animation are illustrative and labelled as such; everything on `/app` comes from the log.
 
+## Paper-trading record
+
+[`reports/paper_trades.csv`](reports/paper_trades.csv) lists every order that reached the demo
+venue: timestamp, instrument, action, direction, price, quantity, notional, fee, client order ID,
+who decided it (model or risk gate) and why, and account equity before and after. It is rebuilt
+from the decision log alone by `python -m slimon report`, which also prints the round trips and
+headline figures, and the agent loop regenerates it whenever it commits.
+
 ## Demo video
 
 [`DEMO.md`](DEMO.md) is a 90-second script: six scenes with the visual, the on-screen text and the

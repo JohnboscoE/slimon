@@ -3,6 +3,7 @@
   python -m slimon check [--llm]   verify venue access, demo instruments, key permissions
   python -m slimon once            run a single tick now and print the record
   python -m slimon run             run the loop (one tick per closed 5m candle)
+  python -m slimon report          rebuild reports/paper_trades.csv and the headline numbers from the log
 """
 
 from __future__ import annotations
@@ -113,6 +114,9 @@ def main(argv: list[str]) -> int:
     cmd = argv[1] if len(argv) > 1 else "help"
     if cmd == "check":
         return check("--llm" in argv)
+    if cmd == "report":
+        from .report import main as report_main
+        return report_main()
     if cmd in ("once", "run"):
         from .agent import Agent, _one_line
         agent = Agent(load_config())

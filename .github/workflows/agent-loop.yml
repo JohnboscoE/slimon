@@ -68,7 +68,9 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add logs
+          # Refresh the flat trade record judges read (reports/paper_trades.csv) from the log.
+          python -m slimon report > /dev/null || echo "report generation failed; log still committed"
+          git add logs reports
           # Runtime state is untracked locally; on a wiped runner the risk counters (drawdown
           # baseline, cooldowns, per-symbol spacing) have to travel with the repository.
           git add -f state/state.json

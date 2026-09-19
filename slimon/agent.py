@@ -40,6 +40,19 @@ def worth_a_decision(events: list[dict], whitelist: list[str], holding: bool) ->
                for e in events)
 
 
+def positions_to_track(held_at_start: list, held_after: list) -> dict:
+    """What the next tick compares against to find positions that have closed.
+
+    Everything held when this tick began, plus anything opened during it. Tracking only the
+    positions held *after* this tick's orders hid every close the agent made itself: the position
+    was already gone from the record, so the next tick never saw it disappear, never fetched its
+    realized PnL, and never counted it toward the consecutive-loss cooldown.
+    """
+    tracked = {p.symbol: {"side": p.side, "qty": p.qty} for p in held_at_start}
+    tracked.update({p.symbol: {"side": p.side, "qty": p.qty} for p in held_after})
+    return tracked
+
+
 def _for_model(ev: dict) -> dict:
     """Session events carry the whole cross-section, which the model already gets under "market".
     Send it once; the event log keeps the full payload."""
@@ -117,6 +130,7 @@ class Agent:
             self.journal.tick(rec, now)
             return rec
         rec["portfolio"] = portfolio.to_dict()
+        held_at_start = portfolio.positions
 
         # Bookkeeping from the previous tick: closed trades feed the loss cooldown.
         closed = self.broker.detect_closed(self.state.get("positions_last_tick", {}), portfolio)
@@ -201,7 +215,7 @@ class Agent:
         rec["portfolio_after"] = after.to_dict() if after is not portfolio else None
         rec["risk_state"] = self.book.snapshot(now, after.equity)
         rec["llm_budget"] = dict(self.budget)
-        self.state.data["positions_last_tick"] = {p.symbol: {"side": p.side, "qty": p.qty} for p in after.positions}
+        self.state.data["positions_last_tick"] = positions_to_track(held_at_start, after.positions)
         self.state.data["risk"] = self.book.d
         self.state.save()
         self.journal.tick(rec, now)
