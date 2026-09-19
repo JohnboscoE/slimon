@@ -5,6 +5,7 @@ import {
   FileText,
   Fingerprint,
   KeyRound,
+  Newspaper,
   Radar,
   Send,
   ShieldCheck,
@@ -35,7 +36,7 @@ const STEPS = [
   {
     icon: Radar,
     title: "Perceive",
-    body: "Live Bitget market data for twelve US-stock perpetuals, from NVDA and TSLA to the S&P 500 and Nasdaq 100. Deterministic detectors run on closed 5-minute candles: a 1% move in 30 minutes, a candle 3× its average range, volume 4× the median, the US open and close, and reviews of held positions. Each event is stamped the moment it is received.",
+    body: "Live Bitget market data for twelve US-stock perpetuals, from NVDA and TSLA to the S&P 500 and Nasdaq 100. Deterministic detectors run on closed 5-minute candles: a 1% move in 30 minutes, a candle 3× its average range, volume 4× the median, the US open and close, and reviews of held positions. Fresh headlines from public news feeds join them as events. Each event is stamped the moment it is received.",
   },
   {
     icon: Sparkles,
@@ -50,7 +51,7 @@ const STEPS = [
   {
     icon: Send,
     title: "Execute",
-    body: "Orders go to Bitget's demo venue with an idempotent client order ID, so a retry can never double-submit. An ambiguous failure is looked up before anything is resent. Every open carries a hard stop preset on the exchange.",
+    body: "Orders go to Bitget's demo venue with an idempotent client order ID, so a retry can never double-submit. An ambiguous failure is looked up before anything is resent. Every open carries a stop (−2.5%) and a target (+5%), both preset on the exchange.",
   },
   {
     icon: FileText,
@@ -118,7 +119,7 @@ export default function Home() {
               The <em className="text-primary">risk gate</em> decides.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground/75">
-              Slimon watches twelve US-stock perpetuals for market events, asks an LLM for one structured decision, and
+              Slimon watches twelve US-stock perpetuals and the news for market events, asks an LLM for one structured decision, and
               runs that decision past 22 deterministic rules before anything reaches the exchange. Every tick is logged,
               including every trade it refused.
             </p>
@@ -175,29 +176,34 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading
             eyebrow="Where the signal comes from"
-            title={<>It doesn&apos;t read the headline. It reads the <em className="text-primary">market&apos;s answer</em>.</>}
+            title={<>It reads the headline, then checks the <em className="text-primary">market&apos;s answer</em>.</>}
           >
-            Slimon perceives through one source: Bitget&apos;s live market data for twelve US-stock perpetuals. It does
-            not scrape news or social media. When a post from a president or a CEO moves a stock, Slimon sees the
-            move itself, at the close of the next five-minute candle, and every step of that is on the record.
+            Slimon perceives through two kinds of source: Bitget&apos;s live market data for twelve US-stock perpetuals,
+            and public news feeds. A headline becomes an event like any other, stamped with when it was published and
+            when the agent saw it, and tagged with whether the market has reacted to it yet.
           </SectionHeading>
 
-          <div className="mt-12 grid gap-3 lg:grid-cols-3">
+          <div className="mt-12 grid gap-3 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: Radar,
-                title: "The source",
-                body: "Tickers and 5-minute candles from Bitget's live venue, the real market, for 12 US-stock and index perps. The demo venue's own order book is read separately, because that is where orders fill.",
+                title: "Market data",
+                body: "Tickers and 5-minute candles from Bitget's live venue for 12 US-stock and index perps. The demo venue's own order book is read separately, because that is where orders fill.",
+              },
+              {
+                icon: Newspaper,
+                title: "News",
+                body: "A Google News search per traded company, the Federal Reserve's own releases (rate decisions, policy statements), and CNBC's markets feed filtered to market-moving topics. Free public feeds, no key. At most five headlines a tick, held positions first.",
               },
               {
                 icon: Clock,
                 title: "How early",
-                body: "Detectors run 15 seconds after every 5-minute candle closes, so a move is caught at the first close after it crosses a threshold: never more than about five minutes late. Each event records its candle time and the moment it was received, and each record carries the model's latency, so the delay is measured, not claimed.",
+                body: "Each tick runs 15 seconds after a 5-minute candle closes, so a price move is caught at the first close after it crosses a threshold, and a headline within minutes of reaching a feed. Every event records when it was published and when it was received, so the delay is measured, not claimed.",
               },
               {
                 icon: ShieldCheck,
                 title: "How it is verified",
-                body: "Closed candles only, never a half-formed one. Moves are compared against a baseline from the same US session. The model sees the whole cross-section to tell one stock's news from a market-wide move, and the gate refuses to open a position if the demo price strays more than 1.5% from the live market.",
+                body: "Every headline carries its market confirmation: the price, range and volume shocks on the same symbol that tick. The model treats news the market has ignored as weak evidence, and the gate refuses to trade on a broken or diverging demo book.",
               },
             ].map((c) => (
               <div key={c.title} className="rounded-xl border bg-card/40 p-6">
@@ -209,17 +215,17 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid gap-6 rounded-xl border border-primary/25 bg-primary/[0.04] p-6 md:grid-cols-[auto_1fr] md:gap-8">
-            <p className="font-display text-2xl leading-tight tracking-tight md:max-w-[14rem]">Why not race the tweets?</p>
+            <p className="font-display text-2xl leading-tight tracking-tight md:max-w-[14rem]">When the news hits a position it holds</p>
             <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
               <p>
-                Being first to a headline is a contest against firms with direct feeds and co-located servers, and a
-                post can be misread, parodied or walked back within minutes. A price that has actually traded is the
-                market&apos;s verdict on the news, whoever broke it.
+                A headline about a stock Slimon holds always goes straight back to the model, which must reassess the
+                position against the thesis it opened on: close it if the news undermines that thesis, hold it if not,
+                and name the headline it relied on. That reasoning is published with the decision.
               </p>
               <p>
-                Stock perps trade around the clock, so news that lands at the weekend still moves them. Slimon keeps
-                watching and logging, but opens nothing until the US pre-market session: thin weekend books are where
-                reactions overshoot.
+                Headlines are untrusted text. Nothing written in one is ever followed as an instruction, and whatever a
+                headline provokes still has to pass every rule of the risk gate. A post on X or Truth Social reaches
+                Slimon only once a news outlet reports it, or as the price move that follows.
               </p>
             </div>
           </div>

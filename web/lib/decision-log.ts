@@ -44,6 +44,9 @@ function toRow(r: Json): TickRow {
         summary: str(o.summary) ?? "",
         receivedAt: str(o.received_at),
         sourceTs: str(o.source_ts),
+        url: str(obj(o.payload)?.url),
+        publisher: str(obj(o.payload)?.publisher),
+        confirmation: arr(obj(o.payload)?.market_confirmation).filter((x): x is string => typeof x === "string"),
       };
     }),
     llm: {

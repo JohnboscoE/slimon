@@ -9,6 +9,10 @@ export interface LogEvent {
   summary: string;
   receivedAt: string | null;
   sourceTs: string | null;
+  /** News events only: the article, its publisher, and the same-symbol shocks seen that tick. */
+  url: string | null;
+  publisher: string | null;
+  confirmation: string[];
 }
 
 export interface LogCheck {

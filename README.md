@@ -5,7 +5,7 @@ An event-driven trading agent for **US-stock perpetuals on Bitget** (Bitget AI B
 The LLM decides (Qwen by default, Claude as a config switch). A **deterministic risk gate**, written as plain code with no model involvement, can veto any decision. Every tick is written to an append-only decision log, including ticks where nothing happened and every veto.
 
 ```
-live-venue market data ─► perception (events, timestamped on receipt)
+live market data + news feeds ─► perception (events, timestamped on receipt)
                                    │
                                    ▼
                           LLM: one structured decision
@@ -70,6 +70,7 @@ Signals come from Bitget's **live** public market data, which reflects the real 
 - `range_expansion` / `volume_spike`: a 5m candle measured against a baseline built **only from candles in the same US session**, so the cash open doesn't register as a spike against the thin pre-market
 - `us_regular_open` / `us_regular_close`: scheduled session events carrying the full cross-section
 - `position_review`: a held position crosses a PnL band, or has gone 4h without review
+- `news`: a fresh, relevant headline from the news feeds, with its publisher, publication time and market confirmation (see below)
 
 Every event is written to `logs/events/` with its `received_at` time and the `source_ts` of the candle it came from, which shows decisions were not made in hindsight.
 
@@ -83,11 +84,16 @@ and took four minutes, long enough for the gate to be judging an order against s
 
 ### Data sources
 
-Slimon reads **one source**: Bitget's public market API (`/api/v3/market/instruments`, `/tickers`, `/candles`) for the 12 watched perps, read from both the live venue (signals) and the demo venue (execution prices, spread, instrument status). It does **not** read news, X, Truth Social or any other feed. The track allows other sources (its sub-themes include sentiment and earnings agents); keeping to one is a deliberate choice.
+Slimon reads **two kinds of source**, and turns both into the same timestamped events:
 
-- **What that means for news.** A post from a president or a CEO reaches Slimon as the price move it causes, not as text. Racing headlines is a contest against firms with direct feeds, and a post can be misread, parodied or retracted within minutes. A price that has actually traded is the market's own verdict on the news, whoever broke it.
-- **How early.** Each tick runs 15 seconds after a 5-minute candle closes, so a move is caught at the first close after it crosses a threshold: never more than about five minutes late. The delay is on the record, not claimed: every event carries `source_ts` and `received_at`, and every model call logs `latency_ms`.
-- **How it is verified.** Detectors use closed candles only. Range and volume are compared against a baseline from the same US session. The model gets the full cross-section, so it can tell one stock's news from an index-wide move. The gate refuses to open a position if the demo book's spread exceeds 0.30% or its price diverges from the live venue by more than 1.5%, and it vetoes any decision that cites an event ID the agent did not see that tick.
+1. **Market data**: Bitget's public market API (`/api/v3/market/instruments`, `/tickers`, `/candles`) for the 12 watched perps, from the live venue (signals) and the demo venue (execution prices, spread, instrument status).
+2. **News**: public RSS feeds, no API key. A Google News search for each traded company (a headline must name the company or its ticker to count), the Federal Reserve's own press releases (rate decisions, policy statements, minutes), and CNBC's markets feed filtered to market-moving topics (the Fed, inflation, jobs, tariffs, the White House, war, a sell-off). The index perps take their news from those market-wide feeds: a search for "S&P 500" returns mostly single-stock stories.
+
+- **How news becomes a decision.** Each new headline published in the last 30 minutes becomes a `news` event with its publisher, publication time (`source_ts`) and the moment the agent received it. Headlines on a held position are always sent to the model, which must reassess the position against its thesis and either close it or hold it, and say which headline it relied on. A headline on a tradable company, or a market-moving one, can trigger a new position. At most five headlines a tick (two per company), held positions first.
+- **How news is verified.** Every news event carries `market_confirmation`: the price, range and volume shocks seen on the same symbol in the same tick. The model is told that a headline the market has ignored is weak evidence, and that a headline can be stale, misreported or already priced in. Headlines are cleaned, truncated and treated strictly as untrusted data: nothing written in one is ever followed as an instruction, and whatever a headline provokes still has to pass every rule of the risk gate.
+- **What it cannot see.** A post on X or Truth Social reaches Slimon only once a news outlet reports it, or as the price move that follows. There is no social feed.
+- **How early.** Each tick runs 15 seconds after a 5-minute candle closes, so a price move is caught at the first close after it crosses a threshold, and a headline within five minutes of appearing in a feed. The delay is on the record, not claimed: every event carries `source_ts` and `received_at`, and every model call logs `latency_ms`.
+- **How market events are verified.** Detectors use closed candles only. Range and volume are compared against a baseline from the same US session. The model gets the full cross-section, so it can tell one stock's news from an index-wide move. The gate refuses to open a position if the demo book's spread exceeds 0.30% or its price diverges from the live venue by more than 1.5%, and it vetoes any decision that cites an event ID the agent did not see that tick.
 - **Weekends and overnight.** Stock perps trade around the clock, so news that breaks at the weekend still moves them. Perception keeps running and logging then, and the model is still consulted about held positions, but no new position is opened outside the US pre, regular and post sessions.
 
 ## Modes

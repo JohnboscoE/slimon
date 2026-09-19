@@ -14,6 +14,7 @@ from .config import KILL_SWITCH_PATH, ROOT, Config
 from .decision import DecisionMaker
 from .journal import Journal, State, iso, utcnow
 from .market import Market, us_session
+from .news import NewsFeed
 from .perception import Perception
 from .risk import RiskBook, RiskContext, evaluate, forced_actions
 
@@ -72,6 +73,8 @@ class Agent:
         self.state = State()
         self.journal = Journal(s.values())
         self.perception = Perception(p, self.state)
+        news_cfg = cfg.raw.get("news", {})
+        self.news = NewsFeed(news_cfg, self.state) if news_cfg.get("enabled") else None
         self.dm = DecisionMaker.from_config(cfg)
         self.book = RiskBook(self.state.get("risk", {}), cfg.risk)
         self.budget = self.state.get("llm_budget", {})
@@ -165,6 +168,11 @@ class Agent:
             ctx.portfolio = portfolio
 
         events = self.perception.detect(snap, portfolio, now, session)
+        if self.news:
+            held = {p.symbol for p in portfolio.positions}
+            watch = list(dict.fromkeys(a["whitelist"] + sorted(held)))
+            headlines, rec["news"] = self.news.poll(now, session, watch, held, events)
+            events += headlines
         for ev in events:
             self.journal.event(ev, now)
         rec["events"] = events

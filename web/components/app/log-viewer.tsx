@@ -253,6 +253,18 @@ function TickDetail({ row: r }: { row: TickRow }) {
                     {cited.has(e.id) && <span className="text-[11px] text-foreground/70">cited</span>}
                   </div>
                   <p className="mt-1.5">{e.summary}</p>
+                  {e.type === "news" && (
+                    <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px]">
+                      {e.url && /^https?:\/\//.test(e.url) && (
+                        <a href={e.url} target="_blank" rel="noopener noreferrer nofollow" className="text-primary underline-offset-2 hover:underline">
+                          Read the article
+                        </a>
+                      )}
+                      <span className={e.confirmation.length ? "text-pass" : "text-muted-foreground"}>
+                        {e.confirmation.length ? `Market confirmed: ${e.confirmation.join("; ")}` : "No market reaction this tick"}
+                      </span>
+                    </p>
+                  )}
                   <p className="mt-1 font-mono text-[10.5px] text-muted-foreground">
                     received {fmtTime(e.receivedAt)}
                     {e.sourceTs && <> · candle {fmtTime(e.sourceTs)}</>}

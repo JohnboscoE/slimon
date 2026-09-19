@@ -81,6 +81,39 @@ take_profit_pct = 5.0              # target, likewise: twice the stop, so a winn
 max_holding_hours = 72
 open_sessions = ["pre", "regular", "post"]   # no new positions overnight / weekends
 
+[news]
+# Public headlines as events. Free RSS feeds, no API key. A headline on a held position always
+# sends that position back to the model; one on a tradable name or a market-moving topic can
+# trigger a decision. Each event says whether the market has confirmed it this tick.
+enabled = true
+max_age_minutes = 30               # only headlines published in the last half hour are new
+max_events_per_tick = 5            # held positions first, then tradable names, then the market
+max_per_symbol = 2                 # so one busy name cannot crowd out the rest
+
+# Google News search per traded company; a headline must name the company or its ticker.
+# The index perps (SP500USDT, NDX100USDT) have no search of their own: a search for "S&P 500"
+# returns mostly single-stock stories that merely mention the index. Index-level news arrives
+# through the market-wide feeds below.
+[news.symbol_queries]
+NVDAUSDT = "Nvidia"
+TSLAUSDT = "Tesla"
+AAPLUSDT = "Apple"
+METAUSDT = "Meta Platforms OR Meta"
+AMZNUSDT = "Amazon"
+GOOGLUSDT = "Alphabet OR Google"
+
+# Market-wide feeds. The Fed's own releases carry rate decisions and policy statements; general
+# market headlines must mention a market-moving topic to count.
+[[news.macro_feeds]]
+name = "federal_reserve"
+url = "https://www.federalreserve.gov/feeds/press_all.xml"
+keywords = ["FOMC", "federal funds", "monetary policy", "interest rate", "rates", "statement", "Powell", "minutes", "balance sheet"]
+
+[[news.macro_feeds]]
+name = "cnbc_markets"
+url = "https://www.cnbc.com/id/20910258/device/rss/rss.html"
+keywords = ["Fed", "Powell", "rate cut", "rate hike", "rates", "inflation", "CPI", "PCE", "jobs report", "payrolls", "unemployment", "GDP", "recession", "tariff", "tariffs", "Trump", "White House", "sanctions", "war", "strike", "Treasury", "yields", "sell-off", "selloff", "rally", "crash"]
+
 [sim]
 # Used only when no Bitget key is configured (local paper book, demo-venue prices).
 starting_equity_usdt = 10000
