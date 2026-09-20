@@ -1,0 +1,1 @@
+{"type": "startup", "ts": "2026-09-20T01:12:08.126Z", "mode": "live_demo", "config_hash": "eceef44d5bb3", "git_head": "bdf4ebe", "llm_provider": "qwen", "model": "qwen3.8-max", "llm_configured": true, "key_check": {"perm_type": "unknown", "permissions": [], "permissions_reported": false, "ip_bound": false}, "hold_mode": "one_way_mode"}
