@@ -124,17 +124,66 @@ class Polling(unittest.TestCase):
         self.assertEqual(len(nf.poll(NOW, "regular", ["NVDAUSDT"], set(), [])[0]), 5)
 
 
+class WhichHeadlinesSpendACall(unittest.TestCase):
+    """Commentary is logged; it just cannot spend a model call on its own."""
+
+    CFG_T = {**CFG, "trusted_publishers": ["Reuters", "Wall Street Journal"], "max_wakes_per_hour": 2}
+
+    def wakes(self, title, age=3, publisher=None, held=frozenset(), market_events=(), state=None):
+        nf = NewsFeed(self.CFG_T, state or StubState(), fetch=lambda url: rss((title, age, publisher)) if "Nvidia" in url else rss())
+        events, _ = nf.poll(NOW, "regular", ["NVDAUSDT"], set(held), list(market_events))
+        return events[0]["payload"]["wakes_model"]
+
+    def test_the_hourly_quota_bounds_headlines_nothing_else_vouches_for(self):
+        state = StubState()
+        woke = [self.wakes(f"Nvidia commentary {i} - Watcher Guru", publisher="Watcher Guru", state=state)
+                for i in range(4)]
+        self.assertEqual(woke, [True, True, False, False])
+
+    def test_the_quota_never_blocks_a_held_position(self):
+        state = StubState()
+        for i in range(3):
+            self.wakes(f"Nvidia commentary {i} - Watcher Guru", publisher="Watcher Guru", state=state)
+        self.assertTrue(self.wakes("Nvidia recalls product - Watcher Guru", publisher="Watcher Guru",
+                                   held={"NVDAUSDT"}, state=state))
+
+    def test_a_wire_headline_wakes_the_model(self):
+        self.assertTrue(self.wakes("Nvidia cuts guidance - Reuters", publisher="Reuters"))
+
+    def test_commentary_does_not_once_the_hours_slots_are_used(self):
+        state = StubState()
+        state.data["news_wakes"] = [NOW.isoformat(), NOW.isoformat()]  # both slots taken this hour
+        self.assertFalse(self.wakes("Nvidia could reach $240 by 2030 - Watcher Guru", publisher="Watcher Guru", state=state))
+
+    def test_but_it_does_when_the_market_has_reacted(self):
+        shock = {"type": "price_move", "symbol": "NVDAUSDT", "summary": "NVDAUSDT -2.10% over 30m"}
+        self.assertTrue(self.wakes("Nvidia could reach $240 - Watcher Guru", publisher="Watcher Guru", market_events=[shock]))
+
+    def test_and_when_the_position_is_held(self):
+        self.assertTrue(self.wakes("Nvidia could reach $240 - Watcher Guru", publisher="Watcher Guru", held={"NVDAUSDT"}))
+
+
 class NewsTriggersDecisions(unittest.TestCase):
     WL = ["NVDAUSDT", "TSLAUSDT"]
 
-    def test_news_on_a_tradable_name_calls_the_model(self):
-        self.assertTrue(worth_a_decision([{"type": "news", "symbol": "NVDAUSDT"}], self.WL, holding=False))
+    def news(self, symbol, wakes):
+        return {"type": "news", "symbol": symbol, "payload": {"wakes_model": wakes}}
+
+    def test_a_waking_headline_calls_the_model(self):
+        self.assertTrue(worth_a_decision([self.news("NVDAUSDT", True)], self.WL, holding=False))
+
+    def test_commentary_alone_does_not_call_the_model(self):
+        self.assertFalse(worth_a_decision([self.news("NVDAUSDT", False)], self.WL, holding=False))
+
+    def test_commentary_still_rides_along_with_a_market_event(self):
+        events = [self.news("NVDAUSDT", False), {"type": "price_move", "symbol": "NVDAUSDT"}]
+        self.assertTrue(worth_a_decision(events, self.WL, holding=False))
 
     def test_market_wide_news_calls_the_model(self):
-        self.assertTrue(worth_a_decision([{"type": "news", "symbol": None}], self.WL, holding=False))
+        self.assertTrue(worth_a_decision([self.news(None, True)], self.WL, holding=False))
 
     def test_news_while_holding_always_calls_the_model(self):
-        self.assertTrue(worth_a_decision([{"type": "news", "symbol": "MSTRUSDT"}], self.WL, holding=True))
+        self.assertTrue(worth_a_decision([self.news("MSTRUSDT", False)], self.WL, holding=True))
 
 
 if __name__ == "__main__":

@@ -37,8 +37,15 @@ def worth_a_decision(events: list[dict], whitelist: list[str], holding: bool) ->
     watch-only symbols alone can only ever produce NO_TRADE, so they are logged but not sent."""
     if holding:
         return bool(events)
-    return any(e.get("symbol") is None or e.get("symbol") in whitelist or e.get("type") == "position_review"
-               for e in events)
+
+    def actionable(e: dict) -> bool:
+        if e.get("type") == "news":
+            # Commentary the market has ignored, from an outlet with no wire standing, is logged
+            # but does not get a model call of its own (see news.py).
+            return bool((e.get("payload") or {}).get("wakes_model"))
+        return e.get("symbol") is None or e.get("symbol") in whitelist or e.get("type") == "position_review"
+
+    return any(actionable(e) for e in events)
 
 
 def positions_to_track(held_at_start: list, held_after: list) -> dict:

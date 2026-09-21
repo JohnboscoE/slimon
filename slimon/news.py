@@ -88,6 +88,17 @@ class NewsFeed:
         r.raise_for_status()
         return r.content
 
+    def _take_wake_slot(self, now: datetime) -> bool:
+        """One of the hour's slots for a headline that nothing else vouches for, if any are left."""
+        quota = self.cfg.get("max_wakes_per_hour", 2)
+        recent = [t for t in self.state.get("news_wakes", []) if now - datetime.fromisoformat(t) < timedelta(hours=1)]
+        if len(recent) >= quota:
+            self.state.data["news_wakes"] = recent
+            return False
+        recent.append(now.isoformat())
+        self.state.data["news_wakes"] = recent
+        return True
+
     def _sources(self, symbols: list[str]) -> list[dict]:
         out = []
         queries = self.cfg.get("symbol_queries", {})
@@ -166,6 +177,20 @@ class NewsFeed:
         for src, it, iid in candidates:
             sym = src["symbol"]
             confirm = shocks.get(sym, []) if sym else []
+            held_position = bool(sym and sym in held)
+            # Which headlines may spend a model call on their own. Company feeds carry a lot of
+            # commentary ("X could reach $Y by 2030") that names the company and says nothing new;
+            # waking the model for each would exhaust the daily call budget before the US open.
+            # Everything else is still logged and still shown to the model when something else
+            # wakes it - it just cannot be the trigger.
+            trusted = _mentions(it["publisher"] or "", self.cfg.get("trusted_publishers", [])) if it["publisher"] else False
+            always = held_position or bool(confirm) or sym is None or trusted
+            # Anything else may still wake the model, but only so often per hour. Judging the
+            # outlet alone does not work: the feeds surface aggregators, and real stories (an
+            # $80bn equity raise, a DOJ settlement, a regulator's safety finding) arrive through
+            # them as readily as commentary does. A quota bounds the cost without guessing which
+            # is which, and the rest is still logged and still read when something else wakes it.
+            wakes_model = always or self._take_wake_slot(now)
             subject = sym.removesuffix("USDT") if sym else "Market"
             by = f" ({it['publisher']})" if it["publisher"] else ""
             events.append({
@@ -180,8 +205,9 @@ class NewsFeed:
                     "headline": it["title"], "publisher": it["publisher"] or None, "url": it["link"],
                     "feed": src["name"], "published_at": iso(it["published"]),
                     "age_minutes": round((now - it["published"]).total_seconds() / 60, 1),
-                    "held_position": bool(sym and sym in held),
+                    "held_position": held_position,
                     "market_confirmation": confirm,
+                    "wakes_model": wakes_model,
                 },
             })
         return events, status

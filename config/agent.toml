@@ -90,6 +90,17 @@ max_age_minutes = 30               # only headlines published in the last half h
 max_events_per_tick = 5            # held positions first, then tradable names, then the market
 max_per_symbol = 2                 # so one busy name cannot crowd out the rest
 
+# A headline always spends a model call if it concerns a held position, the market has already
+# reacted to it, it is market-wide, or it comes from one of the outlets below. Any other relevant
+# headline may still trigger a decision, but only this many times an hour: company feeds carry a
+# lot of commentary that names the company and reports nothing, and without a bound it would drain
+# the day's model-call budget before the US open. The rest is still logged, and still read by the
+# model whenever something else wakes it.
+max_wakes_per_hour = 2
+trusted_publishers = ["Reuters", "Bloomberg", "Wall Street Journal", "WSJ", "Associated Press", "AP",
+                      "CNBC", "Financial Times", "Dow Jones", "Barron's", "MarketWatch", "Yahoo Finance",
+                      "Business Wire", "PR Newswire", "GlobeNewswire", "Federal Reserve"]
+
 # Google News search per traded company; a headline must name the company or its ticker.
 # The index perps (SP500USDT, NDX100USDT) have no search of their own: a search for "S&P 500"
 # returns mostly single-stock stories that merely mention the index. Index-level news arrives
