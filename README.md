@@ -54,7 +54,7 @@ Closing a position reduces risk, so kill switches, breakers, cooldowns and sessi
 
 The gate also acts **on its own**, without consulting the model: a hard stop at -2.5%, a take profit at +5% (both preset on the exchange when the position opens, so they hold even when the agent is not running, and re-checked locally each tick as a backstop), and a 72h maximum holding time.
 
-**Every exit is attributed.** Each closed trade records `closed_by` and a `reason`: the model's own decision, the gate rule that fired (`hard_stop`, `take_profit`, `max_holding_time`), or, when a position simply disappears between ticks, that no agent order was involved and it was the exchange stop, the exchange target, or a liquidation. Nothing is inferred from the sign of the PnL.
+**Every exit is attributed.** Each closed trade records `closed_by` and a `reason`: the model's own decision, the gate rule that fired (`hard_stop`, `take_profit`, `max_holding_time`), or, when a position simply disappears between ticks, that no agent order was involved: the exchange stop, the exchange target, a liquidation, or the operator closing it by hand. Nothing is inferred from the sign of the PnL.
 
 Scheduled macro events (FOMC, CPI, a diarised speech) can be listed under `macro_events` in `[perception]`. Each fires once at its time and sends held positions back to the model with the catalyst named. This covers catalysts known in advance; unscheduled headlines arrive through the news feeds described under Data sources.
 

@@ -151,7 +151,7 @@ class Agent:
         for t in closed:
             rule = pending.pop(t["symbol"], None)
             t["closed_by"] = "agent" if rule else "exchange_or_external"
-            t["reason"] = rule or "no agent order: exchange stop, exchange take-profit, or liquidation"
+            t["reason"] = rule or "no agent order: exchange stop, exchange take-profit, liquidation, or a manual close"
         notes = self.book.record_closed(closed, now)
         self.book.roll_day(now, portfolio.equity)
         trip = self.book.update_breaker(now, portfolio.equity)
