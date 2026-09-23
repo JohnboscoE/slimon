@@ -16,7 +16,7 @@
   },
   "llm_budget": {
     "day": "2026-09-23",
-    "calls": 12,
+    "calls": 40,
     "cost_usd": 0.0
   },
   "positions_last_tick": {
@@ -43,44 +43,44 @@
   "last_session": "closed",
   "position_reviews": {
     "NDX100USDT": {
-      "last_at": "2026-09-22T22:15:15.000Z",
+      "last_at": "2026-09-23T06:15:15.000Z",
       "band": 0
     },
     "METAUSDT": {
-      "last_at": "2026-09-23T00:40:15.000Z",
+      "last_at": "2026-09-23T04:40:15.000Z",
       "band": 0
     }
   },
   "event_last": {
-    "volume_spike|METAUSDT": "2026-09-23T01:10:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-09-22T19:55:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-09-23T01:20:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-09-22T23:15:15.000Z",
+    "volume_spike|METAUSDT": "2026-09-23T04:40:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-09-23T03:15:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-09-23T05:50:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-09-23T06:15:15.000Z",
     "us_regular_open|None": "2026-09-22T13:30:15.000Z",
-    "price_move|MSTRUSDT": "2026-09-22T20:20:15.000Z",
+    "price_move|MSTRUSDT": "2026-09-23T04:35:15.000Z",
     "price_move|CRCLUSDT": "2026-09-22T20:00:15.000Z",
     "us_regular_close|None": "2026-09-22T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-09-22T23:05:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-09-22T04:40:15.000Z",
-    "volume_spike|HOODUSDT": "2026-09-23T01:15:15.000Z",
-    "volume_spike|COINUSDT": "2026-09-22T23:50:15.000Z",
+    "volume_spike|SP500USDT": "2026-09-23T06:15:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-09-23T04:40:15.000Z",
+    "volume_spike|HOODUSDT": "2026-09-23T05:50:15.000Z",
+    "volume_spike|COINUSDT": "2026-09-23T04:35:15.000Z",
     "price_move|HOODUSDT": "2026-09-22T19:30:15.000Z",
-    "range_expansion|HOODUSDT": "2026-09-22T13:30:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-09-23T00:00:15.000Z",
-    "range_expansion|SP500USDT": "2026-09-22T22:35:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-09-22T23:20:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-09-22T13:25:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-09-22T23:00:15.000Z",
+    "range_expansion|HOODUSDT": "2026-09-23T03:45:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-09-23T04:25:15.000Z",
+    "range_expansion|SP500USDT": "2026-09-23T06:00:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-09-23T04:20:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-09-23T01:40:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-09-23T06:20:15.000Z",
     "price_move|GOOGLUSDT": "2026-09-22T13:40:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-09-22T23:55:15.000Z",
-    "range_expansion|NDX100USDT": "2026-09-23T01:20:15.000Z",
-    "volume_spike|NDX100USDT": "2026-09-22T23:55:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-09-23T01:20:15.000Z",
-    "range_expansion|METAUSDT": "2026-09-22T11:05:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-09-23T03:45:15.000Z",
+    "range_expansion|NDX100USDT": "2026-09-23T05:45:15.000Z",
+    "volume_spike|NDX100USDT": "2026-09-23T05:45:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-09-23T06:05:15.000Z",
+    "range_expansion|METAUSDT": "2026-09-23T04:40:15.000Z",
     "range_expansion|TSLAUSDT": "2026-09-22T13:30:15.000Z",
     "price_move|COINUSDT": "2026-09-22T20:05:15.000Z",
     "range_expansion|NVDAUSDT": "2026-09-22T19:55:15.000Z",
-    "range_expansion|COINUSDT": "2026-09-22T13:30:15.000Z",
+    "range_expansion|COINUSDT": "2026-09-23T04:25:15.000Z",
     "range_expansion|CRCLUSDT": "2026-09-22T21:05:15.000Z",
     "price_move|METAUSDT": "2026-09-22T16:55:15.000Z",
     "range_expansion|MSTRUSDT": "2026-09-22T23:10:15.000Z",
@@ -88,85 +88,85 @@
     "price_move|AMZNUSDT": "2026-09-18T15:05:15.000Z",
     "position_review|SP500USDT": "2026-09-19T01:30:15.000Z",
     "price_move|NVDAUSDT": "2026-09-22T13:35:15.000Z",
-    "position_review|METAUSDT": "2026-09-23T00:40:15.000Z",
-    "position_review|NDX100USDT": "2026-09-22T22:15:15.000Z",
+    "position_review|METAUSDT": "2026-09-23T04:40:15.000Z",
+    "position_review|NDX100USDT": "2026-09-23T06:15:15.000Z",
     "price_move|AAPLUSDT": "2026-09-22T15:10:15.000Z"
   },
   "recent_decisions": [
     {
-      "tick_id": "20260923T003015",
+      "tick_id": "20260923T034515",
       "action": "NO_TRADE",
       "instrument": "NVDAUSDT",
-      "confidence": 0.78,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T004015",
-      "action": "NO_TRADE",
-      "instrument": "METAUSDT",
-      "confidence": 0.78,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T004515",
-      "action": "NO_TRADE",
-      "instrument": "AAPLUSDT",
-      "confidence": 0.92,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T010015",
-      "action": "NO_TRADE",
-      "instrument": "GOOGLUSDT",
-      "confidence": 0.78,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T010515",
-      "action": "NO_TRADE",
-      "instrument": "AAPLUSDT",
-      "confidence": 0.88,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T011015",
-      "action": "NO_TRADE",
-      "instrument": "METAUSDT",
-      "confidence": 0.78,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260923T011515",
-      "action": "NO_TRADE",
-      "instrument": "HOODUSDT",
       "confidence": 0.82,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20260923T012015",
+      "tick_id": "20260923T035015",
+      "action": "NO_TRADE",
+      "instrument": "GOOGLUSDT",
+      "confidence": 0.82,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T041015",
       "action": "NO_TRADE",
       "instrument": "NVDAUSDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T042015",
+      "action": "NO_TRADE",
+      "instrument": "NVDAUSDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T042515",
+      "action": "NO_TRADE",
+      "instrument": "METAUSDT",
       "confidence": 0.8,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T043015",
+      "action": "NO_TRADE",
+      "instrument": "AMZNUSDT",
+      "confidence": 0.75,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T043515",
+      "action": "NO_TRADE",
+      "instrument": "COINUSDT",
+      "confidence": 0.78,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260923T044015",
+      "action": "NO_TRADE",
+      "instrument": "METAUSDT",
+      "confidence": 0.78,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-09-23T01:11:16.613Z",
+  "last_log_commit_at": "2026-09-23T05:25:17.835Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
@@ -938,10 +938,36 @@
     "fce220617bc2",
     "77ccc6aaedfe",
     "d9a6b3b0de24",
-    "ebeb5f158cc1"
+    "ebeb5f158cc1",
+    "cb70b218b34c",
+    "9ab15cb772e4",
+    "53bece858661",
+    "f694c29e92a2",
+    "34385993529b",
+    "1e67a58c128d",
+    "744b815eb573",
+    "d46044ecd78d",
+    "2cf4eee0b8f0",
+    "284c5564916f",
+    "77c623233432",
+    "06555ed78d5f",
+    "78d3ebdb7652",
+    "201f670c4060",
+    "fac4fa150475",
+    "40531a141372",
+    "c86038efca57",
+    "9ede0fb1fd41",
+    "79a184eead6f",
+    "a9a958e73a23",
+    "bcd685f7c615",
+    "512c3dbc5e49",
+    "ba0176d2f6ab",
+    "bf64c2e2a64c",
+    "e787afb32f39",
+    "8748750b95ca"
   ],
   "news_wakes": [
-    "2026-09-23T00:20:15.000133+00:00",
-    "2026-09-23T01:00:15.000135+00:00"
+    "2026-09-23T05:45:15.000111+00:00",
+    "2026-09-23T06:15:15.000114+00:00"
   ]
 }
