@@ -22,8 +22,13 @@ whitelist = [
 provider = "qwen"                  # "qwen" (QWEN_API_KEY) or "anthropic" (ANTHROPIC_API_KEY)
 # Ceilings per UTC day, so a fixed credit lasts a known number of days. A busy session produces
 # ~25-30 calls; past the cap, ticks are still logged with the model left unconsulted.
-max_calls_per_day = 40
-max_cost_usd_per_day = 0.05        # only bites where the provider reports cost (Anthropic)
+# Split by session on purpose. A single flat cap of 40 was exhausted before 06:00 UTC on three
+# days running, because an overnight position had the model reviewing every headline while nothing
+# could be traded, and the whole US session then ran without a decision. The quiet hours now have
+# their own small allowance and cannot spend the session's.
+max_calls_per_day = 80             # pre-market, regular and after-hours
+max_calls_per_day_closed = 12      # while the US market is shut (managing an overnight position)
+max_cost_usd_per_day = 0.60        # only bites where the provider reports cost (Anthropic)
 
 [llm.qwen]
 # Bitget AI hackathon gateway (Qwen token subsidy), OpenAI-compatible chat completions.

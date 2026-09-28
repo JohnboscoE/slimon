@@ -77,9 +77,12 @@ Every event is written to `logs/events/` with its `received_at` time and the `so
 ### When the model is called
 
 The decision model is set in `config/agent.toml` under `[llm]`: **Qwen** (`qwen3.8-max`, through Bitget's hackathon gateway, key in `QWEN_API_KEY`) by default, or **Claude** (`claude-sonnet-5` at `medium` effort, `ANTHROPIC_API_KEY`). Both get the same system prompt, the same JSON schema and the same validation; every call logs its provider, the model that served it, token usage and latency (and `cost_usd` for Claude). The model is consulted only when a tick produces an event it could act on: an event on a tradable symbol, a US session open or close, a position review, or any event while a position is held. Quiet ticks and events on watch-only symbols are logged with the reason the model was not called (`no_events`, `no_tradable_events`, `us_market_closed_and_flat`). The context is sent as compact JSON with the market cross-section included once.
-A per-UTC-day ceiling (`max_calls_per_day`, `max_cost_usd_per_day` in `[llm]`) keeps a fixed credit
-lasting a known number of days; past it, ticks are logged with `llm_daily_cap` and the model is left
-unconsulted. Qwen's thinking is capped too (`thinking_budget`): unbounded it reasoned ~4,500 tokens
+A per-UTC-day ceiling in `[llm]` keeps a fixed credit lasting a known number of days; past it, ticks
+are logged with `llm_daily_cap` and the model is left unconsulted. The allowance is split by session
+(`max_calls_per_day` for pre-market, regular and after-hours; `max_calls_per_day_closed` for the
+quiet hours), because a single flat cap behaved badly: with a position held overnight the model
+reviewed every headline while nothing could be traded, and on three days running the whole day's
+budget was gone before 06:00 UTC, leaving the US session without a single decision. Qwen's thinking is capped too (`thinking_budget`): unbounded it reasoned ~4,500 tokens
 and took four minutes, long enough for the gate to be judging an order against stale prices.
 
 ### Data sources

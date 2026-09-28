@@ -192,11 +192,11 @@ class Agent:
             rec["llm"] = {"called": False, "reason": "us_market_closed_and_flat"}
         elif not worth_a_decision(events, a["whitelist"], holding=bool(portfolio.positions)):
             rec["llm"] = {"called": False, "reason": "no_tradable_events"}
-        elif (spent := budget.exhausted(budget.roll(self.budget, now), self.cfg.raw["llm"])):
+        elif (spent := budget.exhausted(budget.roll(self.budget, now), self.cfg.raw["llm"], session)):
             rec["llm"] = {"called": False, "reason": "llm_daily_cap", "detail": spent}
         else:
             llm = self.dm.decide(self._context(now, session, events, snap, portfolio))
-            budget.record(self.budget, llm.get("cost_usd"))
+            budget.record(self.budget, llm.get("cost_usd"), session)
             decision = llm.pop("decision")
             rec["llm"] = llm
             if llm.get("error"):
