@@ -19,7 +19,7 @@ from .perception import Perception
 from .risk import RiskBook, RiskContext, evaluate, forced_actions
 
 SCHEMA = "slimon.tick/v1"
-RECENT_N = 8
+RECENT_N = 4   # recent decisions and closed trades shown to the model; each costs input tokens
 FILLED_LIKE = {"filled", "partially_filled", "submitted", "new", "live", "would_submit"}
 
 

@@ -83,7 +83,10 @@ are logged with `llm_daily_cap` and the model is left unconsulted. The allowance
 quiet hours), because a single flat cap behaved badly: with a position held overnight the model
 reviewed every headline while nothing could be traded, and on three days running the whole day's
 budget was gone before 06:00 UTC, leaving the US session without a single decision. Qwen's thinking is capped too (`thinking_budget`): unbounded it reasoned ~4,500 tokens
-and took four minutes, long enough for the gate to be judging an order against stale prices.
+and took four minutes, long enough for the gate to be judging an order against stale prices. It now
+runs with thinking off (`thinking_budget = 0`), the cheapest setting on the only model the hackathon
+key can reach: ~350 output tokens and ~10s a call, against ~1,100 tokens and ~25s at a 1,000-token
+budget. Raise it again if decisions start to look shallow.
 
 ### Data sources
 

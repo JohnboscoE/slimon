@@ -26,8 +26,8 @@ provider = "qwen"                  # "qwen" (QWEN_API_KEY) or "anthropic" (ANTHR
 # days running, because an overnight position had the model reviewing every headline while nothing
 # could be traded, and the whole US session then ran without a decision. The quiet hours now have
 # their own small allowance and cannot spend the session's.
-max_calls_per_day = 80             # pre-market, regular and after-hours
-max_calls_per_day_closed = 12      # while the US market is shut (managing an overnight position)
+max_calls_per_day = 50             # pre-market, regular and after-hours
+max_calls_per_day_closed = 8       # while the US market is shut (managing an overnight position)
 max_cost_usd_per_day = 0.60        # only bites where the provider reports cost (Anthropic)
 
 [llm.qwen]
@@ -37,7 +37,10 @@ base_url = "https://hackathon.bitgetops.com/v1"
 # Unbounded, qwen3.8-max reasoned ~4,500 tokens per decision and took ~4 minutes: too slow for a
 # 5-minute tick, and the gate would judge the order against stale prices. A 1,000-token budget
 # measured ~30s with the same decision quality. 0 turns thinking off (~10s).
-thinking_budget = 1000
+# 0 turns thinking off: the cheapest setting on the only model this key can reach (the gateway
+# denies every smaller Qwen). It cut output from ~1,100 tokens a call to ~350 and latency from
+# ~25s to ~10s. Raise it to 1000 if decisions start looking shallow.
+thinking_budget = 0
 timeout_seconds = 120              # a slower call is abandoned and logged, never retried
 
 [llm.anthropic]
@@ -92,7 +95,7 @@ open_sessions = ["pre", "regular", "post"]   # no new positions overnight / week
 # trigger a decision. Each event says whether the market has confirmed it this tick.
 enabled = true
 max_age_minutes = 30               # only headlines published in the last half hour are new
-max_events_per_tick = 5            # held positions first, then tradable names, then the market
+max_events_per_tick = 3            # held positions first, then tradable names, then the market
 max_per_symbol = 2                 # so one busy name cannot crowd out the rest
 
 # A headline always spends a model call if it concerns a held position, the market has already
@@ -108,7 +111,7 @@ max_wakes_per_hour = 2
 # their original publication times and their age, so Monday's decision is taken knowing what
 # happened over the weekend. Older than this, they are dropped as history rather than news.
 carry_max_age_hours = 72
-max_carried_events = 10
+max_carried_events = 6
 trusted_publishers = ["Reuters", "Bloomberg", "Wall Street Journal", "WSJ", "Associated Press", "AP",
                       "CNBC", "Financial Times", "Dow Jones", "Barron's", "MarketWatch", "Yahoo Finance",
                       "Business Wire", "PR Newswire", "GlobeNewswire", "Federal Reserve"]
