@@ -36,6 +36,7 @@ USER_AGENT = "Mozilla/5.0 (compatible; slimon-agent/1.0; +https://github.com/Joh
 GOOGLE_NEWS = "https://news.google.com/rss/search?q={q}+when:1d&hl=en-US&gl=US&ceid=US:en"
 HEADLINE_CHARS = 200
 SEEN_KEEP = 800
+PENDING_KEEP = 60          # headlines held over a shut market before the oldest are dropped
 
 
 def _clean(text: str) -> str:
@@ -111,6 +112,46 @@ class NewsFeed:
         for feed in self.cfg.get("macro_feeds", []):
             out.append({"name": feed["name"], "url": feed["url"], "symbol": None,
                         "keywords": feed.get("keywords")})
+        return out
+
+    def _park(self, events: list[dict], now: datetime) -> None:
+        """Hold headlines that arrive while the market is shut until it opens again."""
+        pending = self.state.get("news_pending", [])
+        pending.extend(events)
+        cutoff = now - timedelta(hours=self.cfg.get("carry_max_age_hours", 72))
+        pending[:] = [e for e in pending if datetime.fromisoformat(e["source_ts"].replace("Z", "+00:00")) > cutoff]
+        del pending[: max(0, len(pending) - PENDING_KEEP)]
+
+    def _drain(self, now: datetime, held: set[str]) -> list[dict]:
+        """Everything that happened while the market was shut, re-presented at the first open tick.
+
+        The agent could not act on these when they arrived, and by Monday they are no longer new
+        enough for the freshness filter to pass them again. They keep their original publication
+        and receipt times, so the record still shows when the agent first learned of each one.
+        """
+        pending = self.state.get("news_pending", [])
+        if not pending:
+            return []
+        # A long outage, or a market shut for days, can leave items too old to be news any more.
+        cutoff = now - timedelta(hours=self.cfg.get("carry_max_age_hours", 72))
+        pending[:] = [e for e in pending
+                      if datetime.fromisoformat(e["source_ts"].replace("Z", "+00:00")) > cutoff]
+        ranked = sorted(pending, key=lambda e: (
+            0 if e["symbol"] in held else 1 if e["symbol"] else 2,
+            -datetime.fromisoformat(e["source_ts"].replace("Z", "+00:00")).timestamp(),
+        ))[: self.cfg.get("max_carried_events", 10)]
+        pending.clear()
+        out = []
+        for e in ranked:
+            published = datetime.fromisoformat(e["source_ts"].replace("Z", "+00:00"))
+            carried = {**e, "payload": {**e["payload"],
+                                        "carried_over": True,
+                                        "re_presented_at": iso(now),
+                                        "age_minutes": round((now - published).total_seconds() / 60, 1),
+                                        # It has earned a call: this is the first tick that could act on it.
+                                        "wakes_model": True}}
+            carried["summary"] = f"[while the market was shut] {e['summary']}"
+            out.append(carried)
         return out
 
     def poll(self, now: datetime, session: str, symbols: list[str], held: set[str],
@@ -194,7 +235,7 @@ class NewsFeed:
             subject = sym.removesuffix("USDT") if sym else "Market"
             by = f" ({it['publisher']})" if it["publisher"] else ""
             events.append({
-                "id": f"evt-news-{sym or 'mkt'}-{iid}",
+                "id": f"evt-news-{sym or 'mkt'}-{iid}",  # stable across a carry-over, so citations still resolve
                 "type": "news",
                 "symbol": sym,
                 "received_at": iso(now),
@@ -210,4 +251,15 @@ class NewsFeed:
                     "wakes_model": wakes_model,
                 },
             })
-        return events, status
+
+        # Nothing can be acted on while the US market is shut and the book is flat: the model is
+        # not even called. Park those headlines and hand them to the first tick that can trade,
+        # so Monday's decision is made knowing what happened over the weekend.
+        can_act = session != "closed" or bool(held)
+        if not can_act:
+            self._park(events, now)
+            status["parked"] = len(events)
+            return [], status
+        carried = self._drain(now, held)
+        status["carried_over"] = len(carried)
+        return carried + events, status

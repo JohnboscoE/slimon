@@ -97,6 +97,13 @@ max_per_symbol = 2                 # so one busy name cannot crowd out the rest
 # the day's model-call budget before the US open. The rest is still logged, and still read by the
 # model whenever something else wakes it.
 max_wakes_per_hour = 2
+
+# Headlines that arrive while the US market is shut and the book is flat cannot be acted on: the
+# model is not even called. They are held and re-presented at the first tick that can trade, with
+# their original publication times and their age, so Monday's decision is taken knowing what
+# happened over the weekend. Older than this, they are dropped as history rather than news.
+carry_max_age_hours = 72
+max_carried_events = 10
 trusted_publishers = ["Reuters", "Bloomberg", "Wall Street Journal", "WSJ", "Associated Press", "AP",
                       "CNBC", "Financial Times", "Dow Jones", "Barron's", "MarketWatch", "Yahoo Finance",
                       "Business Wire", "PR Newswire", "GlobeNewswire", "Federal Reserve"]

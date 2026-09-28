@@ -3,6 +3,7 @@ from datetime import datetime, timedelta, timezone
 from email.utils import format_datetime
 
 from slimon.agent import worth_a_decision
+from slimon.journal import iso
 from slimon.news import NewsFeed, parse_rss
 
 NOW = datetime(2026, 9, 21, 14, 0, tzinfo=timezone.utc)
@@ -122,6 +123,52 @@ class Polling(unittest.TestCase):
         many = rss(*((f"Nvidia headline number {i}", 2, None) for i in range(12)))
         nf = NewsFeed(cfg, StubState(), fetch=lambda url: many if "Nvidia" in url else rss())
         self.assertEqual(len(nf.poll(NOW, "regular", ["NVDAUSDT"], set(), [])[0]), 5)
+
+
+class NewsWhileTheMarketIsShut(unittest.TestCase):
+    """Weekend and overnight headlines are held, then decided on at the first tick that can trade."""
+
+    def nf(self, state, title="Nvidia announces a buyback", age=3):
+        return NewsFeed(CFG, state, fetch=lambda url: rss((title, age, "Reuters")) if "Nvidia" in url else rss())
+
+    def test_nothing_is_emitted_while_shut_and_flat(self):
+        state = StubState()
+        events, status = self.nf(state).poll(NOW, "closed", ["NVDAUSDT"], set(), [])
+        self.assertEqual(events, [])
+        self.assertEqual(status["parked"], 1)
+        self.assertEqual(len(state.data["news_pending"]), 1)
+
+    def test_it_comes_back_at_the_first_tradable_tick(self):
+        state = StubState()
+        self.nf(state).poll(NOW, "closed", ["NVDAUSDT"], set(), [])
+        monday = NOW + timedelta(days=2)
+        events, status = self.nf(state, title="Something else entirely", age=1).poll(
+            monday, "pre", ["NVDAUSDT"], set(), [])
+        carried = [e for e in events if e["payload"].get("carried_over")]
+        self.assertEqual(len(carried), 1)
+        e = carried[0]
+        self.assertIn("while the market was shut", e["summary"])
+        self.assertTrue(e["payload"]["wakes_model"])
+        self.assertEqual(e["source_ts"], iso(NOW - timedelta(minutes=3)))   # original publication time kept
+        self.assertEqual(e["payload"]["re_presented_at"], iso(monday))
+        self.assertGreater(e["payload"]["age_minutes"], 2800)               # and it says how old it is
+        self.assertEqual(status["carried_over"], 1)
+        self.assertEqual(state.data["news_pending"], [])                    # handed over once, not repeatedly
+
+    def test_a_held_position_gets_the_news_immediately_even_when_shut(self):
+        state = StubState()
+        events, status = self.nf(state).poll(NOW, "closed", ["NVDAUSDT"], {"NVDAUSDT"}, [])
+        self.assertEqual(len(events), 1)
+        self.assertFalse(events[0]["payload"].get("carried_over"))
+        self.assertEqual(state.data.get("news_pending", []), [])
+
+    def test_headlines_older_than_the_carry_window_are_dropped(self):
+        state = StubState()
+        self.nf(state).poll(NOW, "closed", ["NVDAUSDT"], set(), [])
+        much_later = NOW + timedelta(hours=80)   # past carry_max_age_hours (72)
+        events, _ = self.nf(state, title="Fresh item", age=1).poll(much_later, "pre", ["NVDAUSDT"], set(), [])
+        self.assertFalse([e for e in events if e["payload"].get("carried_over")])
+        self.assertEqual(state.data["news_pending"], [])
 
 
 class WhichHeadlinesSpendACall(unittest.TestCase):
