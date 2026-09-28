@@ -73,7 +73,7 @@
     "volume_spike|AAPLUSDT": "2026-09-28T19:55:15.000Z",
     "price_move|GOOGLUSDT": "2026-09-25T14:05:15.000Z",
     "volume_spike|CRCLUSDT": "2026-09-28T21:05:15.000Z",
-    "range_expansion|NDX100USDT": "2026-09-28T21:05:15.000Z",
+    "range_expansion|NDX100USDT": "2026-09-28T22:20:15.000Z",
     "volume_spike|NDX100USDT": "2026-09-28T21:05:15.000Z",
     "volume_spike|NVDAUSDT": "2026-09-28T19:55:15.000Z",
     "range_expansion|METAUSDT": "2026-09-28T12:35:15.000Z",
@@ -176,7 +176,6 @@
   },
   "macro_fired": [],
   "news_seen": [
-    "184a3db133df",
     "a0d0f9c720b3",
     "b31b43ba3768",
     "a36c9d62a0ac",
@@ -975,10 +974,11 @@
     "eb41b07206e2",
     "cf58534aaf78",
     "25a35853accb",
-    "22bf507e3c46"
+    "22bf507e3c46",
+    "474e2ac36f54"
   ],
   "news_wakes": [
-    "2026-09-28T21:05:15.000165+00:00",
-    "2026-09-28T21:10:15.000136+00:00"
-  ]
+    "2026-09-28T22:15:15.000142+00:00"
+  ],
+  "news_pending": []
 }
