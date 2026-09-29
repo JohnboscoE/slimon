@@ -8,15 +8,15 @@
       "AMZNUSDT": "2026-09-18T15:05:15.000Z",
       "METAUSDT": "2026-09-22T12:20:15.000Z"
     },
-    "day": "2026-09-28",
-    "day_start_equity": 50040.10489296,
+    "day": "2026-09-29",
+    "day_start_equity": 50028.89165223,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null
   },
   "llm_budget": {
     "day": "2026-09-28",
-    "calls": 43,
+    "calls": 46,
     "cost_usd": 0.0,
     "calls_closed": 0
   },
@@ -50,33 +50,33 @@
       "detected_at": "2026-09-25T10:20:15.000Z"
     }
   ],
-  "last_session": "post",
+  "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-09-28T21:05:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-09-28T21:25:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-09-28T21:10:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-09-28T22:40:15.000Z",
+    "volume_spike|METAUSDT": "2026-09-29T04:00:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-09-29T03:10:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-09-29T03:35:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-09-29T03:10:15.000Z",
     "us_regular_open|None": "2026-09-28T13:30:15.000Z",
-    "price_move|MSTRUSDT": "2026-09-28T19:40:15.000Z",
+    "price_move|MSTRUSDT": "2026-09-29T01:10:15.000Z",
     "price_move|CRCLUSDT": "2026-09-28T19:25:15.000Z",
     "us_regular_close|None": "2026-09-28T20:00:15.000Z",
     "volume_spike|SP500USDT": "2026-09-28T19:15:15.000Z",
     "volume_spike|MSTRUSDT": "2026-09-28T16:30:15.000Z",
-    "volume_spike|HOODUSDT": "2026-09-28T19:55:15.000Z",
+    "volume_spike|HOODUSDT": "2026-09-29T02:30:15.000Z",
     "volume_spike|COINUSDT": "2026-09-28T22:05:15.000Z",
     "price_move|HOODUSDT": "2026-09-28T14:45:15.000Z",
     "range_expansion|HOODUSDT": "2026-09-28T13:30:15.000Z",
     "range_expansion|GOOGLUSDT": "2026-09-28T13:30:15.000Z",
-    "range_expansion|SP500USDT": "2026-09-28T22:30:15.000Z",
+    "range_expansion|SP500USDT": "2026-09-29T03:15:15.000Z",
     "volume_spike|TSLAUSDT": "2026-09-28T21:15:15.000Z",
     "range_expansion|AAPLUSDT": "2026-09-28T13:30:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-09-28T19:55:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-09-29T03:50:15.000Z",
     "price_move|GOOGLUSDT": "2026-09-25T14:05:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-09-28T23:05:15.000Z",
-    "range_expansion|NDX100USDT": "2026-09-28T22:20:15.000Z",
-    "volume_spike|NDX100USDT": "2026-09-28T21:05:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-09-28T19:55:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-09-29T02:30:15.000Z",
+    "range_expansion|NDX100USDT": "2026-09-29T03:00:15.000Z",
+    "volume_spike|NDX100USDT": "2026-09-29T03:55:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-09-29T03:30:15.000Z",
     "range_expansion|METAUSDT": "2026-09-28T12:35:15.000Z",
     "range_expansion|TSLAUSDT": "2026-09-28T13:05:15.000Z",
     "price_move|COINUSDT": "2026-09-28T16:25:15.000Z",
@@ -95,69 +95,6 @@
   },
   "recent_decisions": [
     {
-      "tick_id": "20260928T134015",
-      "action": "NO_TRADE",
-      "instrument": "METAUSDT",
-      "confidence": 0.65,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T135515",
-      "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
-      "confidence": 0.65,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T140515",
-      "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
-      "confidence": 0.72,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T141515",
-      "action": "NO_TRADE",
-      "instrument": "GOOGLUSDT",
-      "confidence": 0.72,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T142515",
-      "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
-      "confidence": 0.72,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T223015",
-      "action": "NO_TRADE",
-      "instrument": "SP500USDT",
-      "confidence": 0.78,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260928T224015",
-      "action": "NO_TRADE",
-      "instrument": "GOOGLUSDT",
-      "confidence": 0.72,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
       "tick_id": "20260928T230515",
       "action": "NO_TRADE",
       "instrument": "NVDAUSDT",
@@ -165,38 +102,42 @@
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
+    },
+    {
+      "tick_id": "20260928T232015",
+      "action": "NO_TRADE",
+      "instrument": "NVDAUSDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260928T233515",
+      "action": "NO_TRADE",
+      "instrument": "TSLAUSDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260928T234515",
+      "action": "NO_TRADE",
+      "instrument": "NDX100USDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-09-28T22:50:18.634Z",
+  "last_log_commit_at": "2026-09-29T04:10:18.873Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "a4b4bfc0d18c",
-    "b439fc920c0c",
-    "cb3d31ffe27d",
-    "2a1b59a2729c",
-    "06f0a6591b06",
-    "e807f4d16057",
-    "8781e6cbe828",
-    "6e7867d3cb01",
-    "fd5fca3a20d2",
-    "805646167caa",
-    "5a989049dded",
-    "de2db55179a3",
-    "83dcd6497a0d",
-    "29f8729fb261",
-    "8d0b72d61a91",
-    "0e2cff4a9288",
-    "59f7af5e20e0",
-    "c9aef6fb9ec1",
-    "8e0eaa5024c5",
-    "0cd487df3dad",
-    "ef1f350a16db",
-    "80925ed71952",
-    "6c9b8fc537d0",
     "4e005ef10966",
     "9b8ac1b70c03",
     "b09b307827af",
@@ -973,11 +914,419 @@
     "8c0fb3839042",
     "f13479de9734",
     "141aaaf09c89",
-    "407ca54f68de"
+    "407ca54f68de",
+    "9677d1ffdca7",
+    "c45add7c2687",
+    "26955b4ca311",
+    "af9b0871a606",
+    "eb521da32e9a",
+    "a72f5ad8d9e1",
+    "882aeb81444a",
+    "2af0f33b5c6d",
+    "4fd96e05cac7",
+    "2523b1bdac6b",
+    "617b97ae12e6",
+    "1b0770960ff8",
+    "b53be3610698",
+    "353a40cf01f6",
+    "d062fe27632e",
+    "c729bd4f36da",
+    "0a043707e804",
+    "77ba38e3358a",
+    "ef18901c42ab",
+    "ec8b9ba8d932",
+    "4c2b58b02605",
+    "4ad1d3313834",
+    "32f535aa988d"
   ],
   "news_wakes": [
-    "2026-09-28T22:15:15.000142+00:00",
-    "2026-09-28T22:30:15.000122+00:00"
+    "2026-09-29T03:15:15.000138+00:00",
+    "2026-09-29T03:55:15.000120+00:00"
   ],
-  "news_pending": []
+  "news_pending": [
+    {
+      "id": "evt-news-METAUSDT-eb521da32e9a",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T00:05:15.000Z",
+      "source_ts": "2026-09-28T23:48:20.000Z",
+      "session": "closed",
+      "summary": "META news (Stock Titan): Mark Zuckerberg reports 17,140 shares converted and 27,474 sold at Meta Platforms (META).",
+      "payload": {
+        "headline": "Mark Zuckerberg reports 17,140 shares converted and 27,474 sold at Meta Platforms (META).",
+        "publisher": "Stock Titan",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNcnJwQXR1Y1oyUkdTVWlEQUVsejk4UWJtdkZGdk1mNE5XbEZPcy05amJ2Z2dzWHRNbGY5ckdqdmlDZ2JLRFhvbmxlQVJFQVhpUDJhUnFlYVJxN3NMOUk5Ujc3MVNzSzJiUlBiVWU5UEFPRVUwdjUyRDBGRDJ6N2hHNktqMjRoVmZyNFM2RjFRZ3ZRYWdDTTUyaGlMOVFrblJidlRvVUctTHd6MnZHd3luQjNn?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-28T23:48:20.000Z",
+        "age_minutes": 16.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-a72f5ad8d9e1",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T00:25:15.000Z",
+      "source_ts": "2026-09-29T00:18:00.000Z",
+      "session": "closed",
+      "summary": "META news (Investing.com UK): Meta platforms CEO Mark Zuckerberg sells $21.36m in stock By Investing.com",
+      "payload": {
+        "headline": "Meta platforms CEO Mark Zuckerberg sells $21.36m in stock By Investing.com",
+        "publisher": "Investing.com UK",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPNlU4MTF5bDZwaHBaX1RDNks0UHA5X21kbHROM2FtZ1lDaEdLX0ozUTY3SHlGa2s3M2JadmM3Y1NwZ0NsREg3emd5ZHdJTG5JeEZrZ19JNkp5NHFLYkg1TlJ2aGZNU1BaOHNTY01RUUlfbGhhcnNWMGhxNndZUk83NTQwanJWdV9TV3A5aXFDU2YtNHhYdlBEdEUzaEgxY2ZhenhDNEhjaDFvQkU1UmtsZk15bEZ2YmM?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T00:18:00.000Z",
+        "age_minutes": 7.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-2af0f33b5c6d",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T00:30:15.000Z",
+      "source_ts": "2026-09-29T00:25:21.000Z",
+      "session": "closed",
+      "summary": "META news (Investing.com India): Form 4 Meta Platforms Inc For: 28 September By Investing.com",
+      "payload": {
+        "headline": "Form 4 Meta Platforms Inc For: 28 September By Investing.com",
+        "publisher": "Investing.com India",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQMTFwUjZmQVBFcXEtT0d2ckt4blpUMU9QRWE2RHIyckxOSkNtcFNaaE14UzRWZDRWNG5Rc3pEVWVLNGR6YnZzeWxZM0V5RTlDRFlFVEE5X0x4X1RNWjZRdmg0SnZ4NDltdmhCQUVLR19KbzRCYzY4UU1MVl90bUdPY1AwRUZpa2hMOGR0cFlEYnk4ZmhZaGxFemdFdlVvWGxuUWhUNTJR?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T00:25:21.000Z",
+        "age_minutes": 4.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-882aeb81444a",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-09-29T00:30:15.000Z",
+      "source_ts": "2026-09-29T00:15:31.000Z",
+      "session": "closed",
+      "summary": "NVDA news (cnet.com): Nvidia\u2019s $150 Billion Buyback: A Lifeline for AI Hype, Not Everyday Investors",
+      "payload": {
+        "headline": "Nvidia\u2019s $150 Billion Buyback: A Lifeline for AI Hype, Not Everyday Investors",
+        "publisher": "cnet.com",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNeEtIWHZ6VVg2WE5lc05nZ3lINnlvWGFyMzFqRV9JM0Iwakd4dks3TDh3R0VRelFpckkzTmFKdDF5YXUwcG94UHIycTZHMldjSGJ0ZEdYRkRxY2hKVjBwY1VlTmJUUDJvOXk3SGNscThlSkJIUzBWaFNQNXR0TGNPODM1bXhHUUVXU3dIZldsRnpTVDNPQXJfejVyTGwxX3JXU0ctU09sTmlhUQ?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-09-29T00:15:31.000Z",
+        "age_minutes": 14.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-2523b1bdac6b",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T01:05:15.000Z",
+      "source_ts": "2026-09-29T01:01:33.000Z",
+      "session": "closed",
+      "summary": "META news (shattered.io): Meta Muse Downloads Hit 2.8M, Beat ChatGPT\u2019s Pace [2026]",
+      "payload": {
+        "headline": "Meta Muse Downloads Hit 2.8M, Beat ChatGPT\u2019s Pace [2026]",
+        "publisher": "shattered.io",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1ZTUprVWFERVhaN0Jodm9oN0dLcHdnX3ZzZUhOVDdfQklTVzB3a2hoY1ZwbW5UcWtqN3Y2Z0dXdUpwMTJFdWJvX1VDNVNvWmZOVDQyRXZiaUoxNHI3ZVprUnljXzI1U2VySUFxemdtSDRhU0hOcmhOWE9Ucw?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T01:01:33.000Z",
+        "age_minutes": 3.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-4fd96e05cac7",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T01:05:15.000Z",
+      "source_ts": "2026-09-29T00:37:53.000Z",
+      "session": "closed",
+      "summary": "META news (Investing.com): Meta platforms CEO Mark Zuckerberg sells $21.36m in stock",
+      "payload": {
+        "headline": "Meta platforms CEO Mark Zuckerberg sells $21.36m in stock",
+        "publisher": "Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxObkJKZFF3LWdZT3A5WFFhQXZiSHFHX21SUnBpWkVEMnBIbHpSWGRqSHBBS0JYalFzUHFyRzZMZDdSZkMyck9zWEtaNWlrVkJzU3ZqQXhsd24zbzcxRkJIQjh2d3I3MXA1a0tPWEhYUURqdV9LQUNOU0tDLXdYcWFQQWJPVDJ0NU40d2VLdlBQZEJpUXFYd2EzamIwcWRRcHNERW00enYyNVFNaHRWOVhHMVJpcG1QR1N1eWlQYg?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T00:37:53.000Z",
+        "age_minutes": 27.4,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-617b97ae12e6",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-09-29T01:25:15.000Z",
+      "source_ts": "2026-09-29T01:20:17.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Benzinga): MDB, KOD, NVTS, BA, NVDA: 5 Trending Stocks Today - NVIDIA (NASDAQ:NVDA)",
+      "payload": {
+        "headline": "MDB, KOD, NVTS, BA, NVDA: 5 Trending Stocks Today - NVIDIA (NASDAQ:NVDA)",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxNMTdnaEZ0S0YwamZ6bTVxZFJKdzZiaG1RbENxVGVpWXlMVXY2ZWU0b3VxN3hzb2ZCVlBTajg4eDNocHNic3BNdEVYa2l5bVZ0UldGX2trbW5ibWEwN2V1NVdxajBLMGNPTlc2QnA4YWRxRHBiU05icWNLQjFaRUVscDY5ei10cnk1RERxN0xRLVc0VkZGWWh0SU4xWG1PNE10OGlXM255OXdKS3BiS2lRSGhJSDE4SnVaUGxVNnc2aUw3aEU5N1c0QkdtNnRhbnJqYy16Uk9QbDNHOW5NRkY0SXBIdFdDRm1VU0lTbnl3d0tKQ2ZtSHk5MUk0cGNwQQ?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-09-29T01:20:17.000Z",
+        "age_minutes": 5.0,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-1b0770960ff8",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T01:50:15.000Z",
+      "source_ts": "2026-09-29T01:46:13.000Z",
+      "session": "closed",
+      "summary": "META news (fool.com): Meta Hasn't Split Its Stock Since Its IPO. Would a Stock Split Get It Into the Dow?",
+      "payload": {
+        "headline": "Meta Hasn't Split Its Stock Since Its IPO. Would a Stock Split Get It Into the Dow?",
+        "publisher": "fool.com",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQZHFGejhqUnI2aUlWeWNiNTJaTWpURUlBWC1ONzZhTDhfV25vYzJRX0dNQzNoV01tN1hWQ0FBZXRiTzRPemdNVWduNXZlQWRXSWg3M0lNY3l4SWFIZ0RfWVp4RlhXamx2eHVvdTZHcm9qUi1abHFGQ0I5RTJEMEhLWGdhc2Z2ZXZsQ2M1NjA0Yk9zOHlQX0VweUoyU25WQkphV0NFcmRCcFhMaDVZd1ZqX1JVbVFmeWZ1MzZERjVmanU1UQ?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T01:46:13.000Z",
+        "age_minutes": 4.0,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-b53be3610698",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-09-29T01:55:15.000Z",
+      "source_ts": "2026-09-29T01:49:56.000Z",
+      "session": "closed",
+      "summary": "AMZN news (kobaran.com): Amazon stock slips 1.4% Monday, yet technical rating improves from Sell to Hold",
+      "payload": {
+        "headline": "Amazon stock slips 1.4% Monday, yet technical rating improves from Sell to Hold",
+        "publisher": "kobaran.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQVjh6Y09SdlFrTk92eE1vS0hiOTJiSWFSYmxHT0FfNUF0TnhuSzVnOXhWZFNvRTAwTVppZEFuNzZFRnFmdDRSZ1RRdk1TNG5xY1M2cDhyZE1mR2dPRkJrNFRMMlVKZ1lFNVJ5MVFDNm1rWlQ2NU45XzVMTkdVeHNnWm80N2pFeUE4WEVVRmg0WERYREFLUFdLVWRGb2NRM2RDcWJ6cA?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-09-29T01:49:56.000Z",
+        "age_minutes": 5.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-353a40cf01f6",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T02:05:15.000Z",
+      "source_ts": "2026-09-29T02:01:46.000Z",
+      "session": "closed",
+      "summary": "META news (GreekReporter.com): Mark Zuckerberg Loses Nearly $10 Billion as Meta Shares Slide",
+      "payload": {
+        "headline": "Mark Zuckerberg Loses Nearly $10 Billion as Meta Shares Slide",
+        "publisher": "GreekReporter.com",
+        "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5JWEZtb1hDSDB1eElsSy1vVGJ1RzNYazR2Mm54NTZwMG9FeklZM3hiQVV4T2pRMjc4bGE2enV5bDVJZTJIMkRvTzVDY0lBTWhfRFcydEUyWUdmWnZNQ0RXck1rMkpuTDVTdW5kVGJFdDZIcXdjZTV1WUNtY3RMQQ?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T02:01:46.000Z",
+        "age_minutes": 3.5,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-d062fe27632e",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-09-29T02:05:15.000Z",
+      "source_ts": "2026-09-29T02:00:00.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (Seeking Alpha): Alphabet: Buy Before It Cashes In On Its TPUs (NASDAQ:GOOGL)",
+      "payload": {
+        "headline": "Alphabet: Buy Before It Cashes In On Its TPUs (NASDAQ:GOOGL)",
+        "publisher": "Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPa0ZOZWlzeEEzZ0hnaEs0QmI3Tnk1SmY4azBFQlBJeDd4VkNGd2k0ZzJhcmNqUnRFNG5MNkZDYVZnSlNQTnpTVC1lRjFiQlV6Z1RQYTJvcU5Mbl9Cc2FjX24zUGlSWUh0Ym1BTHM0UUd6R3pzc0F3SjNyNnFEbXlyTmpNaV9nT3FzbFdjRVpGUDdVV1Nrbmc?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-09-29T02:00:00.000Z",
+        "age_minutes": 5.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-c729bd4f36da",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-09-29T02:10:15.000Z",
+      "source_ts": "2026-09-29T02:02:51.000Z",
+      "session": "closed",
+      "summary": "TSLA news (kobaran.com): Tesla Stock Falls 3.9% for Third Straight Loss as Technical Rating Drops to Sell",
+      "payload": {
+        "headline": "Tesla Stock Falls 3.9% for Third Straight Loss as Technical Rating Drops to Sell",
+        "publisher": "kobaran.com",
+        "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPbExoMzZxSHBTQlJ4VEc3SGxOOTlxOURqNURFT3FNX3FSdXpIUnBOVTlmNGs4OEQya0Z5bnp5Sjdfemh6R3d5MTVnREVWR3NQZVRGeTR6TUUzLV9sdWNyeHBta3B5Z1lPVzc5bWh6RFVUQjVOS3QtVGE4cXhmVWtldVppVTJYREZMcTJpSk8wWk90clZSaTl1ZDFfNUUwY1dTSGN6WGktQQ?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-09-29T02:02:51.000Z",
+        "age_minutes": 7.4,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-77ba38e3358a",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-09-29T02:20:15.000Z",
+      "source_ts": "2026-09-29T02:17:43.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (Pluang): Alphabet's AI-driven growth and $514B backlog boost revenue outlook despite EU regulatory risks",
+      "payload": {
+        "headline": "Alphabet's AI-driven growth and $514B backlog boost revenue outlook despite EU regulatory risks",
+        "publisher": "Pluang",
+        "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5fUEJHa2Z0eUFUbHFfcHducGlxVlNlNV9GVzlPZmFOQnBNbXZjYk1OQUlBUEptdFNFeVB5cjdaN21pWFJad2R5VkFMWmNhZVlzTXBqbWw4SU8yMWpoVkV5dFgwWl8zd01pQnQ4UDFPZ2ZIYnc?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-09-29T02:17:43.000Z",
+        "age_minutes": 2.5,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-0a043707e804",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-09-29T02:20:15.000Z",
+      "source_ts": "2026-09-29T02:17:27.000Z",
+      "session": "closed",
+      "summary": "NVDA news (marketbeat.com): NVIDIA (NASDAQ:NVDA) Announces Stock Repurchase Program",
+      "payload": {
+        "headline": "NVIDIA (NASDAQ:NVDA) Announces Stock Repurchase Program",
+        "publisher": "marketbeat.com",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQWkoyeGhxTVBaazF5UEZSMVZyRl9zcHdBd0VsVTlUMXhTcWU4QkdGbUVET1RYQ2JON0Q3bGs4U19Gdk5BUGc4YmtYTlN2LXZKcWtxQVE4dTY2X0h2LTZQbTkteGkwZXplX2Q2dkhtNFRheE50TzJDNGtuTnZvb3JHa19vVGJnQkpIdTIwU3pfVWdVN010aVZybUlYcm1FTmhtQ2hCSTlFb2FKRGpBU1ZPTzliNkhDdw?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-09-29T02:17:27.000Z",
+        "age_minutes": 2.8,
+        "held_position": false,
+        "market_confirmation": [
+          "NVDAUSDT 5m volume 8.1x median"
+        ],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-ef18901c42ab",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-09-29T02:40:15.000Z",
+      "source_ts": "2026-09-29T02:38:06.000Z",
+      "session": "closed",
+      "summary": "NVDA news (FXLeaders): NVDA Stock Closes Under $130 after Failing Below Highs Again Despite Nvidia Authorizes $150 Billion Share Buyback Increase",
+      "payload": {
+        "headline": "NVDA Stock Closes Under $130 after Failing Below Highs Again Despite Nvidia Authorizes $150 Billion Share Buyback Increase",
+        "publisher": "FXLeaders",
+        "url": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQR0JxWi04RlhKMXE4bEhuSHFVT3RFLU93bElONFVtVnJoV0EwQXhZTzN3WnBuOHlRNG9VVVVOQXFmM1EwQTNaWGVHeDJEWFRpVHg2NDhhdmZLZWFsZjhrNXR3NHIxb3M1T3FndFNHLWt6NlVHNzV1SVo0dmozYllwUVZkcGt0Q0hhNkUxemdVNlQ5RnhGaEJCZ0hJZERLV1FUNFdqRXlPc3BtYUY1d3FWQU5KdnpnRmNhTENOR3FEc1B2dTdTeVJVaVZ1TlhKMVEzRkxzcW1DaWNVNElEaVF1TFJQcGdLMTFGRWxpMkZ5UktZdjZSZXc?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-09-29T02:38:06.000Z",
+        "age_minutes": 2.2,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-ec8b9ba8d932",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-09-29T02:45:15.000Z",
+      "source_ts": "2026-09-29T02:43:06.000Z",
+      "session": "closed",
+      "summary": "META news (FXLeaders): Meta Stock Heads to $700 as OpenAI Agent Threatens Muse Momentum",
+      "payload": {
+        "headline": "Meta Stock Heads to $700 as OpenAI Agent Threatens Muse Momentum",
+        "publisher": "FXLeaders",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPYmR0S3Z5S2pPa0RRQ3BRakMxU2ZNT2EyWWZmdUJiQ01oc2xXdGt2ekZ2Qlh0b0wyUmhZWDZZQ29FeVZ3V05ENkdtUzVkODZrVm9FamVOWGJWWTZUeEpqdXZQamxBZDFiRloyb1ZpTTZfN0N5QTlXU1huQllCakxSNnVUZDViaEpxeHJucmc0cXBoTzBJcmcwOWEwdUVSN2l1NU5rNG1VemNKUQ?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-09-29T02:43:06.000Z",
+        "age_minutes": 2.2,
+        "held_position": false,
+        "market_confirmation": [
+          "METAUSDT 5m volume 5.6x median"
+        ],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-4c2b58b02605",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-09-29T03:15:15.000Z",
+      "source_ts": "2026-09-29T02:51:00.000Z",
+      "session": "closed",
+      "summary": "TSLA news (Investor's Business Daily): Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Sell Off",
+      "payload": {
+        "headline": "Dow Jones Futures: Trump Sparks Stock Market Losses; Elon Musk-Led SpaceX, Tesla Sell Off",
+        "publisher": "Investor's Business Daily",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQWWk2YThmRWdIMTQ0SWMxNEVnQ2haSFBKXzZqT0JmbG9rQ05DN2FoeU12RXJfb0Zjdm1jN3R2dWw2MGVlWFA3dUF3bGoyOGF6Vm55VWdsNWF5czlLVnlxZV9CUzZfLVNfakdnRnEwM25OaE9wTXFxanFHNXJOb3ZLdUdrdkdTTjJfdkVPT1h5UlR6dGpHSFFqc0N5UlVKNG9KNWsxMGhnZVJiVHJxZDI4YUt4MllQdktvX1JNM05ESUZ5cWM?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-09-29T02:51:00.000Z",
+        "age_minutes": 24.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-4ad1d3313834",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-09-29T03:40:15.000Z",
+      "source_ts": "2026-09-29T03:34:55.000Z",
+      "session": "closed",
+      "summary": "NVDA news (The Korea Daily): Nvidia stock buyback \u2014 Record-Breaking $150 Billion Plan Revealed",
+      "payload": {
+        "headline": "Nvidia stock buyback \u2014 Record-Breaking $150 Billion Plan Revealed",
+        "publisher": "The Korea Daily",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBJcks1SlBBWW94MXhSN29BVVE0R3g3TUpTc1JZZm8yQ0RwbDZKdTFXRlliREhCNXYzTFRvRHBOUTNfT1dhdGxxaW9CM2NTcGFDLXdTLXRmY0FvVmp3X0pfRXVn?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-09-29T03:34:55.000Z",
+        "age_minutes": 5.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-32f535aa988d",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-09-29T03:55:15.000Z",
+      "source_ts": "2026-09-29T03:52:37.000Z",
+      "session": "closed",
+      "summary": "TSLA news (Stocktwits): TSLA Stock Slides As Retail Turns Cautious Ahead Of Q3 Deliveries \u2014 But Musk\u2019s Terafab Is Moving Fast",
+      "payload": {
+        "headline": "TSLA Stock Slides As Retail Turns Cautious Ahead Of Q3 Deliveries \u2014 But Musk\u2019s Terafab Is Moving Fast",
+        "publisher": "Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQbExPOG1FUkduOFhoQktDVFZqT1Z4RHd6Y1pzMzdUN1JnQVpKLTlTMXpoOUlfa1lnc3pWb2NDQkVWclBBWjdTTl9zLWlSVmZxMjcxdHUybU9lekFGUWRnTkw3Q2RVME94RWU0WXhHNUhjd25qSmw1VVUwRGFSVFVBXzBINGVxMU1IeGF6Q1ZwOEo1Z20xenNTbHEtbVZ6Zm9kVGUwYWNBZGlTenpYZXdHQnM4c2NmWV9NalRQQ0c3ZWwwSWRyQjQ1QQ?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-09-29T03:52:37.000Z",
+        "age_minutes": 2.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    }
+  ]
 }
