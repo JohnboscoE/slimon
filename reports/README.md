@@ -51,12 +51,40 @@ Each open paired with the close that followed it: `opened` / `closed`, `entry` /
 `gross_pnl_usdt`, `fees_usdt`, `net_pnl_usdt`, `return_pct`, and `closed_by` — whether the model
 decided to close, or the risk gate forced it (hard stop, take profit, maximum holding time).
 
-### `summary.json` — headline figures
+### `summary.json` - headline figures
 
 Period covered, ticks, decisions, risk-gate verdicts (`PASS` / `VETO` / `NO_ACTION`), orders filled,
-round trips and how many won, net closed PnL, fees, turnover, start and end equity, and maximum
-drawdown. `orders_filled` counts every fill, including closes the risk gate forced on its own, so it
-can exceed the number of orders the model originated.
+net closed PnL, fees, turnover, start and end equity, and the three performance statistics the track
+is judged on:
+
+| Field | How it is computed |
+|---|---|
+| `max_drawdown_pct_live` | Largest peak-to-trough fall in account equity, sampled at every tick of the live demo period |
+| `win_rate_pct` | `winning_trips` / `round_trips`, where a win is `net_pnl_usdt > 0` — that is, after both fees |
+| `sharpe_annualised_live` | Mean over standard deviation of **daily** equity returns, annualised by the square root of 252, at a zero risk-free rate. Reported with `sharpe_observation_days`, the number of daily returns behind it |
+
+A day's equity mark is its last reading, and days the agent did not run are skipped rather than
+carried forward, so a gap spans to the next day present instead of contributing zero returns that
+would understate volatility.
+
+`daily_return_mean_pct` and `daily_return_stdev_pct` are the Sharpe's own inputs, published so the
+figure can be checked rather than taken on trust.
+
+**Read the Sharpe with its observation count in view, and do not read it as a track record.** Two
+weeks of daily marks on a book this lightly exposed produces a very small denominator: the gate caps
+one position at 15% of equity and everything open at 40%, equity has moved less than a quarter of a
+percent end to end, and maximum drawdown is under 0.2%. Annualising a mean that small over a standard
+deviation that small by the square root of 252 yields a large number for arithmetic reasons, not
+because the strategy has demonstrated a large risk-adjusted return. The honest summary of the
+performance so far is the one in `round_trips.csv`: seven closed positions, two of them winners, and
+a **negative** net realised PnL. Equity is nonetheless slightly up because it marks an open position
+to market, and that single unrealised winner drives most of the Sharpe. Thirteen daily observations
+and seven round trips cannot support an inference either way.
+
+`orders_filled` counts every fill, including closes the risk gate forced on its own (a hard stop,
+take profit or maximum holding time), so it can exceed the number of orders the model originated.
+That is why the count here can sit one above the executed-trade count on the replay site, which
+counts only the model's own passed decisions.
 
 ## What the log holds that these files flatten
 

@@ -17,10 +17,15 @@
  "orders_filled": 17,
  "round_trips": 7,
  "winning_trips": 2,
+ "win_rate_pct": 28.57,
  "net_pnl_closed_usdt": -28.2501,
  "fees_usdt": 11.5928,
  "turnover_usdt": 19321.38,
  "equity_start_live": 49953.0411,
  "equity_end_live": 50043.7723,
- "max_drawdown_pct_live": -0.1667
+ "max_drawdown_pct_live": -0.1667,
+ "sharpe_annualised_live": 6.2694,
+ "sharpe_observation_days": 13,
+ "daily_return_mean_pct": 0.01574,
+ "daily_return_stdev_pct": 0.03985
 }

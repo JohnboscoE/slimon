@@ -380,7 +380,7 @@ export default function Home() {
 
       <footer className="border-t px-5 py-10 sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Slimon · Built for Bitget AI Base Camp Hackathon S2, Track 2: Agentic Trading.</p>
+          <p>Slimon · Bitget AI Base Camp Hackathon S2 · Track 2: Agentic Trading · Event-Driven Agent.</p>
           <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <a href={REPO} target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">
               Source

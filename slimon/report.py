@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import csv
 import json
+import statistics
 from collections import defaultdict
 from pathlib import Path
 
@@ -96,6 +97,34 @@ def round_trips(trades: list[dict]) -> list[dict]:
     return out
 
 
+def daily_returns(eq: list[tuple[str, float]]) -> list[float]:
+    """Simple returns between the last equity reading of each UTC day.
+
+    Equity is sampled once per tick, so a day's closing mark is just its final reading. Days the
+    agent did not run are absent rather than carried forward, so a gap spans to the next day present
+    instead of printing a run of zero returns that would flatter the volatility.
+    """
+    by_day: dict[str, float] = {}
+    for ts, e in eq:
+        by_day[ts[:10]] = e
+    series = [by_day[d] for d in sorted(by_day)]
+    return [series[i] / series[i - 1] - 1 for i in range(1, len(series)) if series[i - 1]]
+
+
+def sharpe(returns: list[float], periods_per_year: int = 252) -> float | None:
+    """Annualised Sharpe on a zero risk-free rate, or None when there is too little to compute one.
+
+    Reported alongside its observation count on purpose: over a fortnight of daily marks this is a
+    descriptive statistic, not a track record, and it should be read with the sample size in view.
+    """
+    if len(returns) < 2:
+        return None
+    sd = statistics.stdev(returns)
+    if not sd:
+        return None
+    return round(statistics.fmean(returns) / sd * (periods_per_year ** 0.5), 4)
+
+
 def summary(rows: list[dict]) -> dict:
     trades = fills(rows)
     trips = round_trips(trades)
@@ -111,16 +140,22 @@ def summary(rows: list[dict]) -> dict:
         max_dd = min(max_dd, (e / peak - 1) * 100)
     filled = [t for t in trades if t["status"] in FILLED]
     wins = [t for t in trips if t["net_pnl_usdt"] > 0]
+    rets = daily_returns(eq)
     return {
         "log_period": (rows[0]["ts"], rows[-1]["ts"]) if rows else None,
         "live_demo_period": (eq[0][0], eq[-1][0]) if eq else None,
         "ticks": len(rows), "decisions": len(dec), "verdicts": dict(verdicts),
         "orders_filled": len(filled), "round_trips": len(trips), "winning_trips": len(wins),
+        "win_rate_pct": round(len(wins) / len(trips) * 100, 2) if trips else None,
         "net_pnl_closed_usdt": round(sum(t["net_pnl_usdt"] for t in trips), 4),
         "fees_usdt": round(sum(t["fee_usdt"] or 0 for t in filled), 4),
         "turnover_usdt": round(sum(t["notional_usdt"] or 0 for t in filled), 2),
         "equity_start_live": eq[0][1] if eq else None, "equity_end_live": eq[-1][1] if eq else None,
         "max_drawdown_pct_live": round(max_dd, 4),
+        "sharpe_annualised_live": sharpe(rets), "sharpe_observation_days": len(rets),
+        # The Sharpe's own inputs, so the figure can be checked rather than taken on trust.
+        "daily_return_mean_pct": round(statistics.fmean(rets) * 100, 5) if rets else None,
+        "daily_return_stdev_pct": round(statistics.stdev(rets) * 100, 5) if len(rets) > 1 else None,
         "trips": trips,
     }
 
