@@ -1,7 +1,7 @@
-"""Paper-trading report: a flat record of every order that reached the venue, and the headline
-numbers, rebuilt from the decision log alone.
+"""Paper-trading report: a flat record of every order that reached the venue, the realised
+result of every closed position, and the headline numbers, rebuilt from the decision log alone.
 
-  python -m slimon report      writes reports/paper_trades.csv and prints the summary
+  python -m slimon report      writes reports/paper_trades.csv, round_trips.csv, summary.json
 
 Nothing here is hand-entered: every row and figure is derived from logs/decisions/*.jsonl, so
 anyone with the repository can regenerate it and check it against the raw records.
@@ -19,6 +19,9 @@ from .config import LOG_DIR, ROOT
 FIELDS = ["timestamp_utc", "tick_id", "instrument", "action", "direction", "position_side", "price",
           "quantity", "notional_usdt", "fee_usdt", "status", "client_oid", "decided_by", "reason",
           "equity_before_usdt", "equity_after_usdt", "balance_change_usdt"]
+
+TRIP_FIELDS = ["instrument", "side", "opened", "closed", "entry", "exit", "quantity",
+               "gross_pnl_usdt", "fees_usdt", "net_pnl_usdt", "return_pct", "closed_by"]
 
 # Statuses where the order was actually filled on the venue (not merely would-submit or rejected).
 FILLED = {"filled", "partially_filled"}
@@ -133,10 +136,17 @@ def main() -> int:
         w.writerows(trades)
     s = summary(rows)
     trips = s.pop("trips")
+    with (out_dir / "round_trips.csv").open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=TRIP_FIELDS)
+        w.writeheader()
+        w.writerows(trips)
+    with (out_dir / "summary.json").open("w", encoding="utf-8") as f:
+        print(json.dumps(s, indent=1, default=str), file=f)
     print(json.dumps(s, indent=1, default=str))
     print("\nround trips:")
     for t in trips:
         print(f"  {t['instrument']:<11} {t['side']:<5} {t['opened'][:16]} -> {t['closed'][:16]}  "
               f"{t['entry']} -> {t['exit']}  net {t['net_pnl_usdt']:+.4f} USDT ({t['return_pct']:+.3f}%)  by {t['closed_by']}")
-    print(f"\nwrote {out_dir / 'paper_trades.csv'} ({len(trades)} rows)")
+    print(f"\nwrote {out_dir / 'paper_trades.csv'} ({len(trades)} rows), "
+          f"{out_dir / 'round_trips.csv'} ({len(trips)} rows) and {out_dir / 'summary.json'}")
     return 0

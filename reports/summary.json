@@ -1,0 +1,26 @@
+{
+ "log_period": [
+  "2026-09-11T18:20:15.000Z",
+  "2026-10-01T01:15:15.000Z"
+ ],
+ "live_demo_period": [
+  "2026-09-18T04:25:15.000Z",
+  "2026-10-01T01:15:15.000Z"
+ ],
+ "ticks": 3710,
+ "decisions": 432,
+ "verdicts": {
+  "NO_ACTION": 403,
+  "VETO": 12,
+  "PASS": 17
+ },
+ "orders_filled": 17,
+ "round_trips": 7,
+ "winning_trips": 2,
+ "net_pnl_closed_usdt": -28.2501,
+ "fees_usdt": 11.5928,
+ "turnover_usdt": 19321.38,
+ "equity_start_live": 49953.0411,
+ "equity_end_live": 50043.7723,
+ "max_drawdown_pct_live": -0.1667
+}

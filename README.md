@@ -173,11 +173,21 @@ The replay reads `../logs` by default; set `SLIMON_LOG_DIR` to point it at anoth
 
 ## Paper-trading record
 
-[`reports/paper_trades.csv`](reports/paper_trades.csv) lists every order that reached the demo
-venue: timestamp, instrument, action, direction, price, quantity, notional, fee, client order ID,
-who decided it (model or risk gate) and why, and account equity before and after. It is rebuilt
-from the decision log alone by `python -m slimon report`, which also prints the round trips and
-headline figures, and the agent loop regenerates it whenever it commits.
+Three files, all rebuilt from `logs/decisions/*.jsonl` alone by `python -m slimon report`
+([`slimon/report.py`](slimon/report.py)). Nothing is hand-entered, and the agent loop regenerates
+all three whenever it commits, so they never lag the log.
+
+| File | What it holds |
+|---|---|
+| [`reports/paper_trades.csv`](reports/paper_trades.csv) | One row per order that reached the demo venue: **timestamp, instrument, direction, price, quantity** and **account balance change**, plus the action, position side, notional, fee, status, client order ID, who decided it (model or risk gate) and why |
+| [`reports/round_trips.csv`](reports/round_trips.csv) | One row per closed position: entry and exit time and price, quantity, gross and net PnL in USDT, fees, return %, and which side closed it |
+| [`reports/summary.json`](reports/summary.json) | The headline figures: period covered, ticks, decisions, gate verdicts, orders filled, round trips and wins, net closed PnL, fees, turnover, start and end equity, max drawdown |
+
+On the balance column: `equity_before_usdt` and `equity_after_usdt` are the account equity read
+from the venue before and after that order, and `balance_change_usdt` is their difference. On an
+open that difference is mostly the fee; on a close it carries the realised PnL. It is equity, so
+it also moves with any other position still open at that tick — for the clean per-trade result,
+read `net_pnl_usdt` in `round_trips.csv`.
 
 ## Demo video
 
