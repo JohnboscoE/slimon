@@ -17,10 +17,10 @@
     "halt_reason": null
   },
   "llm_budget": {
-    "day": "2026-09-29",
-    "calls": 50,
+    "day": "2026-09-30",
+    "calls": 0,
     "cost_usd": 0.0,
-    "calls_closed": 0
+    "calls_closed": 8
   },
   "positions_last_tick": {
     "AAPLUSDT": {
@@ -69,39 +69,39 @@
   "last_session": "closed",
   "position_reviews": {
     "AAPLUSDT": {
-      "last_at": "2026-09-29T22:35:15.000Z",
+      "last_at": "2026-09-30T02:35:15.000Z",
       "band": 1
     }
   },
   "event_last": {
-    "volume_spike|METAUSDT": "2026-09-29T23:20:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-09-29T13:30:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-09-29T23:35:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-09-29T23:40:15.000Z",
+    "volume_spike|METAUSDT": "2026-09-30T02:30:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-09-30T04:25:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-09-30T04:40:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-09-30T04:45:15.000Z",
     "us_regular_open|None": "2026-09-29T13:30:15.000Z",
-    "price_move|MSTRUSDT": "2026-09-29T20:10:15.000Z",
+    "price_move|MSTRUSDT": "2026-09-30T01:05:15.000Z",
     "price_move|CRCLUSDT": "2026-09-29T18:00:15.000Z",
     "us_regular_close|None": "2026-09-29T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-09-29T19:25:15.000Z",
+    "volume_spike|SP500USDT": "2026-09-30T02:20:15.000Z",
     "volume_spike|MSTRUSDT": "2026-09-29T13:30:15.000Z",
-    "volume_spike|HOODUSDT": "2026-09-29T23:45:15.000Z",
-    "volume_spike|COINUSDT": "2026-09-29T22:35:15.000Z",
+    "volume_spike|HOODUSDT": "2026-09-30T03:20:15.000Z",
+    "volume_spike|COINUSDT": "2026-09-30T03:25:15.000Z",
     "price_move|HOODUSDT": "2026-09-29T22:40:15.000Z",
     "range_expansion|HOODUSDT": "2026-09-29T22:25:15.000Z",
     "range_expansion|GOOGLUSDT": "2026-09-29T13:30:15.000Z",
-    "range_expansion|SP500USDT": "2026-09-29T22:05:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-09-29T23:35:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-09-29T13:30:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-09-29T21:15:15.000Z",
+    "range_expansion|SP500USDT": "2026-09-30T04:55:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-09-30T03:45:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-09-30T01:10:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-09-30T03:20:15.000Z",
     "price_move|GOOGLUSDT": "2026-09-25T14:05:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-09-29T22:35:15.000Z",
-    "range_expansion|NDX100USDT": "2026-09-29T21:10:15.000Z",
-    "volume_spike|NDX100USDT": "2026-09-29T23:25:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-09-29T22:40:15.000Z",
-    "range_expansion|METAUSDT": "2026-09-29T23:00:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-09-30T04:40:15.000Z",
+    "range_expansion|NDX100USDT": "2026-09-30T05:10:15.000Z",
+    "volume_spike|NDX100USDT": "2026-09-30T04:40:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-09-30T01:25:15.000Z",
+    "range_expansion|METAUSDT": "2026-09-30T02:30:15.000Z",
     "range_expansion|TSLAUSDT": "2026-09-29T13:30:15.000Z",
     "price_move|COINUSDT": "2026-09-29T13:35:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-09-29T20:00:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-09-30T01:25:15.000Z",
     "range_expansion|COINUSDT": "2026-09-29T22:40:15.000Z",
     "range_expansion|CRCLUSDT": "2026-09-28T13:05:15.000Z",
     "price_move|METAUSDT": "2026-09-29T18:05:15.000Z",
@@ -113,72 +113,53 @@
     "position_review|METAUSDT": "2026-09-24T17:00:15.000Z",
     "position_review|NDX100USDT": "2026-09-25T06:15:15.000Z",
     "price_move|AAPLUSDT": "2026-09-29T13:45:15.000Z",
-    "position_review|AAPLUSDT": "2026-09-29T22:35:15.000Z"
+    "position_review|AAPLUSDT": "2026-09-30T02:35:15.000Z"
   },
   "recent_decisions": [
     {
-      "tick_id": "20260929T135015",
+      "tick_id": "20260930T005515",
       "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
-      "confidence": 0.9,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260929T135515",
-      "action": "NO_TRADE",
-      "instrument": "AAPLUSDT",
-      "confidence": 0.92,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20260929T140015",
-      "action": "NO_TRADE",
-      "instrument": "GOOGLUSDT",
+      "instrument": "METAUSDT",
       "confidence": 0.95,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20260929T141015",
+      "tick_id": "20260930T010515",
+      "action": "NO_TRADE",
+      "instrument": "MSTRUSDT",
+      "confidence": 0.95,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260930T011015",
       "action": "NO_TRADE",
       "instrument": "AAPLUSDT",
+      "confidence": 0.85,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20260930T012015",
+      "action": "NO_TRADE",
+      "instrument": "SP500USDT",
       "confidence": 0.9,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-09-30T00:10:18.801Z",
+  "last_log_commit_at": "2026-09-30T04:20:18.752Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "7be317e26461",
-    "5f1004277be9",
-    "5556cb4e2e0d",
-    "a192b8867889",
-    "445f93008540",
-    "16ecedf8cd32",
-    "aa59339e810a",
-    "d7ed5fe8182b",
-    "3ab333a7de17",
-    "ffd52c62a9ea",
-    "e43a5f6c2503",
-    "2f4babab1df6",
-    "cd67ab58bba5",
-    "002b3220fb3c",
-    "d770e5289675",
-    "fe0aeca4048a",
-    "1ac74627b6bd",
-    "1468e2027f13",
-    "b74f3a3998c8",
     "11f93c35df8e",
     "aa67f8f92e24",
     "a33e4da11199",
@@ -959,11 +940,30 @@
     "4236f27d6ab1",
     "c7ceae701427",
     "751dc1cbadae",
-    "cb6a4550c73f"
+    "cb6a4550c73f",
+    "941275285cbe",
+    "ffea72dadf26",
+    "0a0e9ffa4f18",
+    "4264de281fdb",
+    "a275f1908772",
+    "d7438033b85f",
+    "1d739d2a7e8d",
+    "f8b114b9a458",
+    "4d8f961f8415",
+    "ef30f22171d5",
+    "48aba8ea1c5c",
+    "3350984a518e",
+    "93393443b1df",
+    "3dfe90347ca3",
+    "0e8cf2c46174",
+    "edf17c087a01",
+    "ed76dfbb60be",
+    "67d6f70313ec",
+    "80bad014ea5a"
   ],
   "news_wakes": [
-    "2026-09-29T22:55:15.000159+00:00",
-    "2026-09-29T23:40:15.000236+00:00"
+    "2026-09-30T03:40:15.000124+00:00",
+    "2026-09-30T03:45:15.000134+00:00"
   ],
   "news_pending": []
 }
