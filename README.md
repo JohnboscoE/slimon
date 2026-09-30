@@ -2,6 +2,14 @@
 
 An event-driven trading agent for **US-stock perpetuals on Bitget** (Bitget AI Base Camp Hackathon S2, Track 2: Agentic Trading, Event-Driven Agent).
 
+**Live demo: [slimon-beta.vercel.app](https://slimon-beta.vercel.app)** — the landing page explains one
+tick, and [**Launch App**](https://slimon-beta.vercel.app/app) replays the real decision log, veto cases
+first. **Run records:** [`reports/paper_trades.csv`](reports/paper_trades.csv) (every order),
+[`reports/round_trips.csv`](reports/round_trips.csv) (realised PnL per closed position),
+[`reports/summary.json`](reports/summary.json) (headline figures), all rebuilt from
+[`logs/decisions/`](logs/decisions) by [`slimon/report.py`](slimon/report.py). The agent runs
+unattended on GitHub Actions and commits its own log, so the history shows it accruing in real time.
+
 The LLM decides (Qwen by default, Claude as a config switch). A **deterministic risk gate**, written as plain code with no model involvement, can veto any decision. Every tick is written to an append-only decision log, including ticks where nothing happened and every veto.
 
 ```

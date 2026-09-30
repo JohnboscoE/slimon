@@ -16,6 +16,8 @@ import { HeroBackdrop } from "@/components/landing/hero-backdrop";
 import { TickDemo } from "@/components/landing/tick-demo";
 import { cn } from "@/lib/utils";
 
+const REPO = "https://github.com/JohnboscoE/slimon";
+
 /* Limits mirror config/agent.toml. If you change the config, change these too. */
 const RULES: { name: string; value: string; detail: string }[] = [
   { name: "whitelist", value: "8 of 12", detail: "Perception watches 12 stock perps; only 8 may be traded." },
@@ -100,6 +102,14 @@ export default function Home() {
               <a href="#data" className="transition-colors hover:text-foreground">Data</a>
               <a href="#gate" className="transition-colors hover:text-foreground">Risk gate</a>
               <a href="#log" className="transition-colors hover:text-foreground">Decision log</a>
+              <a
+                href={REPO}
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-foreground"
+              >
+                Source
+              </a>
             </div>
             <LaunchButton className="h-8 px-3" />
           </div>
@@ -371,6 +381,27 @@ export default function Home() {
       <footer className="border-t px-5 py-10 sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>Slimon · Built for Bitget AI Base Camp Hackathon S2, Track 2: Agentic Trading.</p>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <a href={REPO} target="_blank" rel="noreferrer" className="transition-colors hover:text-foreground">
+              Source
+            </a>
+            <a
+              href={`${REPO}/blob/master/reports/paper_trades.csv`}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              Paper trades
+            </a>
+            <a
+              href={`${REPO}/blob/master/reports/round_trips.csv`}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              Closed trades
+            </a>
+          </p>
           <p>Paper trading on a demo venue. Not investment advice.</p>
         </div>
       </footer>
