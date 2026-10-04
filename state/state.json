@@ -27,25 +27,12 @@
       "side": "long",
       "qty": 4.14
     },
-    "NDX100USDT": {
-      "side": "long",
-      "qty": 0.0488
-    },
     "NVDAUSDT": {
       "side": "long",
       "qty": 6.35
     }
   },
   "recent_closed": [
-    {
-      "symbol": "NDX100USDT",
-      "side": "long",
-      "pnl": 2.2449056,
-      "pnl_source": "position_history",
-      "closed_by": "agent",
-      "reason": "max_holding_time",
-      "detected_at": "2026-09-25T10:20:15.000Z"
-    },
     {
       "symbol": "NVDAUSDT",
       "side": "long",
@@ -72,56 +59,61 @@
       "closed_by": "agent",
       "reason": "model_decision",
       "detected_at": "2026-10-01T13:15:15.000Z"
+    },
+    {
+      "symbol": "NDX100USDT",
+      "side": "long",
+      "pnl": 5.908216,
+      "pnl_source": "position_history",
+      "closed_by": "agent",
+      "reason": "max_holding_time",
+      "detected_at": "2026-10-04T11:00:15.000Z"
     }
   ],
   "last_session": "closed",
   "position_reviews": {
-    "NDX100USDT": {
-      "last_at": "2026-10-04T06:55:15.000Z",
-      "band": 0
-    },
     "NVDAUSDT": {
-      "last_at": "2026-10-04T08:40:15.000Z",
+      "last_at": "2026-10-04T12:40:15.000Z",
       "band": 0
     },
     "TSLAUSDT": {
-      "last_at": "2026-10-04T07:55:15.000Z",
+      "last_at": "2026-10-04T11:55:15.000Z",
       "band": 1
     }
   },
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-04T09:10:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-04T08:50:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-04T08:30:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-04T08:55:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-04T13:50:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-04T12:50:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-04T14:10:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-04T14:20:15.000Z",
     "us_regular_open|None": "2026-10-02T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-02T19:40:15.000Z",
     "price_move|CRCLUSDT": "2026-10-02T20:00:15.000Z",
     "us_regular_close|None": "2026-10-02T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-04T08:00:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-10-04T06:25:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-04T08:35:15.000Z",
-    "volume_spike|COINUSDT": "2026-10-04T08:20:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-04T13:45:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-10-04T14:15:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-04T13:25:15.000Z",
+    "volume_spike|COINUSDT": "2026-10-04T11:55:15.000Z",
     "price_move|HOODUSDT": "2026-10-02T18:40:15.000Z",
-    "range_expansion|HOODUSDT": "2026-10-04T08:00:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-10-04T07:40:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-04T08:25:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-10-04T09:00:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-04T08:35:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-04T08:25:15.000Z",
+    "range_expansion|HOODUSDT": "2026-10-04T10:20:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-10-04T12:55:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-04T14:20:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-10-04T13:25:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-04T12:55:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-04T13:35:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-01T16:55:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-10-04T09:15:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-04T08:00:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-04T08:25:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-04T08:25:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-04T09:20:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-10-04T07:35:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-10-04T14:05:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-04T13:30:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-04T12:50:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-04T13:10:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-04T13:20:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-10-04T13:20:15.000Z",
     "price_move|COINUSDT": "2026-10-02T15:45:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-10-04T06:50:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-10-04T14:00:15.000Z",
     "range_expansion|COINUSDT": "2026-10-04T08:00:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-10-04T08:05:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-10-04T14:05:15.000Z",
     "price_move|METAUSDT": "2026-10-01T14:15:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-10-04T06:25:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-10-04T11:40:15.000Z",
     "price_move|TSLAUSDT": "2026-10-02T20:10:15.000Z",
     "price_move|AMZNUSDT": "2026-10-01T13:45:15.000Z",
     "position_review|SP500USDT": "2026-09-19T01:30:15.000Z",
@@ -130,8 +122,8 @@
     "position_review|NDX100USDT": "2026-10-04T06:55:15.000Z",
     "price_move|AAPLUSDT": "2026-09-30T13:55:15.000Z",
     "position_review|AAPLUSDT": "2026-09-30T10:35:15.000Z",
-    "position_review|TSLAUSDT": "2026-10-04T07:55:15.000Z",
-    "position_review|NVDAUSDT": "2026-10-04T08:40:15.000Z"
+    "position_review|TSLAUSDT": "2026-10-04T11:55:15.000Z",
+    "position_review|NVDAUSDT": "2026-10-04T12:40:15.000Z"
   },
   "recent_decisions": [
     {
@@ -171,40 +163,13 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-04T08:55:29.602Z",
+  "last_log_commit_at": "2026-10-04T14:05:44.901Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "54830546cfc8",
-    "2ee1d16c7bd9",
-    "f194ceba350a",
-    "79b9331abddf",
-    "397fce18e0a5",
-    "2019271db537",
-    "0681cbaddd26",
-    "834097860de7",
-    "476040745e8b",
-    "d08cbe78077b",
-    "0d801adb13ab",
-    "835cfba05256",
-    "6e764dc8ff0e",
-    "5130178a3436",
-    "1b756c3fb80f",
-    "9e06fee59e35",
-    "aa95d97357f4",
-    "f5083803299f",
-    "bbd88e9e8503",
-    "1750f672a10e",
-    "2251ab998fac",
-    "691e8dcf7d16",
-    "43f891425788",
-    "dd7ecf8c0c62",
-    "2fe873753d40",
-    "25245f549c59",
-    "da2a7ce655d5",
     "faa7e051cb02",
     "7e736a4744d7",
     "a3ebd7b8defe",
@@ -977,10 +942,38 @@
     "143cfcee0589",
     "3d18efda706e",
     "c8be2e65885e",
-    "17cbea5ee87a"
+    "17cbea5ee87a",
+    "b340f89b92a7",
+    "8258734e32fe",
+    "10ec35e6a82e",
+    "e93a02aff35d",
+    "1a616e1d6798",
+    "5ef1c517f1b4",
+    "4e9cfbf3e668",
+    "43aa65239040",
+    "a701159f7e99",
+    "b6282775cdc2",
+    "74cdd0520829",
+    "eecc6f8a1a3e",
+    "eda38e73e699",
+    "ae16b7d65aae",
+    "2332fe5d7d65",
+    "e226f7890bb6",
+    "5e7483f76182",
+    "d1b636cb5498",
+    "e9a5055006bb",
+    "80e44472e2a2",
+    "9b774cd6dade",
+    "c44a03726f7c",
+    "605e3e9bd8ec",
+    "dce62a254f65",
+    "b539fa09291e",
+    "6054757ecaa6",
+    "a3fc9587629b"
   ],
   "news_wakes": [
-    "2026-10-04T08:45:15.000121+00:00"
+    "2026-10-04T14:05:15.000156+00:00",
+    "2026-10-04T14:15:15.000109+00:00"
   ],
   "news_pending": []
 }
