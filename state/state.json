@@ -10,17 +10,17 @@
       "AAPLUSDT": "2026-09-29T09:50:15.000Z",
       "NVDAUSDT": "2026-10-02T12:35:15.000Z"
     },
-    "day": "2026-10-04",
-    "day_start_equity": 50098.3488022,
+    "day": "2026-10-05",
+    "day_start_equity": 50122.18055564,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null
   },
   "llm_budget": {
-    "day": "2026-10-04",
+    "day": "2026-10-05",
     "calls": 0,
     "cost_usd": 0.0,
-    "calls_closed": 8
+    "calls_closed": 5
   },
   "positions_last_tick": {
     "TSLAUSDT": {
@@ -73,47 +73,47 @@
   "last_session": "closed",
   "position_reviews": {
     "NVDAUSDT": {
-      "last_at": "2026-10-04T16:40:15.000Z",
+      "last_at": "2026-10-04T20:40:15.000Z",
       "band": 0
     },
     "TSLAUSDT": {
-      "last_at": "2026-10-04T15:55:15.000Z",
-      "band": 1
+      "last_at": "2026-10-05T00:00:15.000Z",
+      "band": 2
     }
   },
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-04T18:25:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-04T19:05:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-04T16:25:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-04T18:25:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-05T00:05:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-04T23:35:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-04T23:45:15.000Z",
     "us_regular_open|None": "2026-10-02T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-02T19:40:15.000Z",
     "price_move|CRCLUSDT": "2026-10-02T20:00:15.000Z",
     "us_regular_close|None": "2026-10-02T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-04T15:50:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-10-04T18:00:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-04T18:55:15.000Z",
-    "volume_spike|COINUSDT": "2026-10-04T18:35:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-04T22:50:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-10-05T00:05:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-05T00:05:15.000Z",
+    "volume_spike|COINUSDT": "2026-10-05T00:05:15.000Z",
     "price_move|HOODUSDT": "2026-10-02T18:40:15.000Z",
-    "range_expansion|HOODUSDT": "2026-10-04T14:55:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-10-04T16:30:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-04T16:15:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-10-04T19:05:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-04T16:05:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-04T18:50:15.000Z",
+    "range_expansion|HOODUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-04T23:35:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-10-04T23:50:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-04T23:50:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-05T00:05:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-01T16:55:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-10-04T19:10:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-04T18:20:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-04T16:25:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-04T19:20:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-04T15:25:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-10-04T15:05:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-05T00:05:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-05T00:15:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-05T00:10:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-04T23:55:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-10-05T00:05:15.000Z",
     "price_move|COINUSDT": "2026-10-02T15:45:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-10-04T15:00:15.000Z",
-    "range_expansion|COINUSDT": "2026-10-04T15:20:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-10-04T14:05:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|COINUSDT": "2026-10-05T00:05:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-10-05T00:05:15.000Z",
     "price_move|METAUSDT": "2026-10-01T14:15:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-10-04T11:40:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-10-05T00:05:15.000Z",
     "price_move|TSLAUSDT": "2026-10-02T20:10:15.000Z",
     "price_move|AMZNUSDT": "2026-10-01T13:45:15.000Z",
     "position_review|SP500USDT": "2026-09-19T01:30:15.000Z",
@@ -122,12 +122,21 @@
     "position_review|NDX100USDT": "2026-10-04T06:55:15.000Z",
     "price_move|AAPLUSDT": "2026-09-30T13:55:15.000Z",
     "position_review|AAPLUSDT": "2026-09-30T10:35:15.000Z",
-    "position_review|TSLAUSDT": "2026-10-04T15:55:15.000Z",
-    "position_review|NVDAUSDT": "2026-10-04T16:40:15.000Z"
+    "position_review|TSLAUSDT": "2026-10-05T00:00:15.000Z",
+    "position_review|NVDAUSDT": "2026-10-04T20:40:15.000Z"
   },
   "recent_decisions": [
     {
-      "tick_id": "20261004T003015",
+      "tick_id": "20261005T000515",
+      "action": "NO_TRADE",
+      "instrument": "TSLAUSDT",
+      "confidence": 0.95,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20261005T001015",
       "action": "NO_TRADE",
       "instrument": "NVDAUSDT",
       "confidence": 0.95,
@@ -136,16 +145,7 @@
       "execution_status": null
     },
     {
-      "tick_id": "20261004T004015",
-      "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
-      "confidence": 0.9,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20261004T004515",
+      "tick_id": "20261005T001515",
       "action": "NO_TRADE",
       "instrument": "NDX100USDT",
       "confidence": 0.95,
@@ -154,38 +154,22 @@
       "execution_status": null
     },
     {
-      "tick_id": "20261004T005015",
+      "tick_id": "20261005T002015",
       "action": "NO_TRADE",
-      "instrument": "NVDAUSDT",
+      "instrument": "TSLAUSDT",
       "confidence": 0.95,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-04T18:20:19.591Z",
+  "last_log_commit_at": "2026-10-04T23:40:29.978Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "95c728cae133",
-    "0b8bb2ad39df",
-    "0339a4b7d2d2",
-    "6441a0661c9e",
-    "b0db98ca6729",
-    "502f47b6f86b",
-    "3e8f6634b376",
-    "8026bb24b5d8",
-    "12f4299cc109",
-    "2f7873238a64",
-    "60f58df9949f",
-    "6169e2fa7402",
-    "bccf71654f8d",
-    "9933356563b7",
-    "e3a798dc28f4",
-    "5ded2e808dcc",
     "1d5ae8dc3cfc",
     "c104c01a9b54",
     "7b03fc81be5c",
@@ -969,11 +953,27 @@
     "dd0102bae905",
     "a6f9a5647b75",
     "7573fadf44cf",
-    "532f2f93f3f8"
+    "532f2f93f3f8",
+    "6ff0b10d2073",
+    "2151589951ba",
+    "280d64f0ceac",
+    "e578491b84a2",
+    "e8a6cfa96067",
+    "e347a88b2a40",
+    "a613efff879d",
+    "efdcd2a0d67d",
+    "f4f60bef5e99",
+    "1f70aa76d3a5",
+    "93faa0621299",
+    "397e5a19e404",
+    "0210593260fc",
+    "3103ad6fac4e",
+    "ef9b30e522ea",
+    "e4e9c1cd0b06"
   ],
   "news_wakes": [
-    "2026-10-04T18:40:15.000136+00:00",
-    "2026-10-04T18:40:15.000136+00:00"
+    "2026-10-04T23:45:15.000144+00:00",
+    "2026-10-05T00:20:15.000133+00:00"
   ],
   "news_pending": []
 }
