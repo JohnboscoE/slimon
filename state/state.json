@@ -64,31 +64,31 @@
   "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-06T01:10:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-05T22:05:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-06T01:05:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-06T01:10:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-06T06:05:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-06T06:15:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-06T05:30:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-06T05:40:15.000Z",
     "us_regular_open|None": "2026-10-05T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-05T19:40:15.000Z",
     "price_move|CRCLUSDT": "2026-10-05T14:55:15.000Z",
     "us_regular_close|None": "2026-10-05T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-05T19:00:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-06T05:35:15.000Z",
     "volume_spike|MSTRUSDT": "2026-10-06T01:05:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-06T01:05:15.000Z",
-    "volume_spike|COINUSDT": "2026-10-05T22:35:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-06T05:45:15.000Z",
+    "volume_spike|COINUSDT": "2026-10-06T05:35:15.000Z",
     "price_move|HOODUSDT": "2026-10-05T14:10:15.000Z",
-    "range_expansion|HOODUSDT": "2026-10-05T19:30:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-10-06T01:10:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-06T01:05:15.000Z",
+    "range_expansion|HOODUSDT": "2026-10-06T06:10:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-10-06T06:15:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-06T05:10:15.000Z",
     "volume_spike|TSLAUSDT": "2026-10-05T23:50:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-06T01:15:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-06T01:10:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-06T05:05:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-06T06:15:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-01T16:55:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-10-06T01:20:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-06T01:05:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-06T01:05:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-06T01:20:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-05T13:30:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-10-06T06:10:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-06T05:55:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-06T02:35:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-06T05:25:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-06T06:15:15.000Z",
     "range_expansion|TSLAUSDT": "2026-10-05T11:05:15.000Z",
     "price_move|COINUSDT": "2026-10-05T16:15:15.000Z",
     "range_expansion|NVDAUSDT": "2026-10-05T23:45:15.000Z",
@@ -145,20 +145,13 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-06T01:00:18.963Z",
+  "last_log_commit_at": "2026-10-06T05:20:18.779Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "f91f41825352",
-    "3f97e0f25880",
-    "9fac9cd83824",
-    "946c0afe2cbe",
-    "96d24db75d66",
-    "b102b5dc24c5",
-    "2ac5c5e8f0fb",
     "2c98047a6c69",
     "578e510344a1",
     "329cae41cfd8",
@@ -951,11 +944,161 @@
     "f8e68fac166d",
     "a31075fab9b9",
     "abec545ad153",
-    "f74e86055140"
+    "f74e86055140",
+    "a3bca368e16e",
+    "8c9b5d1d19dc",
+    "f9b24b0bb171",
+    "d03ef2fab595",
+    "129a1cc3cf10",
+    "06fdbed77194",
+    "f0f87d2317bd"
   ],
   "news_wakes": [
-    "2026-10-05T22:40:15.000126+00:00",
-    "2026-10-05T23:00:15.000133+00:00"
+    "2026-10-06T05:30:15.000155+00:00",
+    "2026-10-06T05:50:15.000125+00:00"
   ],
-  "news_pending": []
+  "news_pending": [
+    {
+      "id": "evt-news-NVDAUSDT-a3bca368e16e",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-06T03:35:15.000Z",
+      "source_ts": "2026-10-06T03:14:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (stocktwits.com): \u2018One Chip In The World Fueling AI Revolution:\u2019 Dan Ives Supports Nvidia Bull Case As Stock Hits Fresh High",
+      "payload": {
+        "headline": "\u2018One Chip In The World Fueling AI Revolution:\u2019 Dan Ives Supports Nvidia Bull Case As Stock Hits Fresh High",
+        "publisher": "stocktwits.com",
+        "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQZDJwSjRFMnZkRzNtOHVkVElIeV96UEUyUG9ZOUxlUF9LNXNtTkNadjhJbDE2OFlPNkw1dmQtMTRKUHVGSHJuNEZVRkJERmM4a1pOVjNUTTRmN1hUZnpwZl8zWlJERWFQbzk5V2gyZWQ1NXNWYm1WRHYtZ0VMZ0NTZXljR2dNTmxLVmliMkI5OXlaYk5Gd0F6T0FiQW93SGdDTjJkek1qUEh6QTdYSXlvR3h4R1dPTkV5YnA3Nko1aEtyOTRrQzU5bVhVcHR3UkdibFZrMmFYY1c5cndMb2Q3Y3ZlMEVFRXNIbVhNLXRyVnZ4bUZMSEN2SlY0RQ?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-06T03:14:00.000Z",
+        "age_minutes": 21.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-8c9b5d1d19dc",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-06T03:35:15.000Z",
+      "source_ts": "2026-10-06T03:06:22.000Z",
+      "session": "closed",
+      "summary": "TSLA news (TipRanks): Tesla Stock (TSLA) Prediction \u2013 Why Truist Is Cautious Despite Solid Q3 Deliveries",
+      "payload": {
+        "headline": "Tesla Stock (TSLA) Prediction \u2013 Why Truist Is Cautious Despite Solid Q3 Deliveries",
+        "publisher": "TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUGtmdHVsZVdSZTkwdU1jZGc1LTBwVDdaWkJLQnBvalhXaXI0cEljMUdGWlNxTXNfcUtIVk5qZDdoQ0x1THBPWkdxTmpldDFFdEJscDZLanR5dEZYWkZFVjlaTVU5QlhSWXE1WEpyaUpQTzk2WEM5UDF4Y1FsaU1lZHNjVEU5Qi1oUU1yWVFkQzd3dHBKTFdCb3RxRF9wSDhVcldaMXpMd0Rxa3c?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-06T03:06:22.000Z",
+        "age_minutes": 28.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-f9b24b0bb171",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-06T05:30:15.000Z",
+      "source_ts": "2026-10-06T05:22:29.000Z",
+      "session": "closed",
+      "summary": "TSLA news (\u0635\u0648\u062a \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a): Elon Musk regains the title of trillionaire, boosted by the rise in SpaceX and Tesla shares",
+      "payload": {
+        "headline": "Elon Musk regains the title of trillionaire, boosted by the rise in SpaceX and Tesla shares",
+        "publisher": "\u0635\u0648\u062a \u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a",
+        "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNNXdOV2hlampXWERKc182WllxRjFBNU9hbmVJMk0yUWQ4QkVRSmRaRlJRZlluZC0zY243U3JsRVhuU3lIM1c2OFczVmtGYVpPWXVnOUxCY01lbTZkaVBtc1YyRWdXZUhxT2tIZS1ZdEJsWF9zMG9kdmc0NTNOSzlmcEI1aXVwcnA3ekZmeVdsa1hJeU1QSjhpaUctN3FvN0JBM2gtbGw3YUNSNXpjeUtMaTZTRm1BX0s4VXM3djFBVkxKNUxKS2J4Qlo4YkRVMW9TSHczUzZtWjRlVVd4bmVB?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-06T05:22:29.000Z",
+        "age_minutes": 7.8,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-d03ef2fab595",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-06T05:50:15.000Z",
+      "source_ts": "2026-10-06T05:45:21.000Z",
+      "session": "closed",
+      "summary": "TSLA news (stocktwits.com): TSLA Stock Rises Overnight: Analyst Says SpaceX Merger Buzz Could \u2018Dominate\u2019 Near-Term Narrative \u2014 Gary Black Sees More Gains Ahead",
+      "payload": {
+        "headline": "TSLA Stock Rises Overnight: Analyst Says SpaceX Merger Buzz Could \u2018Dominate\u2019 Near-Term Narrative \u2014 Gary Black Sees More Gains Ahead",
+        "publisher": "stocktwits.com",
+        "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxQTG1nak0xRi1hVnNRZkNER0VacDlfa0NZU2E2ejZ2a0h2V0Q5aGE5eHRacm1Za09UVDFZVEZObU43Vm1BMUFONGNQVVh1Vk9iWVVudGJBNmNMVkVRVW4tWUIwWEdka2EtQW9ISHZYV2pidkR1RjV4UkZJU05STTdmbzlxWVFoeldJWUY1Y0d4anZubEJTS2hZeEQyeXh5NDNJaUJGYi0zUzUyLTc0WGlGbE1wQ0U1SUlNZXZEQmlldEJWV3Izako4cHZnZnNtRkl1SERtZ2JibTdEbnB4ak1uVDk5U1pmOEdm?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-06T05:45:21.000Z",
+        "age_minutes": 4.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AAPLUSDT-129a1cc3cf10",
+      "type": "news",
+      "symbol": "AAPLUSDT",
+      "received_at": "2026-10-06T05:55:15.000Z",
+      "source_ts": "2026-10-06T05:51:37.000Z",
+      "session": "closed",
+      "summary": "AAPL news (Investing.com Canada): Apple\u2019s Timothy Cook, executive chair, sells $63.8 million in stock. By Investing.com",
+      "payload": {
+        "headline": "Apple\u2019s Timothy Cook, executive chair, sells $63.8 million in stock. By Investing.com",
+        "publisher": "Investing.com Canada",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOY05Vd254dlhTT2xiaTB3YVAxaFJPb0ZqblRDUnJpZzNnTXJpdmlUNWhmMG5aNzRVb2lidzlhOXpNTTJpNmNBRnBOX2RtLTNPVkdPejBsa1k3dUhacDdrcHhLRWZBeGFwSFY1Q1B4eXNYeTIzVjQ1NENmdWk1MVV1VW1pWWZhYmxVSVFxdEhqblNGNk16RlZqdDhJVlRvOEd5S1FHVy0zSzIxUS0wRThhWHVtcXpIYmQ0U1RJZXhlS3k?oc=5",
+        "feed": "google_news:AAPLUSDT",
+        "published_at": "2026-10-06T05:51:37.000Z",
+        "age_minutes": 3.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-AAPLUSDT-06fdbed77194",
+      "type": "news",
+      "symbol": "AAPLUSDT",
+      "received_at": "2026-10-06T06:10:15.000Z",
+      "source_ts": "2026-10-06T05:59:44.000Z",
+      "session": "closed",
+      "summary": "AAPL news (AD HOC NEWS): Apple stock pre-market at EUR 296.98: plus 0.13 percent",
+      "payload": {
+        "headline": "Apple stock pre-market at EUR 296.98: plus 0.13 percent",
+        "publisher": "AD HOC NEWS",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQS19vVlBzcUI3aUtpbWt6d1VqVlFyOFBOdk5wT2FxZ0JNN1Jsc2pTUVItR3NVTmNFMjlpaDRBNllLMVRWb20yRFM0LU84NWZsVEJhVmV6VTdSV05mek1OeFZOS0VZUlEzVkd2NmFWN0NhOWp0RjlVZUtyZ2QzUWQ1ekdoaHpiWW5WZmR6aVNWOGZxa0VaaGVsU1NtWkpFNlJGN21teHJUcE5wdmNNQzJSZ2d3?oc=5",
+        "feed": "google_news:AAPLUSDT",
+        "published_at": "2026-10-06T05:59:44.000Z",
+        "age_minutes": 10.5,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-AAPLUSDT-f0f87d2317bd",
+      "type": "news",
+      "symbol": "AAPLUSDT",
+      "received_at": "2026-10-06T06:15:15.000Z",
+      "source_ts": "2026-10-06T06:11:27.000Z",
+      "session": "closed",
+      "summary": "AAPL news (Investing.com): Apple\u2019s Timothy Cook, executive chair, sells $63.8 million in stock.",
+      "payload": {
+        "headline": "Apple\u2019s Timothy Cook, executive chair, sells $63.8 million in stock.",
+        "publisher": "Investing.com",
+        "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNVHFzN0JLLUNlWVFjNXVpRmhydVB2TGkzZldFbHd2SC1GZlphMVdMNTByU0hZaDBHZ285dDNaM3FTOWZnZzd3UGtUTlVrOF90MFRjMGQzTFZ2S1pVT0diUE41OU9CZngxMk5uUHJFb0xlMzAwYk1LM2ZvRTJhci0yc1VZdms2TUNvOV8xUm5yTXA0cEo4U1hkbE9xUFJ4TmJyQTZXRUxiUlY3aEZlZEpBdG5jUFI3LVVOTk9ncmhmS0xHcEQyNHc?oc=5",
+        "feed": "google_news:AAPLUSDT",
+        "published_at": "2026-10-06T06:11:27.000Z",
+        "age_minutes": 3.8,
+        "held_position": false,
+        "market_confirmation": [
+          "AAPLUSDT 5m volume 15.5x median"
+        ],
+        "wakes_model": true
+      }
+    }
+  ]
 }
