@@ -64,32 +64,32 @@
   "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-07T02:25:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-07T02:15:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-07T02:10:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-07T02:05:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-07T05:10:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-07T07:10:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-07T07:05:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-07T07:25:15.000Z",
     "us_regular_open|None": "2026-10-06T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-07T02:00:15.000Z",
     "price_move|CRCLUSDT": "2026-10-07T02:05:15.000Z",
     "us_regular_close|None": "2026-10-06T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-07T01:35:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-07T07:15:15.000Z",
     "volume_spike|MSTRUSDT": "2026-10-07T02:00:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-07T02:10:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-07T07:15:15.000Z",
     "volume_spike|COINUSDT": "2026-10-07T02:25:15.000Z",
     "price_move|HOODUSDT": "2026-10-07T02:05:15.000Z",
     "range_expansion|HOODUSDT": "2026-10-07T02:00:15.000Z",
     "range_expansion|GOOGLUSDT": "2026-10-07T02:05:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-07T02:05:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-10-07T01:50:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-07T02:05:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-07T02:05:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-07T06:15:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-10-07T07:15:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-07T07:05:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-07T07:05:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-01T16:55:15.000Z",
     "volume_spike|CRCLUSDT": "2026-10-07T01:55:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-07T01:40:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-07T02:05:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-07T02:25:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-06T22:25:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-10-07T02:05:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-07T06:25:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-07T06:40:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-07T07:00:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-07T06:05:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-10-07T07:15:15.000Z",
     "price_move|COINUSDT": "2026-10-07T02:05:15.000Z",
     "range_expansion|NVDAUSDT": "2026-10-06T22:15:15.000Z",
     "range_expansion|COINUSDT": "2026-10-07T02:00:15.000Z",
@@ -145,25 +145,13 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-07T01:30:19.244Z",
+  "last_log_commit_at": "2026-10-07T06:40:18.282Z",
   "closes_sent": {
     "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "9f010134e93c",
-    "6fd06aed1847",
-    "c7c5dffa6414",
-    "2251db1c221b",
-    "4a9c8bdaaced",
-    "329b4f9dada5",
-    "a2348305aff2",
-    "2f56452ee599",
-    "e730da4aef26",
-    "4e8f2535613e",
-    "abf45c31e1b5",
-    "06e5150b6674",
     "a4d90a1b5896",
     "e4f5c8503874",
     "8c87b21934f9",
@@ -951,11 +939,23 @@
     "400f5b52dd38",
     "8762ce5304ec",
     "d2ee30a51571",
-    "d7f9e3582f97"
+    "d7f9e3582f97",
+    "e3c6e948e09e",
+    "fcc6c0d6bb16",
+    "3dcaa21746ed",
+    "4e740a9783ee",
+    "3f60de484042",
+    "1f7adcc463ef",
+    "c587c16ba331",
+    "53f91b53bfc7",
+    "24052fda54e8",
+    "74c13108127d",
+    "e4b7fad803b7",
+    "32f692fb7bbc"
   ],
   "news_wakes": [
-    "2026-10-07T02:00:15.000103+00:00",
-    "2026-10-07T02:10:15.000100+00:00"
+    "2026-10-07T06:20:15.000105+00:00",
+    "2026-10-07T06:30:15.000111+00:00"
   ],
   "news_pending": [
     {
@@ -1198,6 +1198,188 @@
         "held_position": false,
         "market_confirmation": [],
         "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-mkt-e3c6e948e09e",
+      "type": "news",
+      "symbol": null,
+      "received_at": "2026-10-07T04:45:15.000Z",
+      "source_ts": "2026-10-07T04:44:58.000Z",
+      "session": "closed",
+      "summary": "Market news: India\u2019s central bank hikes rates for the first time since 2023 as inflation risks build",
+      "payload": {
+        "headline": "India\u2019s central bank hikes rates for the first time since 2023 as inflation risks build",
+        "publisher": null,
+        "url": "https://www.cnbc.com/2026/10/07/india-rbi-interest-rates-inflation.html",
+        "feed": "cnbc_markets",
+        "published_at": "2026-10-07T04:44:58.000Z",
+        "age_minutes": 0.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-fcc6c0d6bb16",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-07T06:20:15.000Z",
+      "source_ts": "2026-10-07T06:16:19.000Z",
+      "session": "closed",
+      "summary": "AMZN news (GuruFocus): Boston Dynamics Names Rohit Prasad CEO as Amazon (AMZN) Shares R",
+      "payload": {
+        "headline": "Boston Dynamics Names Rohit Prasad CEO as Amazon (AMZN) Shares R",
+        "publisher": "GuruFocus",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOMksxaFJxeURVb0ExMWphMkN2b2pKSUpkU0o0YzliTmY1RWlXM2FGNW9vUTA1MFFSdWJCRFlVaWI3UHk1SWFCUlFRS2pKV3BYNU0xNVNJWWhSd2hId2hxckFDNjlDTkw2Y1huTUNPYjdsZ2p5ZFBLNkRyLTJmazl1cWo5dmpDT3pKd3hXTDBWdTJQMy1lTkhTeGQ5TDlLcWJlcmRUVUs5c3k3eFN3SXJNNHBEYlg3ZE1FMjBuNVBB?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-07T06:16:19.000Z",
+        "age_minutes": 3.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-3dcaa21746ed",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-07T06:30:15.000Z",
+      "source_ts": "2026-10-07T06:19:39.000Z",
+      "session": "closed",
+      "summary": "TSLA news (AD HOC NEWS): Tesla stock pre-market at EUR 336.95: minus 0.17 percent",
+      "payload": {
+        "headline": "Tesla stock pre-market at EUR 336.95: minus 0.17 percent",
+        "publisher": "AD HOC NEWS",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQT3ZTeUpGeVZ4WW5BQnVDbDlJbGtNcDNRbFB3UFU4NmU1UGxsb0J0WWhiY2hKeHFTSndnU25ObmpyZmh2S3U1dzhFZ200TDlrOS02ZnQ1X1RUUUxjSnZaTXRtVFg0MEkwa2Nwb29qY0YyenpoU3RncUZNdkhfN0swN0E0THRpamFZRjZUckpfXzZZa1I4UGMydjhUX0lISnBvbUhrWG02LV9CU3gzczlDLWFlUQ?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-07T06:19:39.000Z",
+        "age_minutes": 10.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-4e740a9783ee",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-07T06:40:15.000Z",
+      "source_ts": "2026-10-07T06:39:25.000Z",
+      "session": "closed",
+      "summary": "NVDA news (KuCoin): SpaceX Seeks $40B Debt to Purchase Nvidia AI Chips Amid 15% Stock Rally",
+      "payload": {
+        "headline": "SpaceX Seeks $40B Debt to Purchase Nvidia AI Chips Amid 15% Stock Rally",
+        "publisher": "KuCoin",
+        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVGo0N2ZjQy05bG1FTUJOUHFfTTk2alp1NjBDU3NpQUJISEZSUEExd000dS02SUhPM2FtTFcyd2Rjbnp0ckJkRnBBWUJzeVlTUERyTGhYNXFvVXN1cFZZb0dsYzR4bzBpeDRSTjNKUVlHSUNKYzIwNnhXT2h1RC1TSlBrSHFnR0FwUkp4WjJWVEJpc28yc1IxS0xNVndXQVRvcjhHTGFB?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-07T06:39:25.000Z",
+        "age_minutes": 0.8,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-3f60de484042",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-10-07T07:05:15.000Z",
+      "source_ts": "2026-10-07T07:04:38.000Z",
+      "session": "closed",
+      "summary": "META news (MarketBeat): Meta Platforms, Inc. (NASDAQ:META) Receives Consensus Rating of \"Moderate Buy\" from Analysts",
+      "payload": {
+        "headline": "Meta Platforms, Inc. (NASDAQ:META) Receives Consensus Rating of \"Moderate Buy\" from Analysts",
+        "publisher": "MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxPVVI4WS1qa3JRLTVROXEtMjNLQ0M2LWJxbXRndVc3b0VuN3VMa3hHaGM1bEpVd2RzMjl1MVVIUlh4d3RCcGcxVmgxeEdIRnFXRi1uajE0bjVsMHJvZFdxOWlCLWRzMHdxUDhfMmxfdW90WlNDeVNVdjJackhHZmdxMXRFbTYzenM3VDM0UFhxTWJMNHoxbzdqMGN4LTVWQTQ3NE8tLVlxTDZ2bDQ3c0Z4SkJfU2VBYXQzbWNndXhvcTNHY3FNU0ttY0xvckJ5S1JjMnZIMlNPMzVMXzZmLWl5ZFNua2o?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-10-07T07:04:38.000Z",
+        "age_minutes": 0.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-1f7adcc463ef",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-10-07T07:05:15.000Z",
+      "source_ts": "2026-10-07T07:04:25.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (The Motley Fool): Google Signs Nuclear Deal With Constellation Energy",
+      "payload": {
+        "headline": "Google Signs Nuclear Deal With Constellation Energy",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQODhNSWN2NjV6bmZBZV9WMHFlN3g5Ti1QU204eWYwdzJWMWhlWVlISEZvVTVqSFJYNnBDWmNiT1FYSE9EVzlQeFcxcTlRQVZqSkxzOFhQd1pHWFl2ampLUWNoN2NSTEVLZTRfU05KV2ZCOW1GbmFTUTJFMk84MmlPRERyNThLN2xuYmQ5Vk1LRFhxcU5tS2xtNFlR?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-10-07T07:04:25.000Z",
+        "age_minutes": 0.8,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-c587c16ba331",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-07T07:10:15.000Z",
+      "source_ts": "2026-10-07T07:06:56.000Z",
+      "session": "closed",
+      "summary": "NVDA news (MarketBeat): NVIDIA Corporation $NVDA Stock Purchased by Avanda Investment Management Pte. Ltd.",
+      "payload": {
+        "headline": "NVIDIA Corporation $NVDA Stock Purchased by Avanda Investment Management Pte. Ltd.",
+        "publisher": "MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOcEQzeVFjdXA5MUNJQVZtb0Vaa2hwSThUekYwV1J3ek5yS0lPUEdicFhXcXgyUWNGMjd6SG9aR2NwVFBFR1RPSDlZR3hDUWNTSkFGOEdQaENnTld1Zk1yMG5JV25DcXQtRHFmakV1Sjl6UVhDQWhMSkQ1Q3A3WG1yN3hMODBpM0FKYk9nWGpnaUVla2xuRDF5RGpzRFlvcTZoYWdiVHNoZnIxNUV0aXpUdEhvTVltejFJUG9GTDB2ejB4bzAwUzRoWkNyNzVfZ0hpVDRrQ2pkOA?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-07T07:06:56.000Z",
+        "age_minutes": 3.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-53f91b53bfc7",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-07T07:10:15.000Z",
+      "source_ts": "2026-10-07T07:06:56.000Z",
+      "session": "closed",
+      "summary": "NVDA news (MarketBeat): 5,525 NVIDIA Corporation $NVDA Shares Sold by AI Squared Management Ltd",
+      "payload": {
+        "headline": "5,525 NVIDIA Corporation $NVDA Shares Sold by AI Squared Management Ltd",
+        "publisher": "MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNNmY1cGg2WWVKTnlWMDRpVGY4RUY1Y2NtdG9uQU5GNTA2X0ZFdGtuTDRBd180a1hVOVBreWdTdWo2Nmd4TEVwX2Q3RllPenMyN19xU092UWh1bk5EWk1oU1VqZWRmQkxuTUMzdmFfck1kYW5CakczdW5ZYWhqY0dDb0dPeXdBWXpnODk4ZVB2c1Vxckd4ZkFlVFE2bGg4Y2U2aGRla2E0Q1JuTkFTTU13dmZuVS1nWXB4M281LV9BbVBlVVZSalJjMVh3?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-07T07:06:56.000Z",
+        "age_minutes": 3.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-24052fda54e8",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-07T07:10:15.000Z",
+      "source_ts": "2026-10-07T07:06:56.000Z",
+      "session": "closed",
+      "summary": "AMZN news (MarketBeat): Amazon.com, Inc. $AMZN Stock Position Raised by Anchor Capital Advisors LLC",
+      "payload": {
+        "headline": "Amazon.com, Inc. $AMZN Stock Position Raised by Anchor Capital Advisors LLC",
+        "publisher": "MarketBeat",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOSC00bFBYMUVoQV9TRVRqQ3h4Rk1hUm9aSGxnQUZkWEg1YzFsQnZaWERqWmVKUEF5cGp1VDBVVFYwb1prQk4tckkzRDYzT1FxdnEwRUtPeE9ob2xjLXExMDd5d0dTNlBPcGpwdG51Z2lIUkRNLXB4cnRSeDNhcmxyNlBmaUllSE9jWDZobEFHQXhmRVZFN0x2TkJPUzY3MEdfaWQ0NVVpWmVwamRVMjdhQjVaNlF6WnhneHl0cEppd0VDSC1RTHlsZzA3TUo?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-07T07:06:56.000Z",
+        "age_minutes": 3.3,
+        "held_position": false,
+        "market_confirmation": [
+          "AMZNUSDT 5m range 3.3x its 48-candle average"
+        ],
+        "wakes_model": true
       }
     }
   ]
