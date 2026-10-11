@@ -1,6 +1,6 @@
 {
   "risk": {
-    "consecutive_losses": 2,
+    "consecutive_losses": 0,
     "last_trade_at": {
       "NDX100USDT": "2026-10-01T10:50:15.000Z",
       "TSLAUSDT": "2026-10-06T11:05:15.000Z",
@@ -23,35 +23,8 @@
     "cost_usd": 0.0,
     "calls_closed": 8
   },
-  "positions_last_tick": {
-    "GOOGLUSDT": {
-      "side": "long",
-      "qty": 4.31
-    },
-    "AMZNUSDT": {
-      "side": "long",
-      "qty": 5.81
-    }
-  },
+  "positions_last_tick": {},
   "recent_closed": [
-    {
-      "symbol": "NVDAUSDT",
-      "side": "long",
-      "pnl": -0.75175408,
-      "pnl_source": "position_history",
-      "closed_by": "agent",
-      "reason": "model_decision",
-      "detected_at": "2026-10-06T15:30:15.000Z"
-    },
-    {
-      "symbol": "NVDAUSDT",
-      "side": "short",
-      "pnl": 30.56501477,
-      "pnl_source": "position_history",
-      "closed_by": "agent",
-      "reason": "model_decision",
-      "detected_at": "2026-10-08T13:35:15.000Z"
-    },
     {
       "symbol": "AAPLUSDT",
       "side": "short",
@@ -69,52 +42,61 @@
       "closed_by": "exchange_or_external",
       "reason": "no agent order: exchange stop, exchange take-profit, liquidation, or a manual close",
       "detected_at": "2026-10-09T16:00:15.000Z"
+    },
+    {
+      "symbol": "GOOGLUSDT",
+      "side": "long",
+      "pnl": 4.10310663,
+      "pnl_source": "position_history",
+      "closed_by": "agent",
+      "reason": "max_holding_time",
+      "detected_at": "2026-10-11T12:20:15.000Z"
+    },
+    {
+      "symbol": "AMZNUSDT",
+      "side": "long",
+      "pnl": 26.52093465,
+      "pnl_source": "position_history",
+      "closed_by": "agent",
+      "reason": "max_holding_time",
+      "detected_at": "2026-10-11T13:15:15.000Z"
     }
   ],
   "last_session": "closed",
-  "position_reviews": {
-    "GOOGLUSDT": {
-      "last_at": "2026-10-11T08:30:15.000Z",
-      "band": 0
-    },
-    "AMZNUSDT": {
-      "last_at": "2026-10-11T11:20:15.000Z",
-      "band": 1
-    }
-  },
+  "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-11T10:40:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-11T10:45:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-11T11:20:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-11T10:35:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-11T16:05:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-11T16:20:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-11T15:50:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-11T16:15:15.000Z",
     "us_regular_open|None": "2026-10-09T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-09T18:25:15.000Z",
     "price_move|CRCLUSDT": "2026-10-09T20:00:15.000Z",
     "us_regular_close|None": "2026-10-09T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-11T06:25:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-10-11T04:35:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-11T10:50:15.000Z",
-    "volume_spike|COINUSDT": "2026-10-11T11:30:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-11T13:55:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-10-11T16:15:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-11T15:35:15.000Z",
+    "volume_spike|COINUSDT": "2026-10-11T16:05:15.000Z",
     "price_move|HOODUSDT": "2026-10-09T14:35:15.000Z",
-    "range_expansion|HOODUSDT": "2026-10-11T11:25:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-10-11T10:55:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-11T11:20:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-10-11T11:25:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-11T10:15:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-11T11:05:15.000Z",
+    "range_expansion|HOODUSDT": "2026-10-11T15:45:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-10-11T15:50:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-11T15:40:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-10-11T16:20:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-11T16:00:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-11T16:00:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-08T14:05:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-10-11T10:50:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-11T11:25:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-11T11:25:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-11T10:35:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-11T10:40:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-10-11T10:55:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-10-11T16:10:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-11T15:20:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-11T15:20:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-11T15:35:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-11T16:05:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-10-11T15:35:15.000Z",
     "price_move|COINUSDT": "2026-10-09T20:00:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-10-11T09:50:15.000Z",
-    "range_expansion|COINUSDT": "2026-10-11T09:35:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-10-11T03:45:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-10-11T15:35:15.000Z",
+    "range_expansion|COINUSDT": "2026-10-11T15:40:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-10-11T15:35:15.000Z",
     "price_move|METAUSDT": "2026-10-09T17:45:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-10-11T03:25:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-10-11T15:35:15.000Z",
     "price_move|TSLAUSDT": "2026-10-09T15:25:15.000Z",
     "price_move|AMZNUSDT": "2026-10-09T13:35:15.000Z",
     "position_review|SP500USDT": "2026-09-19T01:30:15.000Z",
@@ -167,31 +149,12 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-11T11:10:19.177Z",
+  "last_log_commit_at": "2026-10-11T16:20:18.775Z",
   "closes_sent": {
-    "AMZNUSDT": "model_decision",
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "9f197dec94e8",
-    "3a72173fb836",
-    "48872ebb957b",
-    "2e591cebf66a",
-    "8ba379554537",
-    "dbc377247d88",
-    "d895f6fc490a",
-    "36ed519e9008",
-    "dba4d0ee76bb",
-    "9210b34afd56",
-    "ee0fe4503ac6",
-    "ef5c230685c1",
-    "d826c2d5a1e2",
-    "842ce72ecff6",
-    "5d01e40b4788",
-    "965773ba53ef",
-    "92920c309711",
-    "0b491da7d80c",
     "485dd7de0f70",
     "881465687797",
     "80f9adc7a9fb",
@@ -973,11 +936,290 @@
     "5465191f2267",
     "060b3050cc30",
     "f4cb199e6597",
-    "2ebc7c4f8274"
+    "2ebc7c4f8274",
+    "b0328d06a572",
+    "454b662d5191",
+    "4a78dae745f0",
+    "87cab3cf19e6",
+    "234a752d3352",
+    "a2750db9340f",
+    "b820041c0d98",
+    "fcb78ae2f87e",
+    "2cb122820961",
+    "3935d5f05faf",
+    "795b10f90f6f",
+    "1f8e2ffe9916",
+    "e19cb48df702",
+    "11470432ee67",
+    "3f00d8629fce",
+    "ada843dc49de",
+    "0afb7bd52689",
+    "5e625b4968c8"
   ],
   "news_wakes": [
-    "2026-10-11T11:10:15.000179+00:00",
-    "2026-10-11T11:25:15.000157+00:00"
+    "2026-10-11T15:25:15.000167+00:00",
+    "2026-10-11T16:15:15.000161+00:00"
   ],
-  "news_pending": []
+  "news_pending": [
+    {
+      "id": "evt-news-NVDAUSDT-a2750db9340f",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T13:10:15.000Z",
+      "source_ts": "2026-10-11T13:00:37.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Benzinga): David Tepper Once Said \u2018I Don\u2019t Trust Myself\u2019 on Nvidia\u2014Now Appaloosa Holds 1.5 Million Shares",
+      "payload": {
+        "headline": "David Tepper Once Said \u2018I Don\u2019t Trust Myself\u2019 on Nvidia\u2014Now Appaloosa Holds 1.5 Million Shares",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOOW8xb1hSZXJBS3Z6SFRvSERRdEYyNWoxY1dkVjhIQlk0WThVbWduQUtjM2c3TC15MUE0RjBEVUl3VmJNMXhZTUVkbUpxeWlaNWxfdktObXFXZVM2QTlqcThJZ2FWckszWEZRSFc4ZHdnQ3M3Nk56RHZnYW9jNVBSODJPSTBmTVdIN280RHBfRmcxT1JOX0JJWFRRSVcxRVg2Nkswd1h0ZXdfMzFRb0JTOWR1X25PbTBpdWNya0hreE9FMW9BdEdNcDZnVkRkUmUxdzFnV1hqcy1tNzZm?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T13:00:37.000Z",
+        "age_minutes": 9.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-b820041c0d98",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T13:25:15.000Z",
+      "source_ts": "2026-10-11T13:15:33.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Livemint): Nvidia's paid lunches vs Google's free buffets: Are stock perks the new Big Tech benefit?",
+      "payload": {
+        "headline": "Nvidia's paid lunches vs Google's free buffets: Are stock perks the new Big Tech benefit?",
+        "publisher": "Livemint",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxObTl3Q1dsaDM3V0Q5MUVHUlYwV1NkSnl0ZFlibU5mWHdvcjNLb3RRWUk3TFQ3dnB4WW1Qc1dJX0xFZE04VzM0VVAwS3R3d25yamRBZnExek1yT0JYVGE3UFp3QWlpQmdBQ2pmcnZ4TXRadHZ3N3AycDdQdTM5R1ZFUmFrNkN3RDNKNEt0MS1XRDRSM29Gb2ZaWHBuczVWdkt1MVFtb1laaUU1TGV4RVpHN19HaE56bEctbk4xUHBHRnE4OWhWYno0SXZjS1dFNEE5NE5rUlpQcEtBTGZZOVHSAeMBQVVfeXFMTzRrUkRxczQ2ZUlkbWFEZ1Nnc3o5VHdLY0FucVpPNzhpREc2bkx5aS1EMUJXeXpvMm5DUFRMRC1fYlpkbkZfLW5ZWjZGOVpKOVNGZDdmVVlLTlp3TFlDNW11REdUeE1vRkhta3BndGJkd3pSOHM0dndaaHVQbEJxVTNOVjlqdTF6LXNtUGVHekZIUGFvT0ZoZUhEcjhRV2RaczV3NG4xa1NfMDFIeWFfc25nWXM0Nl9ZbDJiZzJ4MGdsNy1xQTNjN3RKVVdqekNRX09NbEt1dUdxWnh4UjJCczR4bWc?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T13:15:33.000Z",
+        "age_minutes": 9.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-fcb78ae2f87e",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-11T13:30:15.000Z",
+      "source_ts": "2026-10-11T13:18:45.000Z",
+      "session": "closed",
+      "summary": "TSLA news (Benzinga): Elon Musk\u2019s Cybertruck Miss, Tesla\u2019s India Puzzle, Polestar\u2019s Sales Slide and More: This Week in Mobility",
+      "payload": {
+        "headline": "Elon Musk\u2019s Cybertruck Miss, Tesla\u2019s India Puzzle, Polestar\u2019s Sales Slide and More: This Week in Mobility",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPNTJKampfamd2QmlLb19GMlVEZ19EcWpEM1RhV0twaUhyVW9JWG5BenhfWk5hZ19zYTM4SnByTVE4UmlLaFl4TlY4YWFlMzhyQmtDWU1rWTNPVTlLOExxV09uZEhyWTJZTzkxZERxNDJqRnRabXJPWWdRTWhZNllXMlZYZVRpSDNlNjZUVnU3MXdlVmY1R2pvSjFGQmIyUTBLREtoOVhfbGN4alFwQUlGV3NZc0o4bmFPbU16M0JuT215UGNUeFRfekhvNElyMDhxYmtoYUlNaVVUOHdjUWNLYUUtRGJHWE0?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-11T13:18:45.000Z",
+        "age_minutes": 11.5,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-2cb122820961",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-10-11T13:40:15.000Z",
+      "source_ts": "2026-10-11T13:38:18.000Z",
+      "session": "closed",
+      "summary": "META news (The Motley Fool): Prediction: Meta Platforms Stock Will Drop After Earnings, and That Could Be an Incredible Buying Opportunity",
+      "payload": {
+        "headline": "Prediction: Meta Platforms Stock Will Drop After Earnings, and That Could Be an Incredible Buying Opportunity",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNV3JVZDdIdmUzZWVGTHRrS09GbXJvYUpmeWxnalJFV1puZzJfZ1ZXYTFFUmRCZ0ptTzVBSm45UFphVXlRNVg5MHNLeTlyNEZhN0dTeXk1UWk4dzhNamRFYVNkWE1Sem9QOFNkT2stV0xZdFlibzhZb051bGV4RE1HNVVuOFNYOUhCcDA1eldOdHJPYjdoUjN6eg?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-10-11T13:38:18.000Z",
+        "age_minutes": 2.0,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-3935d5f05faf",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-10-11T14:20:15.000Z",
+      "source_ts": "2026-10-11T14:13:00.000Z",
+      "session": "closed",
+      "summary": "META news (BeInCrypto): Meta Stock Warning? Zuckerberg Sells $21 Million as Insiders Exit",
+      "payload": {
+        "headline": "Meta Stock Warning? Zuckerberg Sells $21 Million as Insiders Exit",
+        "publisher": "BeInCrypto",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1zX1p6ektzTnZZNWVxaHZfdTcybWx3dm53QnlQd0ZTRjM4eVFPc3pBbk04UlhMWHVFRkw3QzVtb3NoX1p0MmpCMXoyOG0wVVJqMDN1R19wS1VzRzZVcTk2MXloWDNOU0E?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-10-11T14:13:00.000Z",
+        "age_minutes": 7.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-795b10f90f6f",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T14:25:15.000Z",
+      "source_ts": "2026-10-11T14:18:17.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Traders Union): Nvidia and megacaps outperform as rising U.S. Treasury yields lift bond volatility",
+      "payload": {
+        "headline": "Nvidia and megacaps outperform as rising U.S. Treasury yields lift bond volatility",
+        "publisher": "Traders Union",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPU2pFMkx4aWxrazlqNXlrUnJTYUp1dkhILXVjc0syQXdORkw3VXdqSS1TcDdRWFRFVVZmTnBOTWJkTFktVVJEeV9zWkx0TGtfZm82VENyd0V5WXhNOXhfTGRFWmF1c3VSRWVndTRiR1ZnV2Fua0YwcFV1c3dIU213QlVJQ3JRWE9Bak9Ha0Z3UlFDMUo4bjAtdG5XRks1OThqbUVYMUloU0I?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T14:18:17.000Z",
+        "age_minutes": 7.0,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-1f8e2ffe9916",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-10-11T15:05:15.000Z",
+      "source_ts": "2026-10-11T15:02:53.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (The Motley Fool): Alphabet's Google Cloud Is Surging at 82%, and the Heavy Spending Is Starting to Make Sense",
+      "payload": {
+        "headline": "Alphabet's Google Cloud Is Surging at 82%, and the Heavy Spending Is Starting to Make Sense",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQY0p4TFZIQTdmRm9ya1BvbGc0T1E5WEZqMHFOb3BCVk80TXRGX1cwZVlhb2FCWFNDbG9VekxnMHJGanVqZEVtWVNLcUtDazFTMU9iRXZXLXF0cXhibWNCVEFDSkRoRE9hRDB2NGNNdVN3OVZrbDFGZzdvdjc3bldhM0VNQU45UEY4NE5jVUtXMWZmMElDd3JjWA?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-10-11T15:02:53.000Z",
+        "age_minutes": 2.4,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-e19cb48df702",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T15:15:15.000Z",
+      "source_ts": "2026-10-11T15:05:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Seeking Alpha): Nvidia Stock: Finding New Ways To Extend The AI Growth Runway (NASDAQ:NVDA)",
+      "payload": {
+        "headline": "Nvidia Stock: Finding New Ways To Extend The AI Growth Runway (NASDAQ:NVDA)",
+        "publisher": "Seeking Alpha",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNMndobzRCTHpzOWJTYUhfQktHQ1JlRzdzYzV5V1ZfbjB0M2RiM0lLYTBaaW92ODRUWFc5VjYyTldyVFVMVHBQZWUteUN5dGZDdVZqMXVkN1c3SGhUcjVreFNwYnRkU29oWHNUVTBIMlVPVE1icmUtd3MwWFdLRExNWjR2cXpibXp0ZkRpREQ2NDJlTHhKQnEzYXdXSkw4Tlc2Vzcw?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T15:05:00.000Z",
+        "age_minutes": 10.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-11470432ee67",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T15:25:15.000Z",
+      "source_ts": "2026-10-11T15:24:11.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Pluang): Nvidia stays a Buy as AI demand boosts earnings and new financing expands its market.",
+      "payload": {
+        "headline": "Nvidia stays a Buy as AI demand boosts earnings and new financing expands its market.",
+        "publisher": "Pluang",
+        "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNYm12SDFqUVgySVp4ZVlEYURCMFNvbkEyQzJOd05hQTBBZWZHQlFzVUxTUHRfTjVBYlo3aHRKNjdDQ05kbTRzZm9HWmM5SWp0aFhIS19WaVlwSzlHX3pvY3JkUXdvN09EY3VQMVZSMXR0NFZ0UUhKU3ZXSjIxWS16ZXBic1B6cVZjblE?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T15:24:11.000Z",
+        "age_minutes": 1.1,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-3f00d8629fce",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T15:50:15.000Z",
+      "source_ts": "2026-10-11T15:38:39.000Z",
+      "session": "closed",
+      "summary": "NVDA news (FinanceFeeds): Nvidia fell 2.94 percent on Thursday 8 October 2026, to $230.48, after OpenAI's annualized revenue was put near $50 billion. Did chip stocks, rather than the rest of the Nasdaq, account for the lag? -",
+      "payload": {
+        "headline": "Nvidia fell 2.94 percent on Thursday 8 October 2026, to $230.48, after OpenAI's annualized revenue was put near $50 billion. Did chip stocks, rather than the rest of the Nasdaq, account for the lag? -",
+        "publisher": "FinanceFeeds",
+        "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPODg5bUlPRHFrRVhuRXV3NzF6QzFyTzNuMThYaUo5VmxWc2FYZW5EYlhSbjZpOElpWC01VzZhX2JneEdMM2kteXVLRlJZVDR6U1dxVUI5YXVZR3NZUTZyV2NPSG4zYjRhWGpZa2ppLTM0eGROS25zSzQxZTVNdnRTY0lxWFotbE5zeUFCOFdFOC0zRU0?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T15:38:39.000Z",
+        "age_minutes": 11.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-ada843dc49de",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-11T16:00:15.000Z",
+      "source_ts": "2026-10-11T15:30:29.000Z",
+      "session": "closed",
+      "summary": "TSLA news (Benzinga): EXCLUSIVE: Ross Gerber Says Tesla May Make Just \u2018a Few Hundred\u2019 Roadsters: \u2018Hovering Is a Gimmick\u2019",
+      "payload": {
+        "headline": "EXCLUSIVE: Ross Gerber Says Tesla May Make Just \u2018a Few Hundred\u2019 Roadsters: \u2018Hovering Is a Gimmick\u2019",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNdTI4YjFRYk9QMDJCMzFJdUhTa3FkRnRQT3NWR2JkTUFzaThBV3gwUTdpeHdqeU1JdGJDRWVVOW9CUTc1UTRHbkVJT2hyMUNLSjlKbkJIdVlPWjc4ZndtZU1PZVhiYUxXZlROYU9xNTZ4MHpNVjJmeWhDZU1QTTlHVF9JR0xpWktyazFsanhYSDE4TFZTZ3hMWkxIQkNPX3Y0dS1qdEJFSFFyRmZtNmxISWtvNVp3QmFsemxBTFJZNkJROExJTkVvUkV5bTZURWx5WndiSDV1LUR5eF82RWc?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-11T15:30:29.000Z",
+        "age_minutes": 29.8,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-0afb7bd52689",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T16:15:15.000Z",
+      "source_ts": "2026-10-11T16:10:37.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Simply Wall Street): Is NVIDIA (NVDA) Cheap As Its AI Narrative Points To $280 Fair Value?",
+      "payload": {
+        "headline": "Is NVIDIA (NVDA) Cheap As Its AI Narrative Points To $280 Fair Value?",
+        "publisher": "Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNYTZDaE1QdllESjVKUHBVVWVxR3dxLUVyYmtMeUxMNk13WXNUc0tCbUhkb180QUZ6Z3BQWktZNklMN2lmMEtZb01meGpBYmlydURMUi1jYy1ZNlZqQk9nNnBEMzdSZ2hOVTdPeWlDR0szQ3QtR1ZWazhndl9PelFKYzBydm5QVi00eWJNRlFoMlNINExrWDhubEw2X0hKWHVTVlk0RG9aZ01zSFdQS0F2QnJhUjR4UnJLc3dINmxLbEI3cTFqR3ZkZElB0gHPAUFVX3lxTE14RjYxbzJxQkxjRVpwdTdlM0dVMkdkeFhCdExFbHRsbnNfcElKZ3JUeGVVZm1JQVdpWDdkbHJIWkNzN2phSUFYZ1BtVVpLYU9QSzNOS1FTQXBuM2hmeGNsZElrOV9hWkowaFZma0pCWDAtNlo3eTN2X0ZYNUVnNGY3TGk3LTJkVGJyUFVkLWhybDBnNFhZemdwTDVMNW5PS28yOVFOLTVFVkxENFVRZ25oOU80MkxURkU1TXB2MkFyU0REN2tReFRWajhBZmZCOA?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T16:10:37.000Z",
+        "age_minutes": 4.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AAPLUSDT-5e625b4968c8",
+      "type": "news",
+      "symbol": "AAPLUSDT",
+      "received_at": "2026-10-11T16:15:15.000Z",
+      "source_ts": "2026-10-11T16:10:37.000Z",
+      "session": "closed",
+      "summary": "AAPL news (Simply Wall Street): What ADT (ADT)'s Apple Smart Home Tie Up Means For Shareholders",
+      "payload": {
+        "headline": "What ADT (ADT)'s Apple Smart Home Tie Up Means For Shareholders",
+        "publisher": "Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPX2tXMkxUOFh2cklCbVduLTdOQmlLUTVHZEM5c0JQTjlET1M5MHZKUHhldkFKVG1Oc0E1WjJsNXRtTVhrLS01YmRjNVF1VVlmNXRscmV6RGMweWRoNGRaWm90aURZMUxjWUs2ckRCUnRNQmFHdjlmdmZteUxQOEZiRmxQS3ViR1BySEJxSDNQd0U3QzQ5MTNFQk1jd002N1NXbVM0VmtLbzJUdXJLMHVnZ2lfS2VfckdxUV8tOWh2TVMzM3BtMnM40gHMAUFVX3lxTE1BMG9FbmZfUG56d3ljYlotbFpmc1NNMFhQQUJxLTl3bms4THp4R1BITWl1THV6TXNEWXMyM2s5bjFQb0lKRHRxbnlUOXhJQzRKSnFXdHpVTjV5dWY0alJvZTJZaWNYbkhkdHJiQnRvajNIeWRTUUFFTU5mam9pZFZUOHhjZGtVZ3dBYUV3UEFEcnFTQWVrT1dad3ZBek4tRlN3bktVenNaRkI3ZV9NUEc5UXJnd2tOS1FjWVBZSUdSaXdSbTNWRUkwS1JYbg?oc=5",
+        "feed": "google_news:AAPLUSDT",
+        "published_at": "2026-10-11T16:10:37.000Z",
+        "age_minutes": 4.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    }
+  ]
 }
