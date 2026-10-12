@@ -11,8 +11,8 @@
       "NVDAUSDT": "2026-10-09T10:05:15.000Z",
       "GOOGLUSDT": "2026-10-08T12:10:15.000Z"
     },
-    "day": "2026-10-11",
-    "day_start_equity": 50104.85921829,
+    "day": "2026-10-12",
+    "day_start_equity": 50095.04627278,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null
@@ -65,38 +65,38 @@
   "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-10-11T21:30:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-10-11T16:20:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-10-11T21:20:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-10-11T20:55:15.000Z",
+    "volume_spike|METAUSDT": "2026-10-12T02:00:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-10-12T01:05:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-10-12T02:10:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-10-12T01:10:15.000Z",
     "us_regular_open|None": "2026-10-09T13:30:15.000Z",
     "price_move|MSTRUSDT": "2026-10-09T18:25:15.000Z",
     "price_move|CRCLUSDT": "2026-10-09T20:00:15.000Z",
     "us_regular_close|None": "2026-10-09T20:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-10-11T21:20:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-10-11T21:20:15.000Z",
-    "volume_spike|HOODUSDT": "2026-10-11T21:15:15.000Z",
-    "volume_spike|COINUSDT": "2026-10-11T21:10:15.000Z",
+    "volume_spike|SP500USDT": "2026-10-12T01:55:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-10-12T02:05:15.000Z",
+    "volume_spike|HOODUSDT": "2026-10-12T00:35:15.000Z",
+    "volume_spike|COINUSDT": "2026-10-12T00:30:15.000Z",
     "price_move|HOODUSDT": "2026-10-09T14:35:15.000Z",
-    "range_expansion|HOODUSDT": "2026-10-11T21:20:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-10-11T21:30:15.000Z",
-    "range_expansion|SP500USDT": "2026-10-11T18:05:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-10-11T20:55:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-10-11T21:25:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-10-11T21:30:15.000Z",
+    "range_expansion|HOODUSDT": "2026-10-12T00:40:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-10-11T23:35:15.000Z",
+    "range_expansion|SP500USDT": "2026-10-12T01:40:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-10-12T01:30:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-10-12T00:05:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-10-12T01:25:15.000Z",
     "price_move|GOOGLUSDT": "2026-10-08T14:05:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-10-11T21:10:15.000Z",
-    "range_expansion|NDX100USDT": "2026-10-11T20:20:15.000Z",
-    "volume_spike|NDX100USDT": "2026-10-11T20:30:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-10-11T18:50:15.000Z",
-    "range_expansion|METAUSDT": "2026-10-11T20:55:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-10-11T20:50:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-10-12T01:15:15.000Z",
+    "range_expansion|NDX100USDT": "2026-10-12T02:15:15.000Z",
+    "volume_spike|NDX100USDT": "2026-10-12T02:30:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-10-12T01:35:15.000Z",
+    "range_expansion|METAUSDT": "2026-10-12T00:05:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-10-12T00:00:15.000Z",
     "price_move|COINUSDT": "2026-10-09T20:00:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-10-11T18:50:15.000Z",
-    "range_expansion|COINUSDT": "2026-10-11T21:15:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-10-11T21:20:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-10-11T23:50:15.000Z",
+    "range_expansion|COINUSDT": "2026-10-12T02:20:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-10-12T00:05:15.000Z",
     "price_move|METAUSDT": "2026-10-09T17:45:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-10-11T15:35:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-10-12T00:15:15.000Z",
     "price_move|TSLAUSDT": "2026-10-09T15:25:15.000Z",
     "price_move|AMZNUSDT": "2026-10-09T13:35:15.000Z",
     "position_review|SP500USDT": "2026-09-19T01:30:15.000Z",
@@ -149,23 +149,12 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-10-11T20:35:17.535Z",
+  "last_log_commit_at": "2026-10-12T01:50:18.970Z",
   "closes_sent": {
     "SP500USDT": "model_decision"
   },
   "macro_fired": [],
   "news_seen": [
-    "271433202c63",
-    "e64b6f6bcfa4",
-    "cf2cfc1e6638",
-    "19b37742754a",
-    "5742f449ca97",
-    "fd99c6a6076d",
-    "0bd3b363d56a",
-    "d18f19b2571d",
-    "408293f56b8c",
-    "3af2732aaefd",
-    "ecf5dd4a0da5",
     "015ed1d6d9ad",
     "03db99343971",
     "49846921ea41",
@@ -954,11 +943,22 @@
     "ddeb30ae3d63",
     "ebdc0ceff4f4",
     "b27422c30132",
-    "121ddef2f1d7"
+    "121ddef2f1d7",
+    "bbc11c7f408a",
+    "fe2253db67db",
+    "a830d773c8ed",
+    "2c004afa2e91",
+    "227f22a5314f",
+    "52ef77b1ca91",
+    "c59d2ce41df5",
+    "c0a9634f1afd",
+    "204b0fc0d290",
+    "3ee4bcb29a37",
+    "322c264fffeb"
   ],
   "news_wakes": [
-    "2026-10-11T19:50:15.000132+00:00",
-    "2026-10-11T20:00:15.000125+00:00"
+    "2026-10-12T01:25:15.000157+00:00",
+    "2026-10-12T02:15:15.000123+00:00"
   ],
   "news_pending": [
     {
@@ -1543,6 +1543,228 @@
           "GOOGLUSDT 5m volume 4.1x median"
         ],
         "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-bbc11c7f408a",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-11T21:50:15.000Z",
+      "source_ts": "2026-10-11T21:48:38.000Z",
+      "session": "closed",
+      "summary": "AMZN news (Invezz): Amazon plans $7 billion acquisition of Decart, a fast-growing AI startup",
+      "payload": {
+        "headline": "Amazon plans $7 billion acquisition of Decart, a fast-growing AI startup",
+        "publisher": "Invezz",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMlktNkVNdmFyUkNYaVV1SGpOVjNFQmM2aXNTdm9QdVAxNTdOY2t4V2l2ajRBemlVVmowVEZsN0syXzRjcl9xaS1yWXV6eGlvMWprNHlDNXFSQ3lkcUpzR2U2eUdIZU9IaHhHVDFiTWtuUWh6SUlodFJXcS13enJ5STVwZTNuOVVXU1dOU2tBUk1POGYzWUpvRk5fWkJwWlA0U0s5bFFaeWpIZw?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-11T21:48:38.000Z",
+        "age_minutes": 1.6,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-fe2253db67db",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-11T22:10:15.000Z",
+      "source_ts": "2026-10-11T22:01:00.000Z",
+      "session": "closed",
+      "summary": "AMZN news (The Information): Amazon\u2019s Bargains Include Its Stock",
+      "payload": {
+        "headline": "Amazon\u2019s Bargains Include Its Stock",
+        "publisher": "The Information",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNbWxXdUg5azdXbzFfQU9aZ1NUY2dqYWVtZ2I1WFlRa1NDM2RBa1ZFdHhfYlJWemEwZ2Q2amhuU1JaUUJxS2t4dnZmVHV4cHhFZUU0OUp0RUQzQTc2ODFaTHZiVWtOSjdmTGNWRjFxS3VhS3lvVFlQSG9SMWR0dzBQZG5nQWdOdWY3Uk8zNU9sNA?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-11T22:01:00.000Z",
+        "age_minutes": 9.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-a830d773c8ed",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T22:25:15.000Z",
+      "source_ts": "2026-10-11T22:20:17.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Stocks Down Under): Why Are Oracle (NYSE:ORCL) and Broadcom (AVGO) Stocks Falling While Nvidia Holds Up",
+      "payload": {
+        "headline": "Why Are Oracle (NYSE:ORCL) and Broadcom (AVGO) Stocks Falling While Nvidia Holds Up",
+        "publisher": "Stocks Down Under",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5OcDVMcU9KRjRVa3VNTFF2YTF5TnhNdjBhTUFCUnM1ODUwYTJwSlVpVXNxNWJUdFNVT0JOZGllRjFOdllnMXlKMFJiZnpKd1A3S0dGel9SbVliVWIycS0zbzRhR0ZQWGZmS1loTHpVamNQVkN5NWZOczZWZUdzS3c?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T22:20:17.000Z",
+        "age_minutes": 5.0,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-2c004afa2e91",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-10-11T23:05:15.000Z",
+      "source_ts": "2026-10-11T22:44:37.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (Simply Wall Street): Is Alphabet (GOOGL) Reasonable As AI Spending And Cash Flow Collide?",
+      "payload": {
+        "headline": "Is Alphabet (GOOGL) Reasonable As AI Spending And Cash Flow Collide?",
+        "publisher": "Simply Wall Street",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQmV2b3RnZnUyN3dxbzN0TVVoZDYtM19zUklNNTdsZ1NMVkRydGpWQ05tZkRsanZuNTdiWkJjS1hwcW03cUFEMDJSbmVpRnpoakFzLVN0U1cwSGpFc0xZS1labV9adV9jRDZNQldOUkxrUmxvUVRqakdTVHN1LWRWMzEzZ3Y0UW5VakdhZkh5ekJOcUZobXZIOG9KSlRBZmpHMU0zZU5XSmNLUTIzbkpyWmdmZnpyVmxVbndvSnlHSkc0OVXSAcgBQVVfeXFMTWdsTDRwamFyd2RUekhRczU5NFhEajhtbzAzR0ZMRGhZejM1R0RTRkdycWhtRmw3akJwVHFra2xGYmpDVHBuRkRqUE9MS0NwMVFnLTkxekpuejg4NEhqWHRaZ0F0X3FYeDdXMHVZYUpHbzNtNnF0ZFZCaDNhREZiY3VEcHl0cGZmUmJ6bnRRZGFrcE4wR1ZDNzJoWTlHZndfWjZ2MFJtT2NWREh4QUo0dnU4WnQ0Z0RMTldKTEdKc01DcEZzNmdXQ2c?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-10-11T22:44:37.000Z",
+        "age_minutes": 20.6,
+        "held_position": false,
+        "market_confirmation": [
+          "GOOGLUSDT 5m volume 9.4x median"
+        ],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-227f22a5314f",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-10-11T23:35:15.000Z",
+      "source_ts": "2026-10-11T23:33:09.000Z",
+      "session": "closed",
+      "summary": "NVDA news (The Motley Fool): Not Nvidia. Not Broadcom. This Little-Known Chip Supplier Could Be the AI Boom's Best-Kept Secret.",
+      "payload": {
+        "headline": "Not Nvidia. Not Broadcom. This Little-Known Chip Supplier Could Be the AI Boom's Best-Kept Secret.",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOUFBoMi1Gb09QbG1PWlRZRnFPMkJya3BDNnUwSGI1T2JOVXMteEFHd0h6R2ZSaUJ1dUgxUXhJSDRyZmZYQ0NPMHpxRmpMVk1qcEk2eGZEUDM5TTJ3U1lNeUVvN2R6aElLeUxNbDR0cll0R0FBcTRJclByOHZ3MHVDV2NoeHo3ZXlGckNzNjc3RzZiaFBRVXRlMg?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-10-11T23:33:09.000Z",
+        "age_minutes": 2.1,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-52ef77b1ca91",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-12T00:15:15.000Z",
+      "source_ts": "2026-10-12T00:13:24.000Z",
+      "session": "closed",
+      "summary": "AMZN news (GuruFocus): Amazon (AMZN) Eyes $7 Billion Acquisition of Decart AI Amid Inte",
+      "payload": {
+        "headline": "Amazon (AMZN) Eyes $7 Billion Acquisition of Decart AI Amid Inte",
+        "publisher": "GuruFocus",
+        "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPTFJjNXV2U2laeThiSmRCdGNDd1d2MEZLNjlHc3ZvQ1VaRUlZcGFFckNjb2VoOFZUNHRERWRRcmpuNnNxbDF1VEF0WUNsNXh1c09XR2YwWXA4STR6ZVRxeGdlcVFTQ2FtcnZxTV9yOVh5U0NqWUxxTFp6TEcyb2JMbzFoUXp3YXJPT1d0UllEUklEc0pfS0NKUXVEOGZTSHV3eEx0THJEanFPWnFMa01UNk1oOHBjcjhxYU9GOUVuby1uRVN4cUNGVjFn?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-12T00:13:24.000Z",
+        "age_minutes": 1.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-c59d2ce41df5",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-12T00:50:15.000Z",
+      "source_ts": "2026-10-12T00:49:31.000Z",
+      "session": "closed",
+      "summary": "AMZN news (GuruFocus): Amazon (AMZN) Announces Leadership Changes in Alexa Division Ami",
+      "payload": {
+        "headline": "Amazon (AMZN) Announces Leadership Changes in Alexa Division Ami",
+        "publisher": "GuruFocus",
+        "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPelVyWk5BZGRHb0pWdi1LcjVYbGdqaHBhenI5WlFlMEF5aEhLeFdZOGFBbWRiWTkxS2xCSW5GbDMybS16b2hSbmxaYTUtaGdHSEZpcHJwZDVUWG9kVFg5cHZRUHpPY2VlUHVxRGFMUGFoYUlOdWV4YTZVbHhKUjB5Ry1MYkFKVVB2eG9fTUdzZHBLYVZyR2lrY1JsdDFqc2ZQZ2VmNzEtSXQtbDZkQlloSnpQQTBrYVlnZkZxQ0hqdmhrZw?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-12T00:49:31.000Z",
+        "age_minutes": 0.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-c0a9634f1afd",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-10-12T01:25:15.000Z",
+      "source_ts": "2026-10-12T01:15:59.000Z",
+      "session": "closed",
+      "summary": "META news (Benzinga): Mark Zuckerberg Once Wrote Fencing Sequences in Chemistry Class, Now He\u2019s Into Jiu-Jitsu \u2014 Meta Flagged t",
+      "payload": {
+        "headline": "Mark Zuckerberg Once Wrote Fencing Sequences in Chemistry Class, Now He\u2019s Into Jiu-Jitsu \u2014 Meta Flagged t",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNX0x6VGk1VUt0UDhJWXdTZGxQLUU1czF2c090XzlSRE00ck1wMGk1bHBkVmRMRTdtUlplVG1oZ2xpY1JCbmpJeUk5b2tlc05xcHhwOUxLS1A2X3VRZkNOdWpTcGpjNS1ZUmJtbVJuNXZWQTBtSk9LUklpU0d6NUVQVXd4YkpGTFE3bkNvMXBlMmdBMUZJLVBNbE9qQkw?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-10-12T01:15:59.000Z",
+        "age_minutes": 9.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-204b0fc0d290",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-12T01:40:15.000Z",
+      "source_ts": "2026-10-12T01:33:03.000Z",
+      "session": "closed",
+      "summary": "AMZN news (Benzinga): Amazon Reportedly in Talks to Buy AI Startup Decart for $7 Billion - Amazon.com (NASDAQ:AMZN)",
+      "payload": {
+        "headline": "Amazon Reportedly in Talks to Buy AI Startup Decart for $7 Billion - Amazon.com (NASDAQ:AMZN)",
+        "publisher": "Benzinga",
+        "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPRjJycUJVemd5OHlCNzRMODFLX1J0blNYNm5SY2lCLTQteHQ0aWZydEwwM21reHJPd0tqVkRhdVhiR0NGYmVjRHRydmFjbUdHenRlQ2E3Ylh1WG5tOW9QM1FoRUNRcll5emdDcHhlNk9SNEdwREV5d0tyNHpnTHpKQzNYWDkxVkFMY1hWeVFTZmJlSnE4S3FabWJMMjFraVFRUnZCa1MwTUQtd0NnZGFIWWdZZw?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-12T01:33:03.000Z",
+        "age_minutes": 7.2,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-3ee4bcb29a37",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-10-12T02:15:15.000Z",
+      "source_ts": "2026-10-12T01:57:27.000Z",
+      "session": "closed",
+      "summary": "TSLA news (openPR.com): Cryptocurrency News: Apple, Tesla Stocks Go Live on Solana as Pepeto Lines Up a 100x Run",
+      "payload": {
+        "headline": "Cryptocurrency News: Apple, Tesla Stocks Go Live on Solana as Pepeto Lines Up a 100x Run",
+        "publisher": "openPR.com",
+        "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxONUJUN0o3bEs1NG5lOGI0cDN0V1dmN001NldnLS1nYnRlVHpRWDhuOS1CTldsdG9LUkN4V2xjcXJVOTNEVTl6YlI0Z1BIOHpDdTVmYWlfeTQzOVpiMW4tOU1vQ2dyNjBxeTNOc1BZeEdWanpzNDlMVXlvVTdlOEZMMFVQUTVWU1NZV3JsaEtaUElsRFJYY1lKTHVaVQ?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-10-12T01:57:27.000Z",
+        "age_minutes": 17.8,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-322c264fffeb",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-10-12T02:20:15.000Z",
+      "source_ts": "2026-10-12T02:13:00.000Z",
+      "session": "closed",
+      "summary": "AMZN news (Stocktwits): SPCX, TSM, APLD, AMZN, TSLA: Why Retail Traders Couldn\u2019t Take Their Eyes Off These Stocks Last Week",
+      "payload": {
+        "headline": "SPCX, TSM, APLD, AMZN, TSLA: Why Retail Traders Couldn\u2019t Take Their Eyes Off These Stocks Last Week",
+        "publisher": "Stocktwits",
+        "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQYk9ybHZaYU1QSWpibGVRdEJ2THFBVWlvSFRaVi1OS2hsQzY4bXFRWlp3b3RqMDlwVmRvazhkTmlxbllRdURZVWRuTVFvdkFpTVFsR29JbnNxLTF0RFZFLUp4SHhnb1R1M05OOXlaSS02aHlXcFFHNXh2TFZ6N04wLWV6ZzgyYmQwY2g4ZVVXUEVfeXdwWmtVbVhHd200b0d4RWRHUHBtbDlFUW9NMF8tSFpYdkRLSVRTUHpiaTRVWm1tdzEzRU9KTEF4R2FVdnVyWTNEWDQ4SlBrakZNVUNQVGJna04zWm14Y1ZjLVRHdw?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-10-12T02:13:00.000Z",
+        "age_minutes": 7.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
       }
     }
   ]
