@@ -1,13 +1,13 @@
 {
  "log_period": [
   "2026-09-11T18:20:15.000Z",
-  "2026-10-17T15:35:15.000Z"
+  "2026-10-17T20:35:15.000Z"
  ],
  "live_demo_period": [
   "2026-09-18T04:25:15.000Z",
-  "2026-10-17T15:35:15.000Z"
+  "2026-10-17T20:35:15.000Z"
  ],
- "ticks": 8325,
+ "ticks": 8384,
  "decisions": 1137,
  "verdicts": {
   "NO_ACTION": 1085,
@@ -22,10 +22,10 @@
  "fees_usdt": 33.7227,
  "turnover_usdt": 56204.53,
  "equity_start_live": 49953.0411,
- "equity_end_live": 50016.1291,
+ "equity_end_live": 50012.3804,
  "max_drawdown_pct_live": -0.3368,
- "sharpe_annualised_live": 1.4127,
+ "sharpe_annualised_live": 1.3402,
  "sharpe_observation_days": 29,
- "daily_return_mean_pct": 0.00516,
- "daily_return_stdev_pct": 0.05801
+ "daily_return_mean_pct": 0.0049,
+ "daily_return_stdev_pct": 0.05809
 }
