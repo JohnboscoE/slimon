@@ -1,0 +1,1 @@
+{"id": "evt-volume_spike-TSLAUSDT-1792454100000", "type": "volume_spike", "symbol": "TSLAUSDT", "received_at": "2026-10-20T00:00:15.000Z", "source_ts": "2026-10-19T23:55:00.000Z", "session": "closed", "summary": "TSLAUSDT 5m volume 7.9x median", "payload": {"volume": 116.46, "median_volume": 14.81, "multiple": 7.86, "candle_return_pct": -0.005}}
