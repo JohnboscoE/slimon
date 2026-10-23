@@ -1,0 +1,1 @@
+{"id": "evt-volume_spike-COINUSDT-1792713300000", "type": "volume_spike", "symbol": "COINUSDT", "received_at": "2026-10-23T00:00:15.000Z", "source_ts": "2026-10-22T23:55:00.000Z", "session": "closed", "summary": "COINUSDT 5m volume 6.4x median", "payload": {"volume": 261.28, "median_volume": 40.81, "multiple": 6.4, "candle_return_pct": -0.201}}
