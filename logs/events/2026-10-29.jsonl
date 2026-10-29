@@ -1,0 +1,1 @@
+{"id": "evt-price_move-GOOGLUSDT-1793233200000", "type": "price_move", "symbol": "GOOGLUSDT", "received_at": "2026-10-29T00:25:15.000Z", "source_ts": "2026-10-29T00:20:00.000Z", "session": "closed", "summary": "GOOGLUSDT +1.14% over 30m on the live venue", "payload": {"window_min": 30, "return_pct": 1.139, "from": 293.32, "to": 296.66}}
