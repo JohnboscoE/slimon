@@ -1,0 +1,1 @@
+{"id": "evt-volume_spike-NDX100USDT-1793404500000", "type": "volume_spike", "symbol": "NDX100USDT", "received_at": "2026-10-31T00:00:15.000Z", "source_ts": "2026-10-30T23:55:00.000Z", "session": "closed", "summary": "NDX100USDT 5m volume 14.5x median", "payload": {"volume": 0.0058, "median_volume": 0.0004, "multiple": 14.5, "candle_return_pct": 0.021}}
