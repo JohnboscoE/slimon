@@ -1,6 +1,6 @@
 {
   "risk": {
-    "consecutive_losses": 0,
+    "consecutive_losses": 1,
     "last_trade_at": {
       "NDX100USDT": "2026-10-01T10:50:15.000Z",
       "TSLAUSDT": "2026-11-04T09:35:15.000Z",
@@ -11,35 +11,21 @@
       "NVDAUSDT": "2026-11-02T11:15:15.000Z",
       "GOOGLUSDT": "2026-11-03T13:25:15.000Z"
     },
-    "day": "2026-11-06",
-    "day_start_equity": 49829.5776228,
-    "trades_today": 2,
+    "day": "2026-11-07",
+    "day_start_equity": 49803.95309434,
+    "trades_today": 0,
     "halted_until": null,
     "halt_reason": null,
     "cooldown_until": "2026-11-04T14:35:15.000Z"
   },
   "llm_budget": {
-    "day": "2026-11-06",
-    "calls": 50,
+    "day": "2026-11-07",
+    "calls": 5,
     "cost_usd": 0.0,
-    "calls_closed": 8
+    "calls_closed": 0
   },
-  "positions_last_tick": {
-    "AMZNUSDT": {
-      "side": "long",
-      "qty": 5.76
-    }
-  },
+  "positions_last_tick": {},
   "recent_closed": [
-    {
-      "symbol": "TSLAUSDT",
-      "side": "long",
-      "pnl": -5.56714238,
-      "pnl_source": "position_history",
-      "closed_by": "agent",
-      "reason": "model_decision",
-      "detected_at": "2026-11-04T10:35:15.000Z"
-    },
     {
       "symbol": "AMZNUSDT",
       "side": "long",
@@ -66,48 +52,52 @@
       "closed_by": "agent",
       "reason": "model_decision",
       "detected_at": "2026-11-06T12:10:15.000Z"
+    },
+    {
+      "symbol": "AMZNUSDT",
+      "side": "long",
+      "pnl": -50.97023638,
+      "pnl_source": "position_history",
+      "closed_by": "exchange_or_external",
+      "reason": "no agent order: exchange stop, exchange take-profit, liquidation, or a manual close",
+      "detected_at": "2026-11-06T21:55:15.000Z"
     }
   ],
-  "last_session": "post",
-  "position_reviews": {
-    "AMZNUSDT": {
-      "last_at": "2026-11-06T19:55:15.000Z",
-      "band": 0
-    }
-  },
+  "last_session": "closed",
+  "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-11-06T20:20:15.000Z",
+    "volume_spike|METAUSDT": "2026-11-07T00:35:15.000Z",
     "range_expansion|AMZNUSDT": "2026-11-06T14:30:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-11-06T20:30:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-11-06T20:55:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-11-07T02:05:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-11-07T00:20:15.000Z",
     "us_regular_open|None": "2026-11-06T14:30:15.000Z",
     "price_move|MSTRUSDT": "2026-11-06T20:05:15.000Z",
     "price_move|CRCLUSDT": "2026-11-06T20:10:15.000Z",
     "us_regular_close|None": "2026-11-06T21:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-11-06T20:55:15.000Z",
+    "volume_spike|SP500USDT": "2026-11-07T01:00:15.000Z",
     "volume_spike|MSTRUSDT": "2026-11-06T21:00:15.000Z",
-    "volume_spike|HOODUSDT": "2026-11-06T20:05:15.000Z",
-    "volume_spike|COINUSDT": "2026-11-06T14:30:15.000Z",
+    "volume_spike|HOODUSDT": "2026-11-07T02:05:15.000Z",
+    "volume_spike|COINUSDT": "2026-11-07T00:00:15.000Z",
     "price_move|HOODUSDT": "2026-11-06T20:05:15.000Z",
     "range_expansion|HOODUSDT": "2026-11-06T13:35:15.000Z",
     "range_expansion|GOOGLUSDT": "2026-11-06T14:30:15.000Z",
-    "range_expansion|SP500USDT": "2026-11-06T20:55:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-11-06T14:30:15.000Z",
+    "range_expansion|SP500USDT": "2026-11-06T23:50:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-11-07T02:10:15.000Z",
     "range_expansion|AAPLUSDT": "2026-11-06T14:30:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-11-06T20:55:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-11-06T23:45:15.000Z",
     "price_move|GOOGLUSDT": "2026-11-06T14:35:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-11-06T13:35:15.000Z",
-    "range_expansion|NDX100USDT": "2026-11-06T21:00:15.000Z",
-    "volume_spike|NDX100USDT": "2026-11-06T21:00:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-11-07T02:15:15.000Z",
+    "range_expansion|NDX100USDT": "2026-11-07T00:20:15.000Z",
+    "volume_spike|NDX100USDT": "2026-11-07T00:05:15.000Z",
     "volume_spike|NVDAUSDT": "2026-11-06T20:35:15.000Z",
     "range_expansion|METAUSDT": "2026-11-06T13:35:15.000Z",
     "range_expansion|TSLAUSDT": "2026-11-06T13:35:15.000Z",
     "price_move|COINUSDT": "2026-11-06T20:00:15.000Z",
     "range_expansion|NVDAUSDT": "2026-11-06T14:30:15.000Z",
-    "range_expansion|COINUSDT": "2026-11-06T13:35:15.000Z",
+    "range_expansion|COINUSDT": "2026-11-06T22:05:15.000Z",
     "range_expansion|CRCLUSDT": "2026-11-06T13:35:15.000Z",
     "price_move|METAUSDT": "2026-11-06T14:35:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-11-06T13:35:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-11-06T22:05:15.000Z",
     "price_move|TSLAUSDT": "2026-11-06T16:35:15.000Z",
     "price_move|AMZNUSDT": "2026-11-06T15:00:15.000Z",
     "position_review|SP500USDT": "2026-10-21T06:25:15.000Z",
@@ -125,58 +115,46 @@
   },
   "recent_decisions": [
     {
-      "tick_id": "20261106T131515",
+      "tick_id": "20261107T000515",
       "action": "NO_TRADE",
       "instrument": ":none:",
-      "confidence": 0.85,
+      "confidence": 0.9,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20261106T132015",
+      "tick_id": "20261107T001015",
       "action": "NO_TRADE",
-      "instrument": "AMZNUSDT",
-      "confidence": 0.85,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20261106T132515",
-      "action": "NO_TRADE",
-      "instrument": "GOOGLUSDT",
+      "instrument": "AAPLUSDT",
       "confidence": 0.95,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20261106T133015",
+      "tick_id": "20261107T002015",
       "action": "NO_TRADE",
       "instrument": ":none:",
-      "confidence": 0.95,
+      "confidence": 0.9,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20261107T003515",
+      "action": "NO_TRADE",
+      "instrument": ":none:",
+      "confidence": 0.85,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-11-06T20:30:18.621Z",
+  "last_log_commit_at": "2026-11-07T01:45:17.493Z",
   "closes_sent": {},
   "macro_fired": [],
   "news_seen": [
-    "69b99b3104b0",
-    "8c0e4d966a21",
-    "17415ba2463f",
-    "7f496977cf50",
-    "1c843bb6532e",
-    "0c7811ce2500",
-    "70ca91c32b7c",
-    "18446d24ceb4",
-    "dfefcf5d7b04",
-    "4ff90344bef5",
-    "c5b2dbb619de",
-    "eb40d947c28f",
     "d69ce0bcfc0c",
     "73328efd4c0a",
     "b79c212fcc12",
@@ -964,11 +942,44 @@
     "3180e699f5a8",
     "0a3b975029c4",
     "dcbb338f6006",
-    "61cb93b628cf"
+    "61cb93b628cf",
+    "586d7cb7236f",
+    "a2029791e4b8",
+    "c1c5071624a6",
+    "09d4f40fc684",
+    "e07eb3e63715",
+    "e23c7bfd9b60",
+    "aab6091c1d81",
+    "2c8fc3513d33",
+    "5f763fe9f8c9",
+    "0b2843dba164",
+    "ec2a5802f43d",
+    "ba58e02f7465"
   ],
   "news_wakes": [
-    "2026-11-06T20:15:15.000110+00:00",
-    "2026-11-06T20:35:15.000125+00:00"
+    "2026-11-07T00:10:15.000116+00:00",
+    "2026-11-07T01:05:15.000120+00:00"
   ],
-  "news_pending": []
+  "news_pending": [
+    {
+      "id": "evt-news-AAPLUSDT-ba58e02f7465",
+      "type": "news",
+      "symbol": "AAPLUSDT",
+      "received_at": "2026-11-07T01:05:15.000Z",
+      "source_ts": "2026-11-07T00:55:00.000Z",
+      "session": "closed",
+      "summary": "AAPL news (BigGo Finance): Nvidia, Tesla, Apple Join Revolt Against OKX-ICE Tokenized Stock Market as 67 Issuers Object",
+      "payload": {
+        "headline": "Nvidia, Tesla, Apple Join Revolt Against OKX-ICE Tokenized Stock Market as 67 Issuers Object",
+        "publisher": "BigGo Finance",
+        "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFAycVViU01kQ1A3MjVMeHNoWXZFRm9DZnZKSzlFQk5XeDE2eGZhTkwzNFEtSFVXanFJaVhXX3pXek9vcUZkdHRhSlFTZGQwZ2NNYmdaZzJ0WDlQcE5NeWo0ZnJEWFcySkM0NkhtMWZfdjdVek9IVGc?oc=5",
+        "feed": "google_news:AAPLUSDT",
+        "published_at": "2026-11-07T00:55:00.000Z",
+        "age_minutes": 10.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    }
+  ]
 }
