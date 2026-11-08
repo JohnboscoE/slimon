@@ -11,8 +11,8 @@
       "NVDAUSDT": "2026-11-02T11:15:15.000Z",
       "GOOGLUSDT": "2026-11-03T13:25:15.000Z"
     },
-    "day": "2026-11-07",
-    "day_start_equity": 49803.95309434,
+    "day": "2026-11-08",
+    "day_start_equity": 49784.15050987,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null,
@@ -66,36 +66,36 @@
   "last_session": "closed",
   "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-11-07T22:00:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-11-07T19:50:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-11-07T22:05:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-11-07T22:15:15.000Z",
+    "volume_spike|METAUSDT": "2026-11-08T03:15:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-11-08T02:35:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-11-08T02:40:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-11-08T02:20:15.000Z",
     "us_regular_open|None": "2026-11-06T14:30:15.000Z",
     "price_move|MSTRUSDT": "2026-11-06T20:05:15.000Z",
     "price_move|CRCLUSDT": "2026-11-06T20:10:15.000Z",
     "us_regular_close|None": "2026-11-06T21:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-11-07T19:30:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-11-07T21:35:15.000Z",
-    "volume_spike|HOODUSDT": "2026-11-07T21:35:15.000Z",
-    "volume_spike|COINUSDT": "2026-11-07T20:50:15.000Z",
+    "volume_spike|SP500USDT": "2026-11-08T03:00:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-11-08T03:15:15.000Z",
+    "volume_spike|HOODUSDT": "2026-11-08T03:10:15.000Z",
+    "volume_spike|COINUSDT": "2026-11-08T02:20:15.000Z",
     "price_move|HOODUSDT": "2026-11-06T20:05:15.000Z",
-    "range_expansion|HOODUSDT": "2026-11-07T20:50:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-11-07T21:05:15.000Z",
-    "range_expansion|SP500USDT": "2026-11-07T21:40:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-11-07T21:50:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-11-07T20:10:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-11-07T22:15:15.000Z",
+    "range_expansion|HOODUSDT": "2026-11-08T03:05:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-11-08T03:05:15.000Z",
+    "range_expansion|SP500USDT": "2026-11-08T02:10:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-11-08T02:35:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-11-08T01:30:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-11-08T01:30:15.000Z",
     "price_move|GOOGLUSDT": "2026-11-06T14:35:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-11-07T21:10:15.000Z",
-    "range_expansion|NDX100USDT": "2026-11-07T21:40:15.000Z",
-    "volume_spike|NDX100USDT": "2026-11-07T21:40:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-11-07T20:15:15.000Z",
-    "range_expansion|METAUSDT": "2026-11-07T21:15:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-11-07T22:00:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-11-08T03:20:15.000Z",
+    "range_expansion|NDX100USDT": "2026-11-08T02:55:15.000Z",
+    "volume_spike|NDX100USDT": "2026-11-08T02:55:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-11-08T02:05:15.000Z",
+    "range_expansion|METAUSDT": "2026-11-08T03:05:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-11-08T03:05:15.000Z",
     "price_move|COINUSDT": "2026-11-06T20:00:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-11-07T20:20:15.000Z",
-    "range_expansion|COINUSDT": "2026-11-07T20:50:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-11-07T20:50:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-11-07T22:25:15.000Z",
+    "range_expansion|COINUSDT": "2026-11-07T23:50:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-11-08T03:05:15.000Z",
     "price_move|METAUSDT": "2026-11-06T14:35:15.000Z",
     "range_expansion|MSTRUSDT": "2026-11-07T20:50:15.000Z",
     "price_move|TSLAUSDT": "2026-11-06T16:35:15.000Z",
@@ -151,15 +151,10 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-11-07T21:25:17.492Z",
+  "last_log_commit_at": "2026-11-08T02:30:18.676Z",
   "closes_sent": {},
   "macro_fired": [],
   "news_seen": [
-    "574052201a0c",
-    "c70d2df8e1d8",
-    "9c869f441123",
-    "ec7e57723907",
-    "0f99239dc033",
     "74ad2121a573",
     "c58e30a306d8",
     "19fd7fac72af",
@@ -954,115 +949,18 @@
     "5ef963adb790",
     "011a024a21bf",
     "2c85c6789821",
-    "9155e02e1df7"
+    "9155e02e1df7",
+    "8cb9c10f453f",
+    "ebe115caf796",
+    "ec134c480e4a",
+    "dc96756d6973",
+    "deec8afa50cd"
   ],
   "news_wakes": [
-    "2026-11-07T21:35:15.000120+00:00",
-    "2026-11-07T22:05:15.000149+00:00"
+    "2026-11-08T00:40:15.000102+00:00",
+    "2026-11-08T01:00:15.000102+00:00"
   ],
   "news_pending": [
-    {
-      "id": "evt-news-NVDAUSDT-dc1433936ebc",
-      "type": "news",
-      "symbol": "NVDAUSDT",
-      "received_at": "2026-11-07T11:10:15.000Z",
-      "source_ts": "2026-11-07T10:58:00.000Z",
-      "session": "closed",
-      "summary": "NVDA news (India Today): TSMC stock jumps over 6% as Nvidia asks chipmaker to make memory chips",
-      "payload": {
-        "headline": "TSMC stock jumps over 6% as Nvidia asks chipmaker to make memory chips",
-        "publisher": "India Today",
-        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNRlNiaHhwRUJ2VUNZRzVLNnBhSVdJVHo2ZldhUUZuRWYxYk83ZWVqNnhMOUVjRjlzYlpQeldEWjR4blZLT0JYU1hDTWVDWnFCQ2xnRHcyQkNWYTlsa2o4eFNHNnVWM2k4M1NsQms2aFk0alQxRV9heU0zVXlNbTZWQzdDaXJQU0NXR1p3aXYyWWRQVFhScWFDY1daOEZBVzd6MjBOQW5ObURMc0VCOHFmQzlSWk9xSWQ3S2RTTThEbjVGUV9CUkItaVZxbE9Qc1NQU1HSAdcBQVVfeXFMTmVWV0ZtVkNBN1dKRTZlbHhJV2haWmp1clEtaHFSQ2tXRzJTVkgxWTMwLUlrcDFmaHNaWlQ3SVBIZGVaOUxKVU5kTW1YajN4WHBHbl9aUjcyZFpDYXhVbnhub3NoSV9DbWpnUFJUZU9FRm1RWEt5bzF1RjRnaFlQYUlBTTZFemVLeUJ2ZDN3dmZFWDV2bzdfeFhVNUR3ajV6NWhvdjlrRUFBY1JucWllNlI4bHpnWVpqQWVxLXpVd01lWE9FNF9EOW1COU1hMjl4N2R0OWJlblE?oc=5",
-        "feed": "google_news:NVDAUSDT",
-        "published_at": "2026-11-07T10:58:00.000Z",
-        "age_minutes": 12.3,
-        "held_position": false,
-        "market_confirmation": [],
-        "wakes_model": false
-      }
-    },
-    {
-      "id": "evt-news-NVDAUSDT-b90f97b1553f",
-      "type": "news",
-      "symbol": "NVDAUSDT",
-      "received_at": "2026-11-07T11:20:15.000Z",
-      "source_ts": "2026-11-07T11:15:01.000Z",
-      "session": "closed",
-      "summary": "NVDA news (MarketBeat): ABLE Financial Group LLC Acquires 3,689 Shares of NVIDIA Corporation $NVDA",
-      "payload": {
-        "headline": "ABLE Financial Group LLC Acquires 3,689 Shares of NVIDIA Corporation $NVDA",
-        "publisher": "MarketBeat",
-        "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNdDh5NlpXSl9IdUxiTnRIN3V0UW9HeE9tdzhVTmpWRDlfbUI4X2dmZGhzUVlwNmNWS05XSElIVE0wZ2owSDRUY1dEdzBsUkEzSFFfZ3dtZEdwT1JSTzFfOE5TZXY5Vmt1UTZxdzM5TmxVZlNjVGhEQjhlX2hIcWlEbUV0aWVDY0lOYUpUTW1RTDdsS2xsSXRiZzdCRms0UkljeGhnWTJZc1NsS3BrRHJTejQ3OUpUVlQwUUVqU2V6SDdVWkxqTnJaWkhxcGpXdw?oc=5",
-        "feed": "google_news:NVDAUSDT",
-        "published_at": "2026-11-07T11:15:01.000Z",
-        "age_minutes": 5.2,
-        "held_position": false,
-        "market_confirmation": [],
-        "wakes_model": false
-      }
-    },
-    {
-      "id": "evt-news-METAUSDT-c2c93e2fb234",
-      "type": "news",
-      "symbol": "METAUSDT",
-      "received_at": "2026-11-07T11:45:15.000Z",
-      "source_ts": "2026-11-07T11:21:00.000Z",
-      "session": "closed",
-      "summary": "META news (The Times of India): Mark Zuckerberg and Priscilla Chan have pledged to donate 99% of their Meta shares; here's the open lette",
-      "payload": {
-        "headline": "Mark Zuckerberg and Priscilla Chan have pledged to donate 99% of their Meta shares; here's the open lette",
-        "publisher": "The Times of India",
-        "url": "https://news.google.com/rss/articles/CBMi-wJBVV95cUxORVktem9ZNU14VWYtWTFBY2VPaWNzYnJsTDJjX1lWU1VRQVpwRURYa1BfTHZ4aFF6enhKY1VpaEpYakdMY1RHc2kzRXVwQ0RBVzNXUEY1N1c3bU5ORFZvT2tfUWZtUWxrVVRyUEZPMFVLNlozckdJWkxRNkVLTkhnZ0w5TC1jeVp0UEp0VWM0dzR3MEZnQkdqUUtGSEhNY01Wbmg5cjVqcFVOQjVUbnF4ei1nVUdIcDBVVXdGQ2Y3VERDeExweFNReWU2bmJQS3d6dmRLamJXZkNlODdzaEJXMTU1Ym02TG4tUDltLXRCQU43cVR1c2RUR1lDNGNscno5cEp2ODJPUUFmcTNudDVTcmEzcDlBa0RsWXZzSzZJSkdIbWhOUTU2Z0ZBTVNLSkhfUTZ3OHVBOWxWRWhtb0x5MlZmc1FlNGNVdkI5ZGZFNm1jYVdZMXV3WE8wQzJ0aHFqRGhPUXZ4WXlyNzVYYzdGSzg0WlVuVE5ZTG0w0gGAA0FVX3lxTE1lTWlpc3Y1d1V1T3FrdjFlN1d4ZlZZc3pHSjQ5U0R1MXFhWVVHUGl6VWE2aGtsU0hlWkxETXYyblhOaWdvR1RfTWhSTkFITFNJcmdXVXdhbEVOTUpkc1B6c05lNEp6bHI5WWZoV0lyMXlJWDhOVFdiUjM0U1ZWZ3Q0Z0lOUmN4U2NqR2ZQeXlSRzdJazdNa05oQm5VMHBIUlJmT2RXTkNfLTRCSXdqZzh0WkJ2N05UNHR1N1NuQTFXdWlleU5UeVBTNzh0Nnh6d0VSMWEtbmxuX19HMHlLMHJiZGpiS1YwV0RncUFKYkNHZ2JNdi1VSmFTV1BIdVYyRlprMHVSWFhBSktlRVAzeTdUN245aVQ0Zjl5dS1hbGlSTlItYXc2cXRzOHp4OW0xT2c5LWlZVUZTLVNlSVpueHpZLVJYcnV3Ry1jR3JDLVFZOTRXbG0xWFJndXhFaU9udzhBYUkxRkdmMFJEV0FIZzZMQlNhSUhQNUxmNUhkcVRHSQ?oc=5",
-        "feed": "google_news:METAUSDT",
-        "published_at": "2026-11-07T11:21:00.000Z",
-        "age_minutes": 24.3,
-        "held_position": false,
-        "market_confirmation": [],
-        "wakes_model": false
-      }
-    },
-    {
-      "id": "evt-news-GOOGLUSDT-022935933882",
-      "type": "news",
-      "symbol": "GOOGLUSDT",
-      "received_at": "2026-11-07T12:00:15.000Z",
-      "source_ts": "2026-11-07T11:58:01.000Z",
-      "session": "closed",
-      "summary": "GOOGL news (Finbold): Google just increased its SpaceX stock stake to $84 billion",
-      "payload": {
-        "headline": "Google just increased its SpaceX stock stake to $84 billion",
-        "publisher": "Finbold",
-        "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPMDlNWlM3SlhXTXpjQmEzc0g0S3V0X19nclJtNE9aV3VfRzdHYTI0MEJVM0dRelVVNVNqc3J0TE5CYTR6cWVZT0dweEtELWJrTkxoSmZobHdzdDZUQk1OMlVHcVR1V0RNODN4dTZSdTY4TDJEWEZENngtS2dvTDRMZ2dNUWZIQQ?oc=5",
-        "feed": "google_news:GOOGLUSDT",
-        "published_at": "2026-11-07T11:58:01.000Z",
-        "age_minutes": 2.2,
-        "held_position": false,
-        "market_confirmation": [
-          "GOOGLUSDT 5m volume 5.3x median"
-        ],
-        "wakes_model": true
-      }
-    },
-    {
-      "id": "evt-news-GOOGLUSDT-e25ec0a2dc66",
-      "type": "news",
-      "symbol": "GOOGLUSDT",
-      "received_at": "2026-11-07T12:15:15.000Z",
-      "source_ts": "2026-11-07T12:13:19.000Z",
-      "session": "closed",
-      "summary": "GOOGL news (Pluang): Alphabet boosts stake in SpaceX to $83.7B, adds Qualcomm and biotech stocks in portfolio reshuffle",
-      "payload": {
-        "headline": "Alphabet boosts stake in SpaceX to $83.7B, adds Qualcomm and biotech stocks in portfolio reshuffle",
-        "publisher": "Pluang",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOb3g3SkE1bVBKMDF6ODJjXzM0VnpnbnhYb0dWcVVyU0dUaXNhSjhIR0gzMTd0LVFyN25VdXdqQWxSNVZTNC00QTVMMmpqbHlSQkZKcUhvaGdIM1dhUjRZV0NxZ01kQ1RVc1g0THh5cC0tNjNIcF9lVTczb1BJakdOcW5lT2NXZnlrbVQ0eGFiblEtNS1qaW5sN3JPZkU?oc=5",
-        "feed": "google_news:GOOGLUSDT",
-        "published_at": "2026-11-07T12:13:19.000Z",
-        "age_minutes": 1.9,
-        "held_position": false,
-        "market_confirmation": [],
-        "wakes_model": true
-      }
-    },
     {
       "id": "evt-news-METAUSDT-ff33ff68e72b",
       "type": "news",
@@ -2165,6 +2063,106 @@
         "held_position": false,
         "market_confirmation": [],
         "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-8cb9c10f453f",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-07T23:30:15.000Z",
+      "source_ts": "2026-11-07T23:18:53.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Simply Wall St): NVIDIA Heads 3 Top Growth Stocks To Watch",
+      "payload": {
+        "headline": "NVIDIA Heads 3 Top Growth Stocks To Watch",
+        "publisher": "Simply Wall St",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMy1EQmxPZE1BQlNOcUdEd1lveEdhNk92UlBndTY5YXpLYXlIWmNlQ18ybmRPTXFfU3YxZHYwSXc2VUtXQWhGcHp0LTVMUmFLMTdIbnVUNzVZS19hazJ1NWZUSnN5QzBXZFNFYmNqUGlsR1RGS3NTRDRUY09wakRuektYR0VfMks4Y3prUUJ3VHliQlc0M2NKR0M3MTI0YVhYeC1PbTBBSDRMXzZmNjZhZjdR0gG3AUFVX3lxTFB4S0FmVlBwU0FCYmt0WFVoUEdUcWpQOURqYnRKcFZYU1I1MTBOT3JELVI2Z1pneTdENkF3QTVzcm5FOUplaEFqSkZsOVRFcmw1aUtxbEFTQnJCTVZYUTRYRmtPOG1qRmlTZjV4MG9BQzJlNzlMb1k1dzlrbGlsRVVwLW90NEp1Vk1KT05sZVl5amoteV9pX3JJSEtscHhGLUg4bXMyeE9QSm5RcnFOZzJMTld1STY1Zw?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-07T23:18:53.000Z",
+        "age_minutes": 11.4,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-METAUSDT-ebe115caf796",
+      "type": "news",
+      "symbol": "METAUSDT",
+      "received_at": "2026-11-07T23:40:15.000Z",
+      "source_ts": "2026-11-07T23:18:24.000Z",
+      "session": "closed",
+      "summary": "META news (Simply Wall St): Meta AI Spending Puts Dynatrace Stock In Focus",
+      "payload": {
+        "headline": "Meta AI Spending Puts Dynatrace Stock In Focus",
+        "publisher": "Simply Wall St",
+        "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQd3U2M0otNlo0TWd1bnJwbWptZlVQNFhra1A5R1h3enJZbkxzZjVfMU1WNTFhV1A4X2pPSDBBcXVGaWV2MUtRMlFGaVBQRjlYU25tWmVjM2tvZ2ZmWURHQmQ5aFEzRFc4Zm52YlJRbFpWczRDYU5weGJkTnZUbkY0RGdhNnFrVUlGSVgzOFIycEtUZnBLcG95WEE1M3I5cHBoMU9VQWE0bnZ5SGpSYUVyVlNCaldGNjVWcTRQS1NiRTg5S1NGXzdOZ2x0NFLSAdIBQVVfeXFMUDJCTm94MFF6VGF2Q0FaTjFHeGRTUDRTMTU2RXhkUDF2TThnRWIxQ3BxT09Mdm9nbnBEOW9FYUlVZG9Xd3JnSU4yQjR1TFFaeW5ISF9LUzc5LXlKNUFISzJsel9SUTQtUmFOTXBacXJRbnRYWjBWWFRNVjl6WjhrTndzbnpfYmJRR1lvR2o1YUFRQk1EcF9VLWRvdzlTXzhVNE1mWWJaNWh3TlRIdGpndl9waTdhRTRqOWNjeWVzbzExWG9sMlBIU2owUnlScDY5X0dR?oc=5",
+        "feed": "google_news:METAUSDT",
+        "published_at": "2026-11-07T23:18:24.000Z",
+        "age_minutes": 21.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-ec134c480e4a",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-08T00:40:15.000Z",
+      "source_ts": "2026-11-08T00:38:12.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Investing.com India): Form 4 NVIDIA Corporation For: 7 November By Investing.com",
+      "payload": {
+        "headline": "Form 4 NVIDIA Corporation For: 7 November By Investing.com",
+        "publisher": "Investing.com India",
+        "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQWF2VXBaYVdST1dDTDl0QUd6T3B6RGN3dWJXNXFFU1FTWGhybmY1dldFNmltYzU5cHNwM1A2R3ZxakR4TDc2YnN2NHZMQU81Wi02M3RaY0VybHRzWlo3OWYtekd3VnBJZ1lVRmE0Slozcm9raUlWNG95dEo3dE5aaVV3OHdqemJaX2RuY3VpOEw1eWNTakJfYnhzS1RhZmpxdGlv?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-08T00:38:12.000Z",
+        "age_minutes": 2.1,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-dc96756d6973",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-08T01:00:15.000Z",
+      "source_ts": "2026-11-08T00:50:31.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Simply Wall St): NVIDIA And 2 Other Top Value Stocks",
+      "payload": {
+        "headline": "NVIDIA And 2 Other Top Value Stocks",
+        "publisher": "Simply Wall St",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNd2E0R09qOXMzdW5meHBsb3VoV0tKMDBJdUlyMWlDU1VybmY4SkR3Z2tZUXZYa1FsSUl2NzNDLWRQMFlrazJGQ0Y3YnJWLWxDQXpoLXNpZ2o3Y0hSS1R5TmtWR3RCekVJSWNGdktJc2ZwbWd3MWJ4dDlfT1ZwdGYzUmx1V1ctYzlmd2NZMjdpa3hwZFctTTlYbXNvSkNrbUtEc0d4YzZWS1NBZ9IBrwFBVV95cUxQbVRMaWdPZDJnWlN5OG5ZaWE1V3dwa1pDY3pVMFYzOGJOcDFRTmJoVXllNXRQQkNqOFoyTkc5aEZEMHc3UDZHcjZJWURJRm9CWTJPWmhCUkZGQUhxMnQ4Y0ZaQ1JaRFJkRWhZZG9KVWE3MVNqa0JHUUZNSUlMeTF2TWR5TDVndjQ1SUJmcU9mRXljMmttMUkyVmZ1S1l2Ui1WdGw5Q0pZblhzWkRXbzNB?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-08T00:50:31.000Z",
+        "age_minutes": 9.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-deec8afa50cd",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-11-08T01:05:15.000Z",
+      "source_ts": "2026-11-08T01:00:00.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (The Motley Fool): Alphabet's $15 Billion Investment in Malaysia Data Centers Shows That Midterm Results Won't Stop the AI Boom",
+      "payload": {
+        "headline": "Alphabet's $15 Billion Investment in Malaysia Data Centers Shows That Midterm Results Won't Stop the AI Boom",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOWmxWWHRKeDM3VjJrWERQVWJROTVVLWxqem80T2xDcGlRNkh3UDV0Y3dJWWRJR1VqTDc1OFFDVHNmTDB1bUZYNXJwalRpRWUwYVg5TXd2d3lXdzhtQTRWcmhlTHUyaTByTDhGS1RiQ1hFZjBETERhVC13NDdKdnhCdFU4cWFiTnAzcWRXYkNNRzRQNGFYM01tUw?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-11-08T01:00:00.000Z",
+        "age_minutes": 5.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
       }
     }
   ]
