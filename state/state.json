@@ -20,9 +20,9 @@
   },
   "llm_budget": {
     "day": "2026-11-14",
-    "calls": 5,
+    "calls": 7,
     "cost_usd": 0.0,
-    "calls_closed": 0
+    "calls_closed": 8
   },
   "positions_last_tick": {
     "AAPLUSDT": {
@@ -68,46 +68,46 @@
       "detected_at": "2026-11-13T18:50:15.000Z"
     }
   ],
-  "last_session": "post",
+  "last_session": "closed",
   "position_reviews": {
     "AAPLUSDT": {
-      "last_at": "2026-11-13T20:55:15.000Z",
+      "last_at": "2026-11-14T04:55:15.000Z",
       "band": 0
     }
   },
   "event_last": {
-    "volume_spike|METAUSDT": "2026-11-13T20:55:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-11-13T21:00:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-11-14T00:25:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-11-13T20:55:15.000Z",
+    "volume_spike|METAUSDT": "2026-11-14T05:10:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-11-14T02:30:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-11-14T02:30:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-11-14T03:35:15.000Z",
     "us_regular_open|None": "2026-11-13T14:30:15.000Z",
-    "price_move|MSTRUSDT": "2026-11-13T21:05:15.000Z",
-    "price_move|CRCLUSDT": "2026-11-13T21:05:15.000Z",
+    "price_move|MSTRUSDT": "2026-11-14T03:35:15.000Z",
+    "price_move|CRCLUSDT": "2026-11-14T02:30:15.000Z",
     "us_regular_close|None": "2026-11-13T21:00:15.000Z",
-    "volume_spike|SP500USDT": "2026-11-14T00:15:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-11-13T21:00:15.000Z",
-    "volume_spike|HOODUSDT": "2026-11-13T20:55:15.000Z",
-    "volume_spike|COINUSDT": "2026-11-13T20:55:15.000Z",
+    "volume_spike|SP500USDT": "2026-11-14T04:35:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-11-14T03:35:15.000Z",
+    "volume_spike|HOODUSDT": "2026-11-14T03:35:15.000Z",
+    "volume_spike|COINUSDT": "2026-11-14T03:35:15.000Z",
     "price_move|HOODUSDT": "2026-11-13T21:05:15.000Z",
-    "range_expansion|HOODUSDT": "2026-11-13T13:35:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-11-13T13:35:15.000Z",
+    "range_expansion|HOODUSDT": "2026-11-14T02:25:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-11-14T02:25:15.000Z",
     "range_expansion|SP500USDT": "2026-11-13T22:55:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-11-13T20:55:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-11-13T13:35:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-11-14T00:30:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-11-14T04:55:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-11-14T02:30:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-11-14T04:00:15.000Z",
     "price_move|GOOGLUSDT": "2026-11-13T15:05:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-11-13T14:30:15.000Z",
-    "range_expansion|NDX100USDT": "2026-11-13T13:25:15.000Z",
-    "volume_spike|NDX100USDT": "2026-11-13T22:25:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-11-13T13:35:15.000Z",
-    "range_expansion|METAUSDT": "2026-11-13T13:35:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-11-13T21:00:15.000Z",
-    "price_move|COINUSDT": "2026-11-13T21:05:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-11-13T14:30:15.000Z",
-    "range_expansion|COINUSDT": "2026-11-13T13:35:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-11-13T13:35:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-11-14T03:20:15.000Z",
+    "range_expansion|NDX100USDT": "2026-11-14T04:15:15.000Z",
+    "volume_spike|NDX100USDT": "2026-11-14T05:25:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-11-14T03:40:15.000Z",
+    "range_expansion|METAUSDT": "2026-11-14T02:25:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-11-14T02:25:15.000Z",
+    "price_move|COINUSDT": "2026-11-14T03:35:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-11-14T02:30:15.000Z",
+    "range_expansion|COINUSDT": "2026-11-14T03:35:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-11-14T03:35:15.000Z",
     "price_move|METAUSDT": "2026-11-13T15:40:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-11-13T13:35:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-11-14T03:35:15.000Z",
     "price_move|TSLAUSDT": "2026-11-13T21:25:15.000Z",
     "price_move|AMZNUSDT": "2026-11-13T15:15:15.000Z",
     "position_review|SP500USDT": "2026-10-21T06:25:15.000Z",
@@ -115,7 +115,7 @@
     "position_review|METAUSDT": "2026-11-13T17:35:15.000Z",
     "position_review|NDX100USDT": "2026-11-12T09:30:15.000Z",
     "price_move|AAPLUSDT": "2026-11-10T14:55:15.000Z",
-    "position_review|AAPLUSDT": "2026-11-13T20:55:15.000Z",
+    "position_review|AAPLUSDT": "2026-11-14T04:55:15.000Z",
     "position_review|TSLAUSDT": "2026-10-28T13:45:15.000Z",
     "position_review|NVDAUSDT": "2026-11-10T15:45:15.000Z",
     "position_review|GOOGLUSDT": "2026-11-12T08:40:15.000Z",
@@ -125,51 +125,46 @@
   },
   "recent_decisions": [
     {
-      "tick_id": "20261114T001515",
+      "tick_id": "20261114T022515",
       "action": "NO_TRADE",
-      "instrument": "AAPLUSDT",
+      "instrument": ":none:",
       "confidence": 0.95,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20261114T002015",
+      "tick_id": "20261114T023015",
       "action": "NO_TRADE",
-      "instrument": "AMZNUSDT",
+      "instrument": ":none:",
+      "confidence": 0.9,
+      "verdict": "NO_ACTION",
+      "veto_reasons": [],
+      "execution_status": null
+    },
+    {
+      "tick_id": "20261114T023515",
+      "action": "NO_TRADE",
+      "instrument": ":none:",
       "confidence": 0.95,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     },
     {
-      "tick_id": "20261114T002515",
+      "tick_id": "20261114T031515",
       "action": "NO_TRADE",
-      "instrument": "AMZNUSDT",
-      "confidence": 0.95,
-      "verdict": "NO_ACTION",
-      "veto_reasons": [],
-      "execution_status": null
-    },
-    {
-      "tick_id": "20261114T003015",
-      "action": "NO_TRADE",
-      "instrument": "AAPLUSDT",
+      "instrument": ":none:",
       "confidence": 0.9,
       "verdict": "NO_ACTION",
       "veto_reasons": [],
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-11-13T23:55:18.613Z",
+  "last_log_commit_at": "2026-11-14T05:05:17.340Z",
   "closes_sent": {},
   "macro_fired": [],
   "news_seen": [
-    "a2ff70176c88",
-    "ebfa1b75431e",
-    "66082708dc17",
-    "2c68aa01a76b",
-    "14e0c5889098",
     "49668a2c8d4b",
     "8009ec80c63f",
     "03d469bbc207",
@@ -964,11 +959,15 @@
     "f3a173de656f",
     "576591c059ca",
     "213c0d6dcc72",
-    "6c2404bfedf4"
+    "6c2404bfedf4",
+    "7ef6b760e70c",
+    "6b567eb53f5b",
+    "e0ee84398084",
+    "431b0451dba7",
+    "16573b1725a5"
   ],
   "news_wakes": [
-    "2026-11-13T23:25:15.000111+00:00",
-    "2026-11-13T23:55:15.000114+00:00"
+    "2026-11-14T04:05:15.000125+00:00"
   ],
   "news_pending": []
 }
