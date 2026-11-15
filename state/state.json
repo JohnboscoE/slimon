@@ -1,6 +1,6 @@
 {
   "risk": {
-    "consecutive_losses": 0,
+    "consecutive_losses": 1,
     "last_trade_at": {
       "NDX100USDT": "2026-10-01T10:50:15.000Z",
       "TSLAUSDT": "2026-11-13T12:05:15.000Z",
@@ -11,8 +11,8 @@
       "NVDAUSDT": "2026-11-10T12:30:15.000Z",
       "GOOGLUSDT": "2026-11-09T12:50:15.000Z"
     },
-    "day": "2026-11-14",
-    "day_start_equity": 49637.32195037,
+    "day": "2026-11-15",
+    "day_start_equity": 49657.96813875,
     "trades_today": 0,
     "halted_until": null,
     "halt_reason": null,
@@ -24,22 +24,8 @@
     "cost_usd": 0.0,
     "calls_closed": 8
   },
-  "positions_last_tick": {
-    "AAPLUSDT": {
-      "side": "long",
-      "qty": 4.21
-    }
-  },
+  "positions_last_tick": {},
   "recent_closed": [
-    {
-      "symbol": "GOOGLUSDT",
-      "side": "long",
-      "pnl": 10.39079441,
-      "pnl_source": "position_history",
-      "closed_by": "agent",
-      "reason": "model_decision",
-      "detected_at": "2026-11-12T11:05:15.000Z"
-    },
     {
       "symbol": "NDX100USDT",
       "side": "long",
@@ -66,52 +52,56 @@
       "closed_by": "exchange_or_external",
       "reason": "no agent order: exchange stop, exchange take-profit, liquidation, or a manual close",
       "detected_at": "2026-11-13T18:50:15.000Z"
+    },
+    {
+      "symbol": "AAPLUSDT",
+      "side": "long",
+      "pnl": -2.96994029,
+      "pnl_source": "position_history",
+      "closed_by": "agent",
+      "reason": "max_holding_time",
+      "detected_at": "2026-11-14T21:00:15.000Z"
     }
   ],
   "last_session": "closed",
-  "position_reviews": {
-    "AAPLUSDT": {
-      "last_at": "2026-11-14T16:55:15.000Z",
-      "band": 0
-    }
-  },
+  "position_reviews": {},
   "event_last": {
-    "volume_spike|METAUSDT": "2026-11-14T19:40:15.000Z",
-    "range_expansion|AMZNUSDT": "2026-11-14T14:05:15.000Z",
-    "volume_spike|AMZNUSDT": "2026-11-14T16:25:15.000Z",
-    "volume_spike|GOOGLUSDT": "2026-11-14T16:05:15.000Z",
+    "volume_spike|METAUSDT": "2026-11-15T01:15:15.000Z",
+    "range_expansion|AMZNUSDT": "2026-11-14T20:55:15.000Z",
+    "volume_spike|AMZNUSDT": "2026-11-14T22:05:15.000Z",
+    "volume_spike|GOOGLUSDT": "2026-11-14T22:05:15.000Z",
     "us_regular_open|None": "2026-11-13T14:30:15.000Z",
-    "price_move|MSTRUSDT": "2026-11-14T17:40:15.000Z",
-    "price_move|CRCLUSDT": "2026-11-14T17:40:15.000Z",
+    "price_move|MSTRUSDT": "2026-11-15T00:30:15.000Z",
+    "price_move|CRCLUSDT": "2026-11-15T00:30:15.000Z",
     "us_regular_close|None": "2026-11-13T21:00:15.000Z",
     "volume_spike|SP500USDT": "2026-11-14T19:00:15.000Z",
-    "volume_spike|MSTRUSDT": "2026-11-14T15:10:15.000Z",
-    "volume_spike|HOODUSDT": "2026-11-14T20:20:15.000Z",
-    "volume_spike|COINUSDT": "2026-11-14T15:25:15.000Z",
-    "price_move|HOODUSDT": "2026-11-14T16:30:15.000Z",
-    "range_expansion|HOODUSDT": "2026-11-14T17:25:15.000Z",
-    "range_expansion|GOOGLUSDT": "2026-11-14T15:45:15.000Z",
-    "range_expansion|SP500USDT": "2026-11-14T16:10:15.000Z",
-    "volume_spike|TSLAUSDT": "2026-11-14T20:05:15.000Z",
-    "range_expansion|AAPLUSDT": "2026-11-14T16:30:15.000Z",
-    "volume_spike|AAPLUSDT": "2026-11-14T17:10:15.000Z",
-    "price_move|GOOGLUSDT": "2026-11-14T16:35:15.000Z",
-    "volume_spike|CRCLUSDT": "2026-11-14T15:10:15.000Z",
-    "range_expansion|NDX100USDT": "2026-11-14T15:50:15.000Z",
-    "volume_spike|NDX100USDT": "2026-11-14T20:20:15.000Z",
-    "volume_spike|NVDAUSDT": "2026-11-14T15:35:15.000Z",
-    "range_expansion|METAUSDT": "2026-11-14T15:40:15.000Z",
-    "range_expansion|TSLAUSDT": "2026-11-14T16:25:15.000Z",
-    "price_move|COINUSDT": "2026-11-14T17:40:15.000Z",
-    "range_expansion|NVDAUSDT": "2026-11-14T14:05:15.000Z",
-    "range_expansion|COINUSDT": "2026-11-14T15:45:15.000Z",
-    "range_expansion|CRCLUSDT": "2026-11-14T14:50:15.000Z",
-    "price_move|METAUSDT": "2026-11-13T15:40:15.000Z",
-    "range_expansion|MSTRUSDT": "2026-11-14T14:05:15.000Z",
+    "volume_spike|MSTRUSDT": "2026-11-15T00:05:15.000Z",
+    "volume_spike|HOODUSDT": "2026-11-15T01:05:15.000Z",
+    "volume_spike|COINUSDT": "2026-11-15T01:25:15.000Z",
+    "price_move|HOODUSDT": "2026-11-15T01:15:15.000Z",
+    "range_expansion|HOODUSDT": "2026-11-14T22:15:15.000Z",
+    "range_expansion|GOOGLUSDT": "2026-11-14T22:15:15.000Z",
+    "range_expansion|SP500USDT": "2026-11-14T22:15:15.000Z",
+    "volume_spike|TSLAUSDT": "2026-11-15T01:05:15.000Z",
+    "range_expansion|AAPLUSDT": "2026-11-14T20:55:15.000Z",
+    "volume_spike|AAPLUSDT": "2026-11-15T01:05:15.000Z",
+    "price_move|GOOGLUSDT": "2026-11-14T22:25:15.000Z",
+    "volume_spike|CRCLUSDT": "2026-11-14T23:30:15.000Z",
+    "range_expansion|NDX100USDT": "2026-11-14T21:40:15.000Z",
+    "volume_spike|NDX100USDT": "2026-11-15T00:35:15.000Z",
+    "volume_spike|NVDAUSDT": "2026-11-14T21:40:15.000Z",
+    "range_expansion|METAUSDT": "2026-11-14T20:40:15.000Z",
+    "range_expansion|TSLAUSDT": "2026-11-14T22:10:15.000Z",
+    "price_move|COINUSDT": "2026-11-15T01:15:15.000Z",
+    "range_expansion|NVDAUSDT": "2026-11-14T20:40:15.000Z",
+    "range_expansion|COINUSDT": "2026-11-14T22:10:15.000Z",
+    "range_expansion|CRCLUSDT": "2026-11-15T00:05:15.000Z",
+    "price_move|METAUSDT": "2026-11-14T20:40:15.000Z",
+    "range_expansion|MSTRUSDT": "2026-11-14T22:15:15.000Z",
     "price_move|TSLAUSDT": "2026-11-13T21:25:15.000Z",
     "price_move|AMZNUSDT": "2026-11-13T15:15:15.000Z",
     "position_review|SP500USDT": "2026-10-21T06:25:15.000Z",
-    "price_move|NVDAUSDT": "2026-11-13T18:55:15.000Z",
+    "price_move|NVDAUSDT": "2026-11-15T01:30:15.000Z",
     "position_review|METAUSDT": "2026-11-13T17:35:15.000Z",
     "position_review|NDX100USDT": "2026-11-12T09:30:15.000Z",
     "price_move|AAPLUSDT": "2026-11-10T14:55:15.000Z",
@@ -161,24 +151,10 @@
       "execution_status": null
     }
   ],
-  "last_log_commit_at": "2026-11-14T19:40:17.405Z",
+  "last_log_commit_at": "2026-11-15T00:50:17.704Z",
   "closes_sent": {},
   "macro_fired": [],
   "news_seen": [
-    "d5525da9a559",
-    "a8e51be909ee",
-    "e086e48d1b83",
-    "69dfb4e89552",
-    "cb5db837c3bb",
-    "3b0b4621ac8f",
-    "3c4271fba496",
-    "841d589e182a",
-    "5a4dfac191fc",
-    "fd999a3ffc42",
-    "66335d7c53f3",
-    "d4d2f148f007",
-    "2de74003b2c4",
-    "a3b8ab413983",
     "d43a89ed9311",
     "ecd2a703a630",
     "fdef0bd2eb7e",
@@ -964,11 +940,288 @@
     "0a86f71ce9e3",
     "7f60387b3231",
     "5af1a21e7a55",
-    "f44b7c9bd9c2"
+    "f44b7c9bd9c2",
+    "e7bd24fce89f",
+    "663b2d715cac",
+    "7679dd265116",
+    "2e9af7c902ed",
+    "bc0b8e15b01d",
+    "33aa3ec721c2",
+    "5da996dc97e7",
+    "9dfaac28c0ef",
+    "114076edf75d",
+    "16d75da412a7",
+    "9bd76776de43",
+    "bf2391ab22ac",
+    "839d6feafd99",
+    "304a216c515a"
   ],
   "news_wakes": [
-    "2026-11-14T19:55:15.000104+00:00",
-    "2026-11-14T20:20:15.000105+00:00"
+    "2026-11-15T00:15:15.000133+00:00",
+    "2026-11-15T00:40:15.000139+00:00"
   ],
-  "news_pending": []
+  "news_pending": [
+    {
+      "id": "evt-news-NVDAUSDT-663b2d715cac",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T21:40:15.000Z",
+      "source_ts": "2026-11-14T21:35:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (The Motley Fool): Nvidia Fell While AMD and Broadcom Jumped. Here\u2019s What History Says Happens Next to All 3 Stocks.",
+      "payload": {
+        "headline": "Nvidia Fell While AMD and Broadcom Jumped. Here\u2019s What History Says Happens Next to All 3 Stocks.",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOYmhwWFhlaE9MSk9Za0RneWJlZ0IyYUN2aktVQmZNNTRXS3AwLXpCWmJnSFI1alg5YzVqWXRmWGRYc0xHcGwxZmJjY1dLUkF0UEdXX3BwVkxTc3pQTlV5QVB0dmluMEZBWEpHcEh6NE9HV0RuS2VQSWNpcHZyckpBeUZrWFU3VUg5MjZKU25qdVpXeVVfeG5WREdtQVRGVjJPVTd0ZzVsTnk1endSZ2NianFPeHpKNnVnNWFaX3V6YTRmdU1OMWx1LS1xWHEwdjRqOEp0bw?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T21:35:00.000Z",
+        "age_minutes": 5.3,
+        "held_position": false,
+        "market_confirmation": [
+          "NVDAUSDT 5m volume 4.8x median"
+        ],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-7679dd265116",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T22:00:15.000Z",
+      "source_ts": "2026-11-14T21:54:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (The Motley Fool): ASML vs. NVIDIA: Which Technology Stock Is a Better Buy for 2027?",
+      "payload": {
+        "headline": "ASML vs. NVIDIA: Which Technology Stock Is a Better Buy for 2027?",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNNWRtc3htREkwb2JqNGpoSEx0anRLVFJWWG9CQXZ4cE5GUS01V185QlhoY3lNNk80amVxQV9sTS1WbU9jT0xidTVZdUIwckdrWFM4bUwzNzF0TkNnbFlJVEtjYVJmdFdWLVhVTVVjVC1ELTRmUUFwb3p2WlBQbFI1NGZOUkd1QXZSMFZHdHZRTzdrNTFfVlFmTWJ6a3NpWWt1NFBKSW8xT0pVS05lNDh3MXYtS1ZGdw?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T21:54:00.000Z",
+        "age_minutes": 6.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-2e9af7c902ed",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T22:10:15.000Z",
+      "source_ts": "2026-11-14T21:41:22.000Z",
+      "session": "closed",
+      "summary": "NVDA news (TechCrunch): Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+      "payload": {
+        "headline": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+        "publisher": "TechCrunch",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUXp2MmF6T0R2alBCWHR4SXRzWFVvN2lXRVlRaHRvdzBhbFlsenRnU0JBQmFJeWVVLVVVZzFESlJaMzdSZFpjN184R3Vpc1M1SmRkSFpkZ2htM0JaSXlBZ3U1Tnd3Z24wemRCRUVQa3ZtdUczRVp6VUg5RzRKSFc1d0tQZV8xc0ZTb1lSbld5WE9mVWVfTHFPYXhVRVJid0UycjVnZnczOHhIV194OXl0UzhWc2xQNzJ6eU9J?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T21:41:22.000Z",
+        "age_minutes": 28.9,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-bc0b8e15b01d",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T22:30:15.000Z",
+      "source_ts": "2026-11-14T22:09:06.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Yahoo Finance): 3 AI Chip Stocks Retail Investors May Be Missing Beyond Nvidia",
+      "payload": {
+        "headline": "3 AI Chip Stocks Retail Investors May Be Missing Beyond Nvidia",
+        "publisher": "Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOYTU4MTUtSndpZFFoWUR1VEhjZE9yak8wdWViV3VzT2hzeEhSaDZYVlVSNHRxVE1sWXhMM3RxblNELS03ZTBNVm5YLVJwc0NsUmlUTFIwM2hfc2R2dkNheGlxeFhiRXZXUWNiY1VGRmZ5VnpZZHF3ZzdYODVUUllKX3R5TF9DT2xwWXBNMTBKeXE?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T22:09:06.000Z",
+        "age_minutes": 21.2,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-TSLAUSDT-33aa3ec721c2",
+      "type": "news",
+      "symbol": "TSLAUSDT",
+      "received_at": "2026-11-14T22:40:15.000Z",
+      "source_ts": "2026-11-14T22:28:00.000Z",
+      "session": "closed",
+      "summary": "TSLA news (The Motley Fool): Elon Musk's Tesla and SpaceX Lost More Than $420 Billion in Combined Market Value in Two Days After Democrats Swept the Midterms, With Investors Fearing New Congressional Probes. Here's Why That Polit",
+      "payload": {
+        "headline": "Elon Musk's Tesla and SpaceX Lost More Than $420 Billion in Combined Market Value in Two Days After Democrats Swept the Midterms, With Investors Fearing New Congressional Probes. Here's Why That Polit",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMihwNBVV95cUxOaXU4Q3VIbHZ2VFNSY2N0Vm0xNWNYa1R6V2lFZ0dxNnZtSTZTbWIwcHpwOUFXSWFvWVNVVWxESURuclB3NDFJc2ZjOGpNVC1YaUpuVGw5aG5lSDN4SUc3QzYzTThvelZ0V25fWGRfT1ZkdUNmbE5uQmQzY3NLMUJPUlFpbVVmb2NCbDB0WW92SldIVFN0MldCemtaMU1FYUMtSUwxdTBuSUNyZlhSVEhoOS1lMnEyMkt1WjltRDVnaWlxTzVrRGg1RWZBR0NPTE82QUlpb0NmZndmaFE1VERDQU1ULUZyd0I2d05sLURGc1c3SDBySDJtMHdPNTVyT2hmWENfZEdYU3ZydmVhMUtxbFd2RWRQb09HaDFSODhBOXQtMGJ5amttN0FoWVgwUFRudExkdXpiYS1MT00xOU9vakhQSWZILTJNYy1Xd2Fmc0V0eEhPTHJGT1BKaUtVdWpNN0Ezb1FpWjNIb2xQUUpLNkUyMUhPNUZyWUVFWVJWdzdacjhiS3pr?oc=5",
+        "feed": "google_news:TSLAUSDT",
+        "published_at": "2026-11-14T22:28:00.000Z",
+        "age_minutes": 12.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-GOOGLUSDT-5da996dc97e7",
+      "type": "news",
+      "symbol": "GOOGLUSDT",
+      "received_at": "2026-11-14T23:10:15.000Z",
+      "source_ts": "2026-11-14T23:03:00.000Z",
+      "session": "closed",
+      "summary": "GOOGL news (24/7 Wall St.): He Thinks His $200,000 S&P 500 401(k) Spreads His AI Risk. Two Alphabet Share Classes Put $10,380 in One Company. A 20% Drop Could Cost Him $2,076",
+      "payload": {
+        "headline": "He Thinks His $200,000 S&P 500 401(k) Spreads His AI Risk. Two Alphabet Share Classes Put $10,380 in One Company. A 20% Drop Could Cost Him $2,076",
+        "publisher": "24/7 Wall St.",
+        "url": "https://news.google.com/rss/articles/CBMikwJBVV95cUxPMEYwTE9LYlV6TlUtRzNORERxZHNqbkp6ZG5YanNILXp6SmRzYjVHSGNGaW1jQ05SNW53QmRETFVjSEhJZnhpeXRqNmFXSXZIY3VXTk95UWdwZGxHNm1IWkJIdXpvN3RfRS1SanhPUG9VNmhNVW4xRGl5V3FuN2JXbkxDT24yOHhBRnhCdml2a1cwVXh3bTBxUUN4dWk1NXB5QjgwNzgtWTUweEV2dHNyX3N5cmpqdEo1RnVHWUJRb05Vb3NycEs1UXg3QnlmN1dMenFVdUFGVm9TeTZsMUNoSngxMmxDam95TkphZ1RiT21wNHJHczZiVnZjd01nUGtWbGppRXM0TE9tMHF1OE1EcHJNSQ?oc=5",
+        "feed": "google_news:GOOGLUSDT",
+        "published_at": "2026-11-14T23:03:00.000Z",
+        "age_minutes": 7.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-9dfaac28c0ef",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T23:35:15.000Z",
+      "source_ts": "2026-11-14T23:33:06.000Z",
+      "session": "closed",
+      "summary": "NVDA news (TIKR.com): Dan Ives Valued Nvidia at \u201c$225 Without Jensen.\u201d Now the Stock Trades Below It",
+      "payload": {
+        "headline": "Dan Ives Valued Nvidia at \u201c$225 Without Jensen.\u201d Now the Stock Trades Below It",
+        "publisher": "TIKR.com",
+        "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPT28weWtJWF9wYlhMTDJBd3JmYmxFS25hS3VVb2dqLXRIMzlTNFVfdnROSWUtOS1SaG5CWjBlZzhSck1CTzZMdWxyTnU3dFc1cXFjWU1SYTA0T3BBbUZZbXdELTVYTEhlcWtaUHNFN2hTOFhpOVhWdE56dDFPNVVnbUt0ZkJUbW1BMzZneVV2R1Y1RGd1ZUF1SVkwNkc2enlod3VqaDhEaWNqZFFNNjlkZkJmS3R0amRUWm9TVHJTemFKRm1Pd3BsdUs0WEVwNDlUMUstTkF3MmE?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T23:33:06.000Z",
+        "age_minutes": 2.2,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-114076edf75d",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-14T23:55:15.000Z",
+      "source_ts": "2026-11-14T23:45:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (The Motley Fool): Nvidia's Ousted CEO Said a 1-Gigawatt Data Center Delay Costs $10 Billion a Quarter. Here's Why That Matters for Power Stocks.",
+      "payload": {
+        "headline": "Nvidia's Ousted CEO Said a 1-Gigawatt Data Center Delay Costs $10 Billion a Quarter. Here's Why That Matters for Power Stocks.",
+        "publisher": "The Motley Fool",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNUWl6b2pYWE9JeUVLZm9CdVJKMG5tZVpVczRqb3cySk5NcjVVZFlMNFBZcnMycmYyZlZIcFk5a3pfdS1BaWthZ0hpaFVMOWxlbmpfOWxWV3YtSXVnV2pFR1RwN25hNlJxZzlGTWsxVExXTGI0cXZuOTRPQXVLNUVwdHVUa0tySVozLVhHVEtzcWw2MzNEWUE?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T23:45:00.000Z",
+        "age_minutes": 10.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-16d75da412a7",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-15T00:15:15.000Z",
+      "source_ts": "2026-11-14T23:53:00.000Z",
+      "session": "closed",
+      "summary": "NVDA news (24/7 Wall St.): Warren Buffett's Berkshire Just Hit a Record High as Nvidia Sank. A 67-Year-Old Who Bought 1,000 Shares in 2016 Can Sell $106,000 of It This Year and Pay 0% on the Gain",
+      "payload": {
+        "headline": "Warren Buffett's Berkshire Just Hit a Record High as Nvidia Sank. A 67-Year-Old Who Bought 1,000 Shares in 2016 Can Sell $106,000 of It This Year and Pay 0% on the Gain",
+        "publisher": "24/7 Wall St.",
+        "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNS0JuN2tqU1RoaW8xRHktbXRPUXhJbU8zSWxTZzNDajczQ0E2TkRjMGdnXzloUTlpTmo4MDhLSUxRUHBPaDlIR1NpVHdtbktoRHRuc1YyV3IyemdGb19VaVRISVFpUW5yVFBZSzRERnk4SWNUaEQ4S0c0ZWJJRHA5blJqWDY4alNabFdCU3pVRzgyYU80b05pOTkwX0sxQlh4MmJudkdUV2FyV09wYnRxN3pmSWpUcEVPZy1YY1E2Zk8tSmdHdEdmV2t1dlVKOWRtMkxMaF8wM05yaHQyOWFoVnlMS0V1X21HRTRXTTJmZl8yY2pCMlJocDczbEFJWjdwbmgzNk8wYzgyY2M4czdxV1hVYWFieGJ3RkJmdTctcm9sT2lONzFKTjhEQWk1amM?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-14T23:53:00.000Z",
+        "age_minutes": 22.3,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-AMZNUSDT-9bd76776de43",
+      "type": "news",
+      "symbol": "AMZNUSDT",
+      "received_at": "2026-11-15T00:40:15.000Z",
+      "source_ts": "2026-11-15T00:36:06.000Z",
+      "session": "closed",
+      "summary": "AMZN news (TipRanks): Amazon Earnings Call Highlights AI-Led Growth and Margins",
+      "payload": {
+        "headline": "Amazon Earnings Call Highlights AI-Led Growth and Margins",
+        "publisher": "TipRanks",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOc3o2c1hQQ1Q0Rkt5UkM1Q0NkTGt1R0xzS09aR1ExVEZ6WXBRY0l2Um5tRVBVQzl2eV9HZEFwY3FNcGlPTUZiSWc2WDMxbGVPU0NBWXF6dEFfYkU3bm5ZZ0NQamdadkZkVXRoZG9GQWhTSUNxWjdadHVNMVRrRjBadk9LSGk5TUZMMEZUNnRpdGtjdmNXSjI1UnQyaC1IODB5R01RUl9NU3FzN3NYbWc?oc=5",
+        "feed": "google_news:AMZNUSDT",
+        "published_at": "2026-11-15T00:36:06.000Z",
+        "age_minutes": 4.2,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-bf2391ab22ac",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-15T00:50:15.000Z",
+      "source_ts": "2026-11-15T00:49:35.000Z",
+      "session": "closed",
+      "summary": "NVDA news (WSJ): The 31-Year-Old Trader Who Called Out Jensen Huang\u2019s \u2018China Problem\u2019\u2014and Shorted Nvidia",
+      "payload": {
+        "headline": "The 31-Year-Old Trader Who Called Out Jensen Huang\u2019s \u2018China Problem\u2019\u2014and Shorted Nvidia",
+        "publisher": "WSJ",
+        "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPU3B0dEx6NFJNd3BrRERfNktKdUdWN3U2MWRFc29LNExfVWgxcXhQcHhMQ2otRFV0SVRnVmZRVENUVTR1ai11TzZCaVdfNmM4ay10VFRZOUplOHUzam9jbXJEZzJJRHZOcngwdUNFSHJPelVZaEs3M3NnOXhvQUt1XzVsOA?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-15T00:49:35.000Z",
+        "age_minutes": 0.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": true
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-839d6feafd99",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-15T00:50:15.000Z",
+      "source_ts": "2026-11-15T00:43:35.000Z",
+      "session": "closed",
+      "summary": "NVDA news (Forbes): Investing Expert On Nvidia: \u2018People Will Wish They Bought\u2019",
+      "payload": {
+        "headline": "Investing Expert On Nvidia: \u2018People Will Wish They Bought\u2019",
+        "publisher": "Forbes",
+        "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPREp0aU9iLTBlWkNHNW00VEc2dnNuSWstV3lwWjhSQS1IRzlrRFdXZ0luZjVUVUhwSjNNMWNhbm1aUzlnMEVMcWUyUzBqSENKVVVHZkcza2NXSk5UX29tMHV0akJvNk90NFlKYXE1Y25ma2ptd09PcVgxMWhfcGlMcHJBWXNwVUFraEJzUHA2R08wSFMyTHRJZjBEQUllWXdjZGpDSnpLRk11Ri1OQWc?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-15T00:43:35.000Z",
+        "age_minutes": 6.7,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    },
+    {
+      "id": "evt-news-NVDAUSDT-304a216c515a",
+      "type": "news",
+      "symbol": "NVDAUSDT",
+      "received_at": "2026-11-15T01:15:15.000Z",
+      "source_ts": "2026-11-15T01:09:44.000Z",
+      "session": "closed",
+      "summary": "NVDA news (\uc870\uc120\uc77c\ubcf4): Domestic Investors Buy Nvidia Shares Amid CEO Scandal",
+      "payload": {
+        "headline": "Domestic Investors Buy Nvidia Shares Amid CEO Scandal",
+        "publisher": "\uc870\uc120\uc77c\ubcf4",
+        "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPZFBfNzJsQklZUEpraFVqTEFiaHZ5NENZdXp2ajJxeTF0UzFLd2ItQTVmclZNOFlqMjluQXBqTXBBUnBqTXpXYzhuUGxwMk9mQW54ZkpWdzV2N0NfMFhmNHhwUExZZE1XdzZkZGtYTEowVGkydk0tWmNrX0IwYVpzeHlrVkFDZTA0anJCSlhB?oc=5",
+        "feed": "google_news:NVDAUSDT",
+        "published_at": "2026-11-15T01:09:44.000Z",
+        "age_minutes": 5.5,
+        "held_position": false,
+        "market_confirmation": [],
+        "wakes_model": false
+      }
+    }
+  ]
 }
