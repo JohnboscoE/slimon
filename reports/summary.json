@@ -1,31 +1,31 @@
 {
  "log_period": [
   "2026-09-11T18:20:15.000Z",
-  "2026-11-17T23:40:15.000Z"
+  "2026-11-18T03:00:15.000Z"
  ],
  "live_demo_period": [
   "2026-09-18T04:25:15.000Z",
-  "2026-11-17T23:40:15.000Z"
+  "2026-11-18T03:00:15.000Z"
  ],
- "ticks": 17224,
- "decisions": 2409,
+ "ticks": 17264,
+ "decisions": 2427,
  "verdicts": {
-  "NO_ACTION": 2266,
+  "NO_ACTION": 2282,
   "VETO": 15,
-  "PASS": 128
+  "PASS": 130
  },
- "orders_filled": 136,
- "round_trips": 57,
+ "orders_filled": 138,
+ "round_trips": 58,
  "winning_trips": 21,
- "win_rate_pct": 36.84,
- "net_pnl_closed_usdt": -66.1448,
- "fees_usdt": 107.4079,
- "turnover_usdt": 179013.17,
+ "win_rate_pct": 36.21,
+ "net_pnl_closed_usdt": -86.5079,
+ "fees_usdt": 109.1986,
+ "turnover_usdt": 181997.59,
  "equity_start_live": 49953.0411,
- "equity_end_live": 49602.7275,
- "max_drawdown_pct_live": -1.1559,
- "sharpe_annualised_live": -2.7671,
- "sharpe_observation_days": 60,
- "daily_return_mean_pct": -0.01132,
- "daily_return_stdev_pct": 0.06497
+ "equity_end_live": 49574.8368,
+ "max_drawdown_pct_live": -1.1944,
+ "sharpe_annualised_live": -2.9567,
+ "sharpe_observation_days": 61,
+ "daily_return_mean_pct": -0.01206,
+ "daily_return_stdev_pct": 0.06475
 }
